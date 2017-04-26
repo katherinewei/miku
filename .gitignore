@@ -1,0 +1,10 @@
+﻿build/
+h5/
+src/html/test/
+node_modules/
+spm_modules/
+.DS_Store
+build.sh
+nbproject/
+h5.zip
+.idea/

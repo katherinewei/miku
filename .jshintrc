@@ -1,0 +1,26 @@
+{
+    "indent": 4,
+    "curly": true,
+    "boss": true,
+    "expr": true,
+    "-W069": true,
+    "-W079": true,
+    "-W004": true,
+    "-W116": true,
+    "-W041": true,
+    "-W083": true,
+    "-W061": true,
+    "-W024": true,
+    "-W082": true,
+    "-W120": true,
+    "-W075": true,
+    "-W060": true,
+    "-W103": true,
+    "-W007": true,
+    "-W067": true,
+    "-W033": true,
+    "-W014": true,
+    "-W040": true,
+    "-W086": true
+}
+

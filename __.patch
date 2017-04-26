@@ -1,0 +1,165 @@
+Index: src/common/script/url.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/common/script/url.js	(revision 49c959ce2a743ba5f8dc8f32c5e388e4139eb92e)
++++ src/common/script/url.js	(revision )
+@@ -337,7 +337,10 @@
+         lotteryDrawOrder:  ROOT  + 'lotteryDrawOrder.json',   //抽奖下订单接口
+         lotteryOrder:  ROOT  + 'lotteryOrder.htm',   //抽奖下订单页面
+         itemLotteryDrawList: ROOT + 'itemLotteryDrawList.json',  //领奖接口
++        lottery :ROOT  + 'lottery.htm', //抽奖页面
+ 
++        lotteryDrawMikAtctive:ROOT + 'lotteryDrawMikAtctive.json',
++
+         /**
+          * 摇一摇
+          */
+@@ -424,8 +427,8 @@
+         howToMakeMoney:HTML + 'howToMakeMoney.html?type=1',         //如何赚钱
+ 
+         mbhyymszcPage: ROOT + 'mbhyymszcPage.htm',//美博会一元秒杀页面
+-        concernWeixin:'http://mp.weixin.qq.com/s?__biz=MzA5NjQ4MDQ3Nw==&mid=400607662&idx=1&sn=104bb3cf79486a71e6484fc2f54872e2&scene=0#wechat_redirect'  //关注微信公众号
+-
++        concernWeixin:'http://mp.weixin.qq.com/s?__biz=MzA5NjQ4MDQ3Nw==&mid=400607662&idx=1&sn=104bb3cf79486a71e6484fc2f54872e2&scene=0#wechat_redirect',  //关注微信公众号
++        myParentUser:ROOT + 'myParentUser.json'  //是否有上级
+ 
+     };
+ 
+Index: src/common/script/common.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/common/script/common.js	(revision 49c959ce2a743ba5f8dc8f32c5e388e4139eb92e)
++++ src/common/script/common.js	(revision )
+@@ -489,14 +489,34 @@
+         return str.substr(0,frontLen)+xing+str.substr(str.length-endLen);
+     }
+ 
++    //分享时判断是否有上级，如有则显示
++    function isParentUserShow(){
++        if(URL.param.isShare == '1'){
++            var data = {
++                pUserId :URL.param.pUserId
++            }
+ 
++            Data.myParentUser(data).done(function(res){
++                if(res.hasUp == 1 || res.hasUp == 3 ){
++                    $('body').append('<div id="showParentUserPage"><div class="content"><img src="'+URL.imgPath+'common/images/popup.png"/><i class="close"></i></div></div>');
++                }
++                $('#showParentUserPage i').on('tap',function(){
++                    $('#showParentUserPage').remove();
++                })
++            })
++        }
+ 
++    }
++
++
++
+     var imgPrefix = 'http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==';
+ 
+     var downloadLink = URL.downloadHtm,
+         companyTel = '4006-234-336';
+ 
+     return {
++        isParentUserShow:isParentUserShow,
+         plusStar:plusStar,
+         Crowdfund:Crowdfund,
+         uploadImages: uploadImages,
+Index: src/common/script/data.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/common/script/data.js	(revision 49c959ce2a743ba5f8dc8f32c5e388e4139eb92e)
++++ src/common/script/data.js	(revision )
+@@ -371,7 +371,11 @@
+             Waitting.show('正在登录...', pomi);
+             return pomi;
+         },
+-
++        register: function(data) {
++            var pomi = Request(URL.register, data, 1, 1).fail(S.fail('注册失败！'));
++            Waitting.show('正在注册...', pomi);
++            return pomi;
++        },
+         checkMobile: function(mobile) {
+             var data = {
+                 act: 'send',
+@@ -629,6 +633,8 @@
+         /**
+          * 幸运抽奖--活动
+          */
++
++
+         //幸运抽奖次数
+         lotteryDrawTimes: function () {
+             if (!S.checkProfileId()) return ERROR_PROMISE;
+@@ -637,6 +643,14 @@
+             return pomi;
+         },
+         //幸运抽奖
++        lotteryDrawMikAtctive: function (data) {
++            if (!S.checkProfileId()) return ERROR_PROMISE;
++            var pomi = Request(URL.lotteryDrawMikAtctive, data, 1, 1).fail(S.fail('幸运抽奖失败'));
++            Waitting.show(LOADINGTEXT, pomi);
++            return pomi;
++        },
++
++        //幸运抽奖
+         lotteryDraw: function (data) {
+             if (!S.checkProfileId()) return ERROR_PROMISE;
+             var pomi = Request(URL.lotteryDraw, data, 1, 1).fail(S.fail('幸运抽奖失败'));
+@@ -832,6 +846,13 @@
+             }
+             var pomi = Request(URL.crowdfundBanner, data).fail(function() {
+                 console.log(arguments, '获取我的众筹项目请求失败!');
++            });
++            Waitting.show(LOADINGTEXT, pomi);
++            return pomi;
++        },
++        myParentUser: function (data) {
++            var pomi = Request(URL.myParentUser, data, 1, 1).fail(function() {
++                console.log(arguments, '获取是否有上级请求失败!');
+             });
+             Waitting.show(LOADINGTEXT, pomi);
+             return pomi;
+Index: src/common/style/base.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/common/style/base.scss	(revision 49c959ce2a743ba5f8dc8f32c5e388e4139eb92e)
++++ src/common/style/base.scss	(revision )
+@@ -787,4 +787,28 @@
+         }
+     }
+ }
++//显示是否有上级 || 在同一线上
++#showParentUserPage{
++    background-color: rgba(0,0,0,.4);
++    position: fixed;
++    top:0;
++    width:100%;
++    height:100%;
++    z-index: 11;
++    .content{
++        width:80%;
++        margin: 42% auto 0;
++        position: relative;
++        .close{
++            background-image: url("#{$img_path}common/images/popup_delete.png");
++            position: absolute;
++            right:0;
++            top:0;
++            background-size: 100%;
++            display: block;
++            height:30px;
++            width:30px;
++        }
++    }
++}
+ 
