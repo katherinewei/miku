@@ -1,0 +1,13 @@
+.slide-wrapper {
+    position: relative;
+}
+.slide {
+    overflow: hidden;
+}
+.slide-inner .slide-item a, .slide-inner .slide-item img {
+    display: block;
+    line-height: 1;
+}
+.slide-item {
+    float: left;
+}

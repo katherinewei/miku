@@ -1,0 +1,69 @@
+#tbtx-msg {
+    position:fixed;
+    *position: absolute;
+    /*display:none;*/
+    left:0;
+    bottom:24px;
+    *bottom: auto;
+
+    text-align:left;
+    z-index: 2100;
+    margin: 0;
+    padding: 0;
+}
+#tbtx-msg .tbtx-msg-item {
+    line-height:24px;
+    display:table;
+    *display:block;
+    position:relative;
+    color:#fff;
+    background-color:#34495E;
+    padding:0 8px 0 4px;
+    margin:0 0 8px 0;
+    border-left:4px solid #2C3E50;
+    border-radius:1px;
+    z-index:2000;
+    font-size:12px;
+    font-weight:bold;
+    font-family:"Microsoft YaHei", "微软雅黑", tahoma, arial, simsun, "宋体";
+    white-space: pre-wrap;
+    word-break: break-all;
+    box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+#tbtx-msg .tbtx-msg-warning {
+    background-color:#E67E22;
+    border-color:#D35400;
+}
+#tbtx-msg .tbtx-msg-error {
+    background-color:#E74C3C;
+    border-color:#C0392B;
+}
+#tbtx-msg .tbtx-msg-info {
+    background-color:#3498db;
+    border-color:#2980B9;
+}
+#tbtx-msg .tbtx-msg-debug {
+    background-color:#9B59B6;
+    border-color:#8E44AD;
+}
+#tbtx-msg .tbtx-msg-success {
+    background-color:#2ECC71;
+    border-color:#27AE60;
+}
+
+.tbtx-broadcast {
+  position: fixed;
+  left: -9999px;
+  top: -9999px;
+  background: rgba(0,0,0,0.8);
+  filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#CC000000', endColorstr='#CC000000');
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+  padding: 0 20px;
+  z-index: 9999;
+}
+:root .tbtx-broadcast {
+  filter: none;
+}

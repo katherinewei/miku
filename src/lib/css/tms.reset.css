@@ -1,0 +1,87 @@
+/**
+ * tms重置
+ * 常用div p a img li ul ol
+ * 最外层套上class="tbtx-wrapper"
+ */
+body {
+    margin: 0;
+    padding: 0;
+}
+.tbtx-wrapper {
+    font-size: 12px;
+    line-height: 1.5;
+}
+.tbtx-wrapper div,
+.tbtx-wrapper dl,
+.tbtx-wrapper dl,
+.tbtx-wrapper dt,
+.tbtx-wrapper dd,
+.tbtx-wrapper ul,
+.tbtx-wrapper ol,
+.tbtx-wrapper li,
+.tbtx-wrapper h1,
+.tbtx-wrapper h2,
+.tbtx-wrapper h3,
+.tbtx-wrapper h4,
+.tbtx-wrapper h5,
+.tbtx-wrapper h6,
+.tbtx-wrapper p,
+.tbtx-wrapper hr {
+    margin: 0;
+    padding: 0;
+}
+.tbtx-wrapper img {
+    border: 0;
+    vertical-align: middle;
+}
+.tbtx-wrapper iframe {
+    display: block;
+}
+.tbtx-wrapper ol,
+.tbtx-wrapper ul {
+    list-style: none;
+}
+.tbtx-wrapper h1,
+.tbtx-wrapper h2,
+.tbtx-wrapper h3,
+.tbtx-wrapper h4,
+.tbtx-wrapper h5,
+.tbtx-wrapper h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+.tbtx-wrapper abbr,
+.tbtx-wrapper acronym {
+    border: 0;
+    font-variant: normal;
+}
+.tbtx-wrapper address,
+.tbtx-wrapper caption,
+.tbtx-wrapper cite,
+.tbtx-wrapper em {
+    font-style: normal;
+    font-weight: 500;
+}
+.tbtx-wrapper .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.tbtx-wrapper .clearfix {
+    zoom: 1;
+    /* for IE6 IE7 */
+}
+.tbtx-wrapper a {
+    text-decoration: none;
+}
+.tbtx-wrapper a:hover {
+    color: #e54b7f;
+    text-decoration: underline;
+}
+
+.tbtx-wrapper .tbtx-title {
+    font-family: "Microsoft YaHei",\5fae\8f6f\96c5\9ed1,tahoma,arial,"Hiragino Sans GB",\5b8b\4f53;
+}

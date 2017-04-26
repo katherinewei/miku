@@ -1,0 +1,80 @@
+.tbtx-calendar{
+	border:1px solid #ccc;
+	padding:5px;
+	background:#fff;
+	min-width: 178px;
+	min-height: 178px;
+	color:#000;
+}
+.tbtx-calendar-header{
+	padding-bottom:5px;
+}
+.tbtx-calendar-header span{
+	padding-right:8px;
+}
+.tbtx-calendar-year{
+	margin:0px;
+	margin-right:3px;
+}
+.tbtx-calendar-month{
+	margin:0px;
+	margin-right:3px;
+}
+.tbtx-calendar-day-table{
+	border-collapse:collapse;
+	border:1px solid #f0f0ff;
+}
+.tbtx-calendar-day-table th,
+.tbtx-calendar-day-table td{
+	text-align: center;
+	border: 1px solid #f0f0ff;
+	padding: 2px 2px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+}
+.tbtx-calendar-day-table th{
+	background:#f0f0ff;
+}
+.tbtx-calendar-day-table td{
+	cursor:pointer;
+}
+.tbtx-calendar-day-table td:hover{
+	background:#f0f0ff;
+}
+.tbtx-calendar-week-0{
+	color:#f00;
+}
+.tbtx-calendar-week-1{
+
+}
+.tbtx-calendar-week-2{
+
+}
+.tbtx-calendar-week-3{
+
+}
+.tbtx-calendar-week-4{
+
+}
+.tbtx-calendar-week-5{
+
+}
+.tbtx-calendar-week-6{
+	color:#f00;
+}
+.tbtx-calendar-up-month{
+	color:#ccc;
+}
+.tbtx-calendar-current-month{
+
+}
+.tbtx-calendar-down-month{
+	color:#ccc;
+}
+.tbtx-calendar-day-table .tbtx-calendar-today{
+	background:#feea7a;
+}
+.tbtx-calendar-day-table .tbtx-calendar-current-day{
+	background:#7abbfe;
+}

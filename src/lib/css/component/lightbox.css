@@ -1,0 +1,113 @@
+/*.tbtx-lightbox, .lightbox-inner {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}*/
+.tbtx-lightbox {
+    background: rgba(0,0,0,0.5);
+    overflow: auto;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7f000000', endColorstr='#7f000000');
+}
+:root .tbtx-lightbox {
+    filter: none;
+}
+.tbtx-lightbox-nav-disabled {
+    display: none;
+}
+
+.lightbox {
+    position: absolute;
+    padding: 50px 0;
+}
+.lightbox-wrapper {
+    background: #FFF;
+}
+.lightbox-outer, .lightbox-inner {
+    position: relative;
+}
+.lightbox-outer {
+    padding: 20px;
+    background: #FFF;
+}
+.lightbox-inner {
+    /* width: 500px;
+        height: 500px;*/
+    overflow: hidden;
+}
+.lightbox-inner img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+.lightbox-loading, .lightbox-close, .lightbox-prev span, .lightbox-next span {
+    background-image: url('https://i.alipayobjects.com/e/201305/NQn21oVi1.png');
+}
+
+.lightbox-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -22px;
+    margin-left: -22px;
+    background-position: 0 -108px;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 8060;
+}
+
+.lightbox-loading div {
+    width: 44px;
+    height: 44px;
+    background: url('https://i.alipayobjects.com/e/201305/NQn1apTIj.gif') center center no-repeat;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent url('https://i.alipayobjects.com/e/201305/NQn1bAB7V.gif');
+    /* helps IE */
+    z-index: 8040;
+}
+.lightbox-prev {
+    left: 0;
+}
+.lightbox-next {
+    right: 0;
+}
+.lightbox-nav span {
+    position: absolute;
+    top: 50%;
+    width: 36px;
+    height: 34px;
+    margin-top: -18px;
+    cursor: pointer;
+    z-index: 8040;
+    visibility: hidden;
+}
+.lightbox-prev span {
+    left: 10px;
+    background-position: 0 -36px;
+}
+.lightbox-next span {
+    right: 10px;
+    background-position: 0 -72px;
+}
+.lightbox-nav:hover span {
+    visibility: visible;
+}
