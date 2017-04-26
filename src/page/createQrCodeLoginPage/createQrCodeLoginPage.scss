@@ -1,0 +1,72 @@
+/**
+ * Created by Spades-k on 2016/10/18.
+ * version 0.0.1
+ */
+@import "../../common/style/_mixin";
+.codeBox{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .con{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -135px;
+    margin-top: -198.5px;
+    .code{
+      border: 2px solid #987A53;
+      padding: 5px;
+      background-color: #EBE2D5;
+      img{
+        width: 266px;
+        height: 266px;
+      }
+    }
+    .logo{
+      text-align: center;
+      margin-top: 44px;
+      i{
+        display: inline-block;
+        width: 146px;
+        height:26px;
+        background: url("#{$img_path}common/images/cefu/9lab-cefu.png") center no-repeat;
+        background-size: 100% auto;
+      }
+    }
+    .codeText{
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+}
+
+//--------外框------
+#frameHeader{
+  width: 100%;
+  background: url("#{$img_path}common/images/cefu/pic_jianbtop_ian.png") center no-repeat;
+  background-color: #42454D;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 22px 40px 22px 60px;
+  .logo{
+    width: 145px;
+    height: 26px;
+    float: left;
+    img{
+      width: 145px;
+      height: 26px;
+    }
+  }
+  .outBtn{
+    float: right;
+    height: 26px;
+    width: 55px;
+    line-height: 26px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+  }
+}

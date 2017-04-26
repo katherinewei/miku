@@ -1,0 +1,321 @@
+@import "../../common/style/_mixin";
+
+/**修改2016-01-11*/
+body {
+    overflow-y: auto;
+}
+.user-icon {
+    background-image: url("#{$img_path}common/images/user_center_icon.png");
+    background-size: 40px;
+    background-repeat: no-repeat;
+}
+
+#user-page {
+    height: 100%;
+    padding-bottom: 50px;
+    overflow: auto;
+    background-color: #f6f6f6;
+    .user-info-layout {
+        max-height: 160px;
+        position: relative;
+        //background-image: url("#{$img_path}common/images/bg_profile_header.png");
+       // background-size: 100% 142px;
+        //background-repeat: no-repeat;
+        background-color: #fff;
+        border-bottom: 1px solid $borderColor;
+        padding: 5% 10%;
+        margin-bottom:3%;
+        .right-icon {
+            color: #fff;
+            font-size: 22px;
+            display: none;
+        }
+    }
+    .user-info {
+        padding-left: 10px;
+        color: #2e2e2e;
+        //line-height: 40px;
+        font-size: 16px;
+        padding-top: 7px;
+        padding-bottom: 3px;
+    }
+    .level {
+        padding: 0 8px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        margin-left: 10px;
+        color: #fff;
+        line-height: 24px;
+
+        &:before {
+            background-repeat: no-repeat;
+            background-size: 100%;
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            content: "";
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+        &.level1 {
+            &:before {
+                background-image: url("#{$img_path}common/images/iconR_level1.png");
+            }
+        }
+        &.level2 {
+            &:before {
+                background-image: url("#{$img_path}common/images/iconR_level2.png");
+            }
+        }
+        &.level3 {
+            &:before {
+                background-image: url("#{$img_path}common/images/iconR_level3.png");
+            }
+        }
+        &.level4 {
+            &:before {
+                background-image: url("#{$img_path}common/images/iconR_level4.png");
+            }
+        }
+        &.level5 {
+            &:before {
+                background-image: url("#{$img_path}common/images/iconR_level5.png");
+            }
+        }
+    }
+    .face-img {
+        img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+    }
+    .links-layout {
+        color: #8b8b8b;
+        ul{
+            border: 1px solid $borderColor;
+        }
+        li {
+            background-color: #fff;
+            width: 100%;
+            padding: 0 10px;
+            .item {
+                border-bottom: 1px solid $borderColor;
+                //line-height: 40px;
+                width: 100%;
+                padding: 3% 0;
+                .iconUser {
+                    width: 22px;
+                    height: 22px;
+                    display: inline-block;
+                    //background-image: url("#{$img_path}common/images/iconUser.png");
+                    background-position-x: 50%;
+                    //background-size: 22px 171px;
+                    background-repeat: no-repeat;
+                    margin-right: 4px;
+                    vertical-align: middle;
+
+
+                }
+                .title {
+                    font-size: 14px;
+                    color: #2e2e2e;
+                }
+                .infor {
+                    font-size: 12px;
+                }
+                .right-icon {
+                    font-size: 18px;
+                }
+            }
+            &:last-child {
+               // margin-bottom: 10px;
+                .item {
+                    border-bottom-width: 0;
+                }
+            }
+            &.my-order {
+                .iconUser {
+                    //background-position-y: -2px;
+
+                    background: {
+                        image: url("#{$img_path}common/images/personal_order.png");
+                        size: cover;
+                        position: 0 0;
+                    }
+                }
+            }
+            &.my-coupon {
+                border-top: 1px solid $borderColor;
+                .iconUser {
+                    //background-position-y: -22px;
+
+                    background: {
+                        image: url("#{$img_path}common/images/personal_promotion.png");
+                        size: cover;
+                        position: 0 0;
+                    }
+                }
+            }
+            &.my-consignee {
+                .iconUser {
+                   // background-position-y: -44px;
+                    background: {
+                        image: url("#{$img_path}common/images/personal_naddr.png");
+                        size: cover;
+                        position: 0 0;
+                    }
+                }
+            }
+            &.my-privateButler {
+                border-top: 1px solid $borderColor;
+                .iconUser {
+                    // background-position-y: -44px;
+                    background: {
+                        image: url("#{$img_path}common/images/personal_expert.png");
+                        size: cover;
+                        position: 0 0;
+                    }
+
+                }
+                img{
+                    width:28px;
+                    border-radius: 50%;
+                }
+            }
+            &.my-moisturisesBox {
+                .iconUser {
+                    // background-position-y: -44px;
+                    background: {
+                        image: url("#{$img_path}common/images/personal_box.png");
+                        size: cover;
+                        position: 0 0;
+                    }
+                }
+            }
+            &.my-follow{
+                .iconUser {
+                    // background-position-y: -44px;
+                    background: {
+                        image: url("#{$img_path}common/images/icon_focus.png");
+                        size: cover;
+                        position: 0 0;
+                    }
+                }
+            }
+
+            &.my-profit {
+                .iconUser {
+                    background-position-y: -66px;
+                }
+            }
+            &.my-marketSpread {
+                .iconUser {
+                    background: {
+                        image: url("#{$img_path}common/images/personal_promote.png");
+                        size: cover;
+                        position: 0 0;
+                    }
+                }
+            }
+            &.my-invite-ally {
+                .iconUser {
+                    background-position-y: -84px;
+                }
+            }
+            &.my-ally {
+                .iconUser {
+                    background-position-y: -106px;
+                }
+            }
+            &.my-make-money {
+                .iconUser {
+                    background-position-y: -130px;
+                }
+            }
+            &.contactUs {
+                .iconUser {
+                    //background-position-y: -150px;
+                    background: {
+                        image: url("#{$img_path}common/images/personal_contact.png");
+                        size: cover;
+                        position: 0 0;
+                    }
+                }
+                .tel {
+                    color: $foreground;
+                    font-size: 12px;
+                    display: inline;
+                }
+            }
+        }
+
+    }
+}
+
+.itemBox {
+    margin-bottom: 10px;
+
+    dl {
+        font-size: 12px;
+        text-align: center;
+        padding:3% 0;
+
+    }
+    i.count{
+        position: absolute;
+        top: -7px;
+        right:-9px;
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        line-height: 16px;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 1px solid $foreground;
+        color: $foreground;
+        font-size: 12px;
+        font-style: normal;
+    }
+    &.orderContainer {
+        dt {
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            background-image: url("#{$img_path}common/images/iconOrder.png");
+            background-position-x: 50%;
+            background-size: 22px 110px;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin: 0 auto 4px;
+            position: relative;
+        }
+
+        .order1 {
+            dt {
+                background-position-y: 0;
+            }
+        }
+        .order2 {
+            dt {
+                background-position-y: -22px;
+            }
+        }
+        .order3 {
+            dt {
+                background-position-y: -44px;
+            }
+        }
+        .order4 {
+            dt {
+                background-position-y: -66px;
+            }
+        }
+        .order5 {
+            dt {
+                background-position-y: -88px;
+            }
+        }
+
+    }
+}

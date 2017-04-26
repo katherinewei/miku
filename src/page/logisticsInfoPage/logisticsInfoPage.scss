@@ -1,0 +1,182 @@
+@import "../../common/style/_mixin";
+@mixin icon() {
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 12px;
+  height:12px;
+  margin-left:5px;
+  vertical-align: middle;
+}
+
+#logistics{
+  overflow-y: auto;
+  padding: 0;
+  background-color: $background
+}
+.box{
+  padding:0 5px;
+  //margin-bottom: 7px;
+  border-bottom: 7px solid $background;
+  background-color: #fff;
+
+  &:last-child{
+    border-bottom-width:0;
+    margin-bottom: 0;
+    padding-bottom:0;
+  }
+  .item{
+    border-bottom:1px solid $borderColor;
+    padding: 2% 3%;
+    &.sub_title{
+     // padding: 2% 0;
+     // font-size: 12px;
+      span{
+        color: $foreground;
+      }
+    }
+    &:last-child{
+      border-bottom-width:0;
+    }
+  }
+  .goods-list-layout {
+    background-color: #fff;
+    width: 100%;
+    padding:0;
+    overflow-x: hidden;
+    .scroll-box {
+      width: 100%;
+      overflow-x: auto;
+    }
+    &.multi-items {
+      .goods {
+        width: 120px;
+      }
+    }
+  }
+}
+
+.goods {
+  border-bottom:1px solid $borderColor;
+  padding: 10px 20px;
+  &:last-child{
+    border-bottom-width:0;
+  }
+  h3 {
+    font-size: 14px;
+    color: $colorDeep;
+    font-weight: normal;
+  }
+  &.float-left {
+    float: left;
+  }
+  .count,
+  .money {
+    color: #5b5b5b;
+  }
+  .count {
+    margin-left: 1em;
+    &:before {
+      content: "x";
+    }
+  }
+  .title{
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    position: relative;
+  }
+}
+.logistics_info {
+  background-color: #fff;
+  padding: 0 8px !important;
+  h4 {
+    font-size: 15px;
+
+    font-weight: normal;
+    padding: 2% 0;
+  }
+  .line {
+    width: 1px;
+    height: 260px;
+    position: absolute;
+    background-color: $colorLighter;
+    left: 11px;
+    top: 10%;
+    display: none;
+  }
+  .list {
+    position: relative;
+    overflow: hidden;
+  }
+  ul {
+    margin-left: 7px;
+    overflow: hidden;
+    border-bottom: 1px solid $borderColor;
+    li {
+      padding:0 0 10px ;
+      margin-left: 10px;
+      line-height: 20px;
+      span {
+        display: block;
+        width:1px;
+        background-color: $borderColor;
+        float: left;
+        margin-top:5px;
+        &:before{
+          position: relative;
+          display: block;
+          float: left;
+          z-index: 1;
+          margin-left: -5px;
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+          background-color: $colorLighter;
+          content: '';
+        }
+      }
+      p {
+        margin-left: 20px;
+        color: $colorLighter;
+      }
+      &.active{
+        span {
+          &:before {
+            background-color: $foreground;
+          }
+        }
+        p{
+          color: $foreground;
+        }
+      }
+    }
+    &.show{
+      height:auto;
+    }
+  }
+  .showMessage{
+    text-align: center;
+    line-height: 40px;
+    &:after{
+      @include icon();
+      margin:0 5px 0 2px;
+      content: "";
+      background-image: url("#{$img_path}common/images/icon_down.png");
+    }
+    &.active{
+      &:after{
+        background-image: url("#{$img_path}common/images/icon_up.png");
+      }
+    }
+  }
+}
+
+
+.noLogistics{
+  margin: 20% auto;
+  text-align: center;
+  font-size: 16px;
+}

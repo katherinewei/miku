@@ -1,0 +1,185 @@
+/**
+ * Created by Spades-k on 2016/7/1.
+ * version 0.0.1
+ */
+@import "../../common/style/_mixin";
+$foreground:#fb4e90;
+$themecolor:#292929;
+$themelinecolor:#E7E7E7;
+$hcolor:#7c7c7c;//灰色字体颜色
+
+.page-content{
+  .allarticle{
+    li{
+      background-color: white;
+      padding: 5px 20px;
+      margin-bottom: 6px;
+      border-top: 1px solid $themelinecolor;
+      border-bottom: 1px solid $themelinecolor;
+      .list_head{
+        width:100%;
+        padding: 1% 0;
+        .head_pic{
+          margin-right: 5px;
+          img{
+            height: 46px;
+            width: 46px;
+            border-radius: 50%;
+          }
+        }
+        .head_title{
+          margin-left: 8px;
+          h4{
+            font-size: 16px;
+          }
+          p{
+            color: $hcolor;
+            font-size: 14px;
+          }
+        }
+        .head_follow{
+          div{
+            width: 112px;
+            text-align: center;
+            height:40px;
+            border-radius: 20px;
+            line-height: 40px;
+            border: 1px solid #8E8E8E;
+            font-size: 16px;
+          }
+        }
+      }
+      .content{
+        margin-top: 5px;
+        .content_p_pic{
+          .pic_one{
+            border-width: 0 0 2px 2px;
+            border-style: solid;
+            border-color: transparent;
+            span{
+              width: 100%;
+              padding-top: 100%;
+              position: relative;
+              display: block;
+              background-size: cover;
+              background-position: 50% 50%;
+            }
+          }
+        }
+        .content_pic{
+          width: 100%;
+        }
+        .content_con{
+          h4{
+            padding: 7px 0 3px 0;
+            font-size: 16px;
+          }
+          p{
+            color: $hcolor;
+            font-size: 16px;
+          }
+        }
+      }
+      .footer{
+        height:30px;
+        line-height: 30px;
+        margin-top: 2px;
+        .f_clikes{
+          margin-right: 20px;
+          padding-top: 4px;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url("#{$img_path}common/images/find/num_like.png") no-repeat;
+            background-size: auto 100%;
+            vertical-align: -5px;
+            margin-right: 2px;
+          }
+          span{
+            color: $hcolor;
+          }
+        }
+        .f_browse{
+          padding-top: 4px;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url("#{$img_path}common/images/find/article_browse.png") no-repeat;
+            background-size: auto 100%;
+            vertical-align: -5px;
+            margin-right: 2px;
+          }
+          span{
+            color: $hcolor;
+          }
+          margin-right: 6%;
+        }
+        .f_reprint{
+          padding-top: 4px;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url("#{$img_path}common/images/find/article_share.png") no-repeat;
+            background-size: auto 100%;
+            vertical-align: -5px;
+            margin-right: 2px;
+          }
+          span{
+            color: $hcolor;
+          }
+          margin-right: 6%;
+        }
+        .f_f_reprint_l{
+          padding-top: 4px;
+          i{
+            //display: inline-block;
+            //width: 20px;
+            //height: 20px;
+            //background: url("#{$img_path}common/images/find/article_share.png") no-repeat;
+            //background-size: auto 100%;
+            //vertical-align: -5px;
+            //margin-right: 2px;
+          }
+          span{
+            color: $hcolor;
+          }
+        }
+        .f_likes{
+          margin-right: 6%;
+          padding-top: 4px;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url("#{$img_path}common/images/find/article_collect.png") no-repeat;
+            background-size: auto 100%;
+            vertical-align: -5px;
+            margin-right: 2px;
+          }
+          span{
+            color: $hcolor;
+          }
+        }
+        .f_comment{
+          padding-top: 4px;
+          margin-right: 6%;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url("#{$img_path}common/images/find/article_comment.png") no-repeat;
+            background-size: auto 100%;
+            vertical-align: -5px;
+            margin-right: 2px;
+          }
+          span{
+            color: $hcolor;
+          }
+        }
+      }
+    }
+  }
+}

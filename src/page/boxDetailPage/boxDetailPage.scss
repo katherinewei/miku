@@ -1,0 +1,195 @@
+@import "../../common/style/_mixin";
+/*盒子预览*/
+.buyBtn{
+  background-color: $foreground;
+  color:#fff;
+  //padding:2% 5%;
+  display: block;
+  line-height:34px;
+  width:50%;
+  text-align: center;
+  margin-left:30%;
+}
+
+.recordBtn{
+  width: 45px;
+  height:45px;
+  display: block;
+  position: absolute;
+  right:0;
+  top:0;
+  background: {
+      image:url("#{$img_path}/common/images/icon_Box-record.png");
+      size: 25px;
+    repeat: no-repeat;
+    position: center;
+  };
+}
+.coursePreviewContent{
+  width:100%;
+  overflow-y: auto;
+  background-color: $background;
+  padding: 45px 0 50px;
+  height:100%;
+  .boxTitle{
+    border-bottom:1px solid $borderColor;
+    text-align: center;
+    line-height: 36px;
+    background-color: #fff;
+  }
+
+  .border-bottom{
+    border-bottom:1px solid $borderColor;
+    padding-bottom:2%;
+  }
+  .boxItemM{
+    img{
+      margin: 0 auto;
+      &.boxImg{
+        margin:0 auto 10px;
+      }
+    }
+    .boxPrice{
+      color: $foreground;
+      font-weight: bold;
+      font-size: 18px;
+     // border-bottom:1px solid $borderColor;
+      padding:0 10px;
+    }
+    .boxDe{
+      background-color: #fff;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+    .boxName{
+      font-size: 15px;
+      line-height: 26px;
+      padding:0 10px ;
+    }
+    .boxIntro{
+      font-size: 12px;
+      color: $colorLighter;
+      margin: 5px 0;
+      padding:0 10px 10px ;
+      border-bottom: 1px solid $borderColor;
+    }
+    .boxOther{
+      padding:0 10px;
+    }
+    .csadName,.boxCreateTime{
+      font-size: 12px;
+      &:before{
+        width:12px;
+        height:12px;
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+        background-size: 100%;
+      }
+    }
+    .csadName:before{
+      background-image: url("#{$img_path}/common/images/personalTailor/csad/icon-peo.png");
+    }
+    .boxCreateTime:before{
+      background-image: url("#{$img_path}/common/images/personalTailor/csad/icon-biao2.png");
+    }
+
+    ul{
+      li{
+        border:1px solid $borderColor;
+        border-left-width:0;
+        border-top-width:0;
+        font-size:15px;
+        text-align: center;
+        line-height: 36px;
+        cursor: pointer;
+        &:last-child{
+          border-right-width:0;
+        }
+        &.current{
+          border-bottom:1px solid $foreground;
+        }
+      }
+    }
+
+
+    .solveWayView{
+      dt{
+        width:40%;
+        display: inline-block;
+        text-align: center;
+        margin-right: 10%;
+        &:nth-child(2n){
+          margin-right:0;
+        }
+      }
+      .suggest{
+        border:1px solid $borderColor;
+        min-height: 70px;
+        padding: 10px;
+      }
+    }
+
+    .coursePC{
+      position: relative;
+      .boxWrap{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 1px solid #fff;
+        width: 230px;
+        transform: translate(-50%, -50%);
+        height: 70px;
+        padding: 10px;
+        .boxInner{
+          background: rgba(255,255,255,0.8);
+          text-align: center;
+          line-height: 50px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .boxContentM {
+    background: #fff;
+    .contentM{
+      padding: 15px;
+    }
+  }
+
+}
+.footerT{
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  line-height: 50px;
+  border-top: 1px solid $borderColor;
+  .boxPrice{
+    font-size: 16px;
+  }
+  .buyBtn{
+    width:60%;
+    margin-left:0;
+
+  }
+  span.spanBtn{
+    background: $colorDeep;
+    border-radius: 5px;
+    width:100px;
+    line-height: 32px;
+    color: #fff;
+    display: inline-block;
+    margin: 10px 15px;
+    cursor: pointer;
+    // text-align: center;
+  }
+
+}
+
+#coursePreview .coursePreviewContent{
+  width:360px;
+  padding:0;
+}

@@ -1,0 +1,150 @@
+@import "../../common/style/_mixin";
+
+body {
+  background-color: #2c2c36;
+}
+
+.wrap {
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+  width: 93.7%;
+  color: #fff;
+}
+
+.time {
+  border-radius: 4px;
+  border: 1px solid $foreground;
+  text-align: center;
+  width: 90%;
+  padding: 2% 0;
+  margin: 2% auto;
+}
+
+.shake {
+  position: relative;
+
+  #shakeHand {
+    position: absolute;
+    left: 30%;
+    top: 22%;
+    width: 48%;
+  }
+}
+
+.footer {
+  position: relative;
+  p {
+    position: absolute;
+    left: 45%;
+    top: 27%;
+    font-size: 18px;
+    span {
+      color: $foreground;
+      font-size: 20px;
+      padding: 0 5px;
+    }
+  }
+}
+
+.resultWrap {
+  position: absolute;
+  top: 0;
+  background-color: rgba(44, 44, 54, .8);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  transition: opacity 0.3s linear 0s;
+  transform: translateZ(0);
+  &.fadeOut {
+    opacity: 0;
+    z-index: -1;
+  }
+  img {
+    vertical-align: middle;
+  }
+  .resultContainer {
+    z-index: 999;
+  }
+  .resultBox {
+    position: absolute;
+    left: 14%;
+    top: 10%;
+    width: 71%;
+    color: #fcc832;
+    text-align: center;
+    .price {
+      font-size: 38px;
+      font-weight: bold;
+      color: #faee63;
+      line-height: 32px;
+      &:before {
+        font-size: 18px;
+        vertical-align: baseline;
+      }
+    }
+
+  }
+  .receive, .resultContainer {
+    position: relative;
+  }
+  .tips {
+    line-height: 50px;
+  }
+  .colseBtn {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 3%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 15%;
+  }
+}
+
+.animated {
+  animation: 3s waggle;
+}
+
+@keyframes waggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  //.wrap {
+  //  width: 75%;
+  //  margin: 0 auto
+  //}
+  //.resultWrap {
+  //  width: 90%;
+  //  left: 5%;
+  //  line-height: 16px;
+  //}
+  //.time{
+  //  width:100%;}
+  .wrap {
+    overflow-y: auto;
+  }
+
+}

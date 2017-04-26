@@ -1,0 +1,108 @@
+@import "../../common/style/_mixin";
+.wl-location-dialog {
+    .dialog-header {
+        background: #fff;
+        @include border(0, 0, 1px);
+        /* height: 80px; */
+        position: absolute;
+        width:100%;
+        z-index:1;
+    }
+    .dialog-content {
+        background: #fff;
+        padding: 80px 0 10px;
+    }
+    .keyword-title {
+        font-size: 17px;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        @include gridborder(0, 0, 1px);
+    }
+    .keyword-layout {
+        padding: 0 10px;
+        .city{
+            @include gridborder(0,1px);
+            background-image: url("#{$img_path}common/images/map_icon.png");
+            background-size: 16px 16px;
+            background-position: left center;
+            background-repeat: no-repeat;
+            line-height: 1;
+            padding-left:20px;
+            font-size:16px;
+        }
+        input {
+            font-size:16px;
+            width: 100%;
+            padding: 12px 10px 12px 30px;
+            background-image: url("#{$img_path}common/images/location_icon.png");
+            background-size: 14px 18px;
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            line-height: 1;
+            /*border: 1px solid #ccc;
+            border-radius: 16px; */
+        }
+    }
+    .result-scroll-title h2{
+        padding: 5px 10px 3px;
+        font-size:16px;
+        @include border(1px);
+        background: #f5f5f5;
+        .clear-history, .relocation {
+            float: right;
+            font-weight: normal;
+            font-size:14px;
+            padding-top: 2px;
+        }
+    }
+    .result-layout {
+        display: none;
+        @include border(1px);
+        &.show{
+            display:block;
+        }
+        h2 {
+            font-size:16px;
+            padding: 5px 10px 3px;
+            @include border(0, 0, 1px);
+            background: #f5f5f5;
+            .clear-history, .relocation {
+                float: right;
+                font-weight: normal;
+                font-size:14px;
+                padding-top: 2px;
+            }
+        }
+        ul {
+            padding: 0 10px;
+            li.poi-item {
+
+                background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150415/vNTT-0-1429075096719.png);
+                background-size: 20px 26px;
+                background-repeat: no-repeat;
+                background-position: left center;
+                padding: 10px 0 10px 30px;
+                @include gridborder(0, 0, 1px);
+                &:last-child {
+                    border-bottom: 0;
+                }
+                h3 {
+                    color: #666;
+                    font-size:16px;
+                    font-weight: normal;
+                }
+                h4 {
+                    font-weight: normal;
+                    color: #999;
+                    font-size:12px;
+                    @include ellipsis;
+                }
+            }
+        }
+    }
+    .location-null-msg{
+        padding:20px;
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>招商公告</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no"/>
+    <meta name="editor" content="superman">
+    <link rel="stylesheet" href="/h5/css/common.css?v=16593"/>
+    <style type="text/css">
+        .header {
+            position: relative;
+            display: none;
+        }
+
+        section.pageA {
+            font-size: 14px;
+            padding: 0px 3% 50px;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: normal;
+            padding: 5px 0;
+        }
+
+        p {
+        }
+
+    </style>
+</head>
+<body>
+<section class="header">
+    <div class="content navbar">
+        <div class="btn-navbar navbar-left"><a href="javascript:history.go(-1);" class="icon icon-return"></a></div>
+        <div class="navbar-main">招商公告</div>
+    </div>
+</section>
+<section class="pageA">
+    <h1>一、入驻流程</h1>
+
+    <div class="content">
+        <p>1、注册并在线签署协议<br/>
+            2、填写信息/提交资质<br/>
+            3、招商审核<br/>
+            4、开通入驻<br/>
+            5、运营</p>
+
+    </div>
+    <h1>二、入驻须知</h1>
+
+    <div class="content">
+        <p>
+            1、入驻的商家必须是在中华人民共和国（港、澳、台地区除外）注册的企业，且需要具备销售相应商品的资质。<br/>
+            2、商家必须给消费者提供正规发票，发票盖章的公司名称必须与商家和我司合作的公司名称一致。<br/>
+            3、商家必须拥有基本电商运营团队，具备完善的运营能力和售后服务能力。<br/>
+            4、商家务必确保申请入驻及后续经营阶段提供的相关资质和信息的真实性。商家入驻申请提交的资质均需加盖贵司红色公章扫描上传并必须保证清晰可见，不得出现违规处理图片行为。一旦发现虚假资质或信息的，您的公司将被列入非诚信商家名单，将不再与您进行合作。
+
+        </p>
+    </div>
+    <h1>三、资质要求</h1>
+
+    <div class="content">
+        <p>1、文件资料可以使用原件或复印件，要求必须真实、有效、完整、清晰，并能涵盖所涉公司及销售产品类别。<br/>
+            2、所有提供的文件资料必须在明示有效期内。<br/>
+            3、所有提供的文件资料须加盖供应商公章。<br/>
+            4、文件资料如涉及数家企业或个人，则相互关系必须明确清晰，并由各方签章确认。<br/>
+            5、相关外文资料必要时须提供对应的中文翻译件。<br/>
+            6、入驻商户需提供的相关文件资料包括但不限于本文件要求的所列项目，如国家法律法规及行政要求规定必须具有其他相关的文件资料时，各方有义务配合及时提供。<br/>
+            备注、提交文件资料时需同时参考文件要求总则、细则以及对应品类资料清单，各品类检验报告等。</p>
+    </div>
+    <h1>四、入驻信息提交</h1>
+
+    <div class="content">
+        <p>1、提交公司基本信息：提交公司目前经营状态的基本信息，包括公司基本信息、经营规模、相关联系人等信息。<br/> 
+            2、提交入驻预经营信息<br/>
+            3、提交公司资质信息：提交入驻公司完善的公司资质电子版，包括公司营业执照信息、组织机构代码证、一般纳税人证明（均需加盖企业公章并保证图片清晰）。<br/>
+            4、提交公司财务及税务信息：提交公司财务及税务资质电子版，包括开户银行许可证及税务登记证（均需加盖企业公章并保证图片清晰）。<br/>
+            5、上传产品资质：提交公司所经营品牌对应的资质电子版，包括品牌资质及品牌对应的产品资质（均需加盖企业公章并保证图片清晰）。 <br/>
+            6、提交信息等待资质审核：提交以上信息，等待审核结果。审核通过后会在系统中进行提示，请及时登录系统查看。</p>
+    </div>
+    <h1>五、合同签订</h1>
+
+    <div class="content">
+        <p>
+            入驻信息审核通过后，会有招商人员与您联系。您需要登录“入驻商家管理系统”在线确认合同的相关信息（包括平台使用费、类目扣点等），并自行打印电子版合同，签字、盖章后将扫描件上传至系统，已加盖公章的纸质合同原件请通过快递寄送一份到米酷。<br/>
+            注意事项： 所有标明乙方盖章处都需要商家加盖公司合同红章，且骑缝处需加盖合同骑缝章。</p>
+    </div>
+
+
+</section>
+<script>
+    var type = getQueryString('type');
+    if (type == 1) {
+        document.getElementsByClassName('header')[0]['style'].display = 'block';
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+</body>
+</html>

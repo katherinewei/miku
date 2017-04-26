@@ -1,0 +1,92 @@
+@import "../../common/style/_mixin";
+.header .navbar-right{
+  width:80px;
+}
+.page-content{
+  background-color: $background;
+  padding-bottom: 0;
+}
+.returnGoods{
+  margin:10px 0 0;
+  height: 100%;
+  overflow-y: auto;
+}
+.border{
+  border-bottom:1px solid $borderColor;
+}
+.not-has-order-msg{
+  .empty_img{
+    width: 100%;
+    text-align: center;
+    margin-top: 30%;
+    img{
+      width: 150px;
+      margin: 0 auto;
+    }
+  }
+}
+.order {
+  background: #fff;
+  margin-bottom: 5px;
+  padding: 0 10px;
+ .summary{
+   @extend .border;
+   padding:5px 0;
+ }
+
+ .create-time {
+    font-size: 12px;
+    color: #7c7c7c;
+  }
+}
+
+
+.goods {
+  @extend .border;
+  .thumb {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px 10px 0;
+    text-align: center;
+    overflow: hidden;
+  }
+  h3 {
+    font-weight: normal;
+    //color: #5b5b5b;
+  }
+  &.float-left {
+    float: left;
+  }
+  .count{
+    padding-left:10px;
+    &:before{
+      content: 'x';
+    }
+
+  }
+}
+.suminfo-layout {
+  padding: 10px 0;
+  font-size: 14px;
+  .btnGroups {
+    padding-right: 10px;
+    text-align: right;
+    .btnReturnGoods{
+      height: 36px;
+      line-height: 36px;
+      margin-left: 0.5em;
+      border-radius: 3px;
+      display: inline-block;
+      text-align: center;
+      width: 90px;
+      border:1px solid #2e2e2e;
+
+    }
+
+
+  }
+}
+
+
+

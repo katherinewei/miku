@@ -1,0 +1,118 @@
+@import "../../common/style/_mixin";
+.wl-shop-list-dialog {
+    @include fullwin;
+    .dialog-content {
+        background: #fff;
+        padding: 40px 0 10px 0;
+    }
+    .dialog-header {
+        background: #fff;
+        color: #000;
+        background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150327/vNTT-0-1427448681001.png);
+        background-size: 10px 13px;
+        background-repeat: no-repeat;
+        background-position: 10px 13px; //10px 10px;
+        padding-left: 25px;
+        height: 40px; //33px;
+        font-size: 15px; //14px;
+        color: #666;
+        line-height: 43px; //36px;
+        .bottom-icon {
+            margin-left: 0.5em;
+            font-size: 15px; //14px;
+            font-weight: bold;
+        }
+    }
+    .shop-list-layout {
+        /* @include gridborder(1px); */
+        
+        padding: 0 5px;
+        h1 {
+            padding: 0 5px;
+            color: #999;
+            height: 40px;
+            line-height: 40px;
+            /* text-align: center; */
+            
+            font-size: 13px;
+        }
+    }
+    .shop-list {
+        /* @include gridborder(1px,0,1px,0);
+        background: #fff; */
+    }
+    .shop {
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 5px;
+        padding: 10px;
+        position: relative;
+        /* @include gridborder(1px);
+        &:first-child{
+            border-top:0;
+        } */
+        
+        &.distance-reckon {
+            background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150331/vNTT-0-1427788125638.png);
+            background-size: 45px 45px;
+            background-repeat: no-repeat; 
+            
+            background-position: right top;
+            .distance-layout {
+                display: block;
+            }
+        }
+        h2 {
+            font-size: 15px;
+            color: #666;
+        }
+        p {
+            font-size: 12px;
+            color: #999;
+        }
+        .distance-layout {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-radius: 0 5px 0 0;
+            color: #fff;
+            text-align: right;
+            line-height: 1;
+            padding: 2px;
+        }
+    }
+    .unfind-shop-message {
+        font-size: 15px;
+        color: #333;
+        text-align: center;
+        /*  background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150414/vNTT-0-1428997746295.png);
+        background-position: center 30px;
+        background-repeat: no-repeat; */
+        /* background-size: 204px 92px;
+        min-height: 240px;
+        padding-top: 140px; */
+        
+        padding: 50px 0 10px;
+        .hand-position {
+            width: 200px;
+            margin: 20px auto;
+            height: 50px;
+            line-height: 50px;
+            padding: 0;
+            font-size: 16px;
+            background-color: #ffa423;
+        }
+    }
+    .footer {
+        @include border(1px);
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px 0;
+        .copyright {
+            background: #fff;
+        }
+    }
+}

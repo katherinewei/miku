@@ -1,0 +1,31 @@
+section {
+  height: 100%;
+  overflow: auto;
+}
+
+.content {
+  position: relative;
+  -webkit-transition: all 0.5s linear 0s;
+  transition: all 0.5s linear 0s;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  overflow: auto;
+  .btn-receive,.btn-share {
+    display: inline-block;
+    position: absolute;
+    width: 30%;
+    height: 6rem;
+  }
+  .btn-receive {
+    top: 44%;
+    left: 20%;
+  }
+  .btn-share {
+    top: 63%;
+    left: 28%;
+  }
+}
+
+.shareCont {
+  opacity: 1;
+}

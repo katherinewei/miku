@@ -1,0 +1,130 @@
+/**
+ * Created by Spades-k on 2016/10/19.
+ * version 0.0.1
+ */
+body{
+  min-height: 870px;
+  overflow: auto;
+}
+.skinChekBox{
+  position: relative;
+  height: 100%;
+  .con{
+    width: 795px;
+    height: 725px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -397.5px;
+    margin-top: -362.5px;
+    .headBox{
+      text-align: center;
+      .tit{
+        font-weight: bold;
+        font-size: 46px;
+        color: #2e2e2e;
+      }
+      .stit{
+        font-size: 24px;
+        color: #2e2e2e;
+      }
+    }
+    .conBox{
+      width: 100%;
+      height: 443px;
+      margin-top: 67px;
+      .conVideo{
+        height: 437px;
+        float: left;
+        video{
+          width: 542px;
+          height: 437px;
+          background-color: #42454D;
+        }
+      }
+      .showImg{
+        float: right;
+        height: 437px;
+        .st1{
+          ul{
+            li{
+              margin-bottom: 35px;
+              .st1_1,.st1_2,.st1_3{
+                border: 1px solid white;
+                img{
+                  width: 156px;
+                  height: 122px;
+                  cursor: pointer;
+                }
+              }
+              &:last-child{
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+        .st2{
+          ul{
+            li{
+              margin-bottom: 35px;
+              .st1_1,.st1_2{
+                border: 1px solid white;
+                img{
+                  width: 156px;
+                  height: 122px;
+                  cursor: pointer;
+                }
+              }
+              &:last-child{
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+        .st3{
+          ul{
+            li{
+              .st1_1{
+                border: 1px solid white;
+                img{
+                  width: 156px;
+                  height: 122px;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .bottomBtn{
+      display: inline-block;
+      float: right;
+      margin-top: 40px;
+      .cImg,.next{
+        width: 94px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .cImg{
+        background-color: #cfa972;
+        color: white;
+        border:1px solid #996c33;
+        margin-bottom: 8px;
+      }
+      .next{
+        background-color: white;
+        color: #bcbcbe;
+        border:1px solid #bcbcbe;
+        &.active{
+          background-color: #cfa972;
+          color: white;
+          border:1px solid #996c33;
+        }
+      }
+    }
+  }
+}

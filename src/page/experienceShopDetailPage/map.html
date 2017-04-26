@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>地图</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no"/>
+    <meta name="editor" content="superman">
+
+    <script>
+        var pageConfig = {
+            openid: "",
+            appid: "",
+            shopid: "2043",
+            pid: "79113",
+            pUserId: "",
+            subscribeWx: "",
+            isWx: "0",
+            refurl: ""
+        }
+    </script>
+    <link rel="stylesheet" href="http://187.unesmall.com/h5/css/common.css?v=17085"/>
+    <link rel="stylesheet" href="http://187.unesmall.com/h5/css/page/mapPage.css?v=17085"/>
+</head>
+<body>
+<!--<div class="waitting" style="margin-left: -44px; margin-top: -40px;">-->
+    <!--<div class="loading"></div>-->
+    <!--<div class="message">正在加载...</div>-->
+<!--</div>-->
+
+<script src="http://187.unesmall.com/h5/js/lib/main.js?v=17085"></script>
+<script src="http://187.unesmall.com/h5/js/page/mapPage.js?v=17085"></script>
+<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+<script>
+    function init(){
+        var type = getQueryString('type');
+        var center = new qq.maps.LatLng(39.916527,116.397128);
+        var map = new qq.maps.Map(document.getElementById("container"), {
+            center: center,
+            zoom: 13
+        });
+        //设置标注
+        var anchor = new qq.maps.Point(6, 6),
+                size = new qq.maps.Size(24, 24),
+                origin = new qq.maps.Point(0, 0),
+                icon = new qq.maps.MarkerImage('http://unesmall.b0.upaiyun.com/common/images/experienceStore/icon_landmark.png', size, origin, anchor);
+
+        if(type == 0){
+            var infoWin = new qq.maps.InfoWindow({
+                map: map
+            });
+            var latlngs = [
+                new qq.maps.LatLng(39.91474,116.37333),
+                new qq.maps.LatLng(39.91447,116.39336),
+                new qq.maps.LatLng(39.90884,116.41306)
+            ];
+
+            for(var i = 0;i < latlngs.length; i++) {
+                (function(n){
+                    var marker = new qq.maps.Marker({
+                        icon: icon,
+                        position: latlngs[n],
+                        map: map
+                    });
+                    qq.maps.event.addListener(marker, 'click', function() {
+                        infoWin.open();
+                        infoWin.setContent('<div class="addrDetail'+n+' grid"><div class="row"><div class="col col-17"><p><span class="num">'+(n+1)+'</span><span class="name">汗蒸美容疗养管</span></p><div class="starWrap"><div class="star" style="width:100%"></div> </div><div class="addr" ><span class="zone">嘉禾/人和</span><span class="distance">1.8km</span></div></div> <div class="col col-18">到这里去</div></div> </div>');
+                        infoWin.setPosition(latlngs[n]);
+                    });
+                })(i);
+            }
+        }
+        else{
+            //添加定时器
+            setTimeout(function(){
+
+                var marker=new qq.maps.Marker({
+                    icon: icon,
+                    position:center,
+                    animation:qq.maps.MarkerAnimation.DROP,
+                    map:map
+                });
+            },500);
+
+        }
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    window.onload=init;
+</script>
+<div id="container"></div>
+<div style="display:none">
+
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256895643'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256895643' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+</div>
+
+</body>
+</html>

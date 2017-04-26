@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>米酷下载</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no"/>
+    <meta name="editor" content="superman">
+    <style type="text/css">
+        body, div, img {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: middle;
+
+        }
+    </style>
+</head>
+<body>
+<div class="downloadTips">
+    <div id="Android">
+        <img src="http://unesmall.b0.upaiyun.com/common/images/downloadTips/Android_01.jpg"/>
+        <img src="http://unesmall.b0.upaiyun.com/common/images/downloadTips/Android_02.jpg"/>
+        <img src="http://unesmall.b0.upaiyun.com/common/images/downloadTips/Android_03.jpg"/>
+        <img src="http://unesmall.b0.upaiyun.com/common/images/downloadTips/Android_04.jpg"/>
+    </div>
+    <div id="ios">
+        <img src="http://unesmall.b0.upaiyun.com/common/images/downloadTips/IOS_01.jpg"/>
+        <img src="http://unesmall.b0.upaiyun.com/common/images/downloadTips/IOS_02.jpg"/>
+        <img src="http://unesmall.b0.upaiyun.com/common/images/downloadTips/IOS_03.jpg"/>
+        <img src="http://unesmall.b0.upaiyun.com/common/images/downloadTips/IOS_04.jpg"/>
+    </div>
+</div>
+<script src="/h5/js/lib/gallery/zepto/1.1.6/zepto.js"></script>
+<script>
+    //判断是否微信
+    var inWeixin = navigator.userAgent.match(/micromessenger/i);
+    var isAndroid = navigator.userAgent.match(/Android/i);
+    var isIPhone = navigator.userAgent.match(/iPhone|ipad/i);
+
+    function checkDownload() {
+        if (inWeixin) {
+            $('.downloadTips').show();
+            (isAndroid) ? $('#Android').show() : $('#ios').show();
+            return;
+        } else {
+            if (isAndroid) {
+                location.href = 'http://fir.im/v3q9';
+            } else {
+                location.href = 'http://fir.im/unesApple';
+            }
+        }
+    }
+    checkDownload();
+
+</script>
+</body>
+</html>

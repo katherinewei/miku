@@ -1,0 +1,99 @@
+@import "../../common/style/_mixin";
+
+@mixin icon() {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  content: '';
+  width:30px;
+  height:30px;
+  vertical-align: middle;
+  display: inline-block;
+  margin: -4px 8px 0  0 ;
+}
+
+#exp{
+  background: {
+    //image: url("#{$img_path}common/images/personalTailor/bg.png");
+    size: 100% 100%;
+  };
+  color: #292929;
+  padding:0;
+  overflow-y: auto;
+   .top{
+    text-align: center;
+    font-size: 16px;
+    //background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9f8ff), to(#feebf2));
+    //background: gradient(linear, 0 0, 0 100%, from(#d9f8ff), to(#feebf2));
+    padding:5% 0;
+    .photo{
+      width:25%;
+      margin: 0 auto 3%;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+     .name{
+       font-size: 16px;
+     }
+    .consult{
+      width:110px;
+      text-align: center;
+      line-height: 32px;
+      border:1px solid $foreground;
+      color: $foreground;
+      display: block;
+      margin: 2% auto 0%;
+    }
+    .starWrap {
+      background-image: url("#{$img_path}common/images/icon_star_big_n.png");
+      background-repeat: repeat;
+      background-size: 10px;
+      width: 50px;
+      height: 10px;
+      margin: 1% auto;
+
+      .star {
+        background-image: url("#{$img_path}common/images/icon_star_big_h.png");
+        background-repeat: repeat;
+        background-size: 10px;
+        width: 60%;
+        height: 10px;
+      }
+    }
+  }
+  .introduce {
+    padding:4% 6%;
+    //border-top:1px solid $borderColor;
+    dd{
+      margin-bottom: 5%;
+     // color: $colorLighter;
+      p{
+        margin-left: 38px;
+        //color: #ccc;
+      }
+
+      h3{
+        font-size: 16px;
+        //color: $colorDeep;
+        &.introduce_icon{
+          &:before{
+           @include icon();
+            background-image: url("#{$img_path}common/images/personalTailor/icon_p1.png");
+          }
+        }
+        &.achieve_icon{
+          &:before{
+            @include icon();
+            background-image: url("#{$img_path}common/images/personalTailor/icon_p2.png");
+          }
+        }
+        &.skill_icon{
+          &:before{
+            @include icon();
+            background-image: url("#{$img_path}common/images/personalTailor/icon_p3.png");
+          }
+        }
+      }
+    }
+
+  }
+}

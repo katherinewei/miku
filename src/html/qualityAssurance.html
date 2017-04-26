@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正品保证</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no"/>
+    <meta name="editor" content="superman">
+    <link rel="stylesheet" href="/h5/css/common.css?v=16593"/>
+    <style type="text/css">
+        body {
+            color: #2e2e2e;
+
+        }
+
+        .header {
+            position: relative;
+            display: none;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .header .navbar {
+            background-color: #fff;
+        }
+
+        .header .navbar-main {
+            color: #2e2e2e;
+        }
+
+
+
+        section.pageA {
+            font-size: 14px;
+            padding-bottom: 46px;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .headerTop {
+            width: 100%;
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/bg_top.png");
+            background-size: 100%;
+            min-height: 235px;
+        }
+
+        .headerTop img.logo {
+            width: 50%;
+            margin: 0 auto;
+            padding: 14px 0 5px;
+        }
+
+        .headerTop dl {
+            margin: 0 3px;
+            text-align: center;
+            color: #fff;
+
+        }
+
+        .headerTop dl img {
+            margin: 0 auto 7px;
+            max-width: 45px;
+
+        }
+
+        .list_item {
+            padding: 8% 3% 0;
+        }
+
+        fieldset {
+            border: none;
+            border-top: 1px solid #2e2e2e;
+            text-align: center;
+
+            overflow: hidden;
+            width: 100%;
+        }
+
+        fieldset legend {
+            padding: 0 3%;
+            color: #fb4e90;
+            width: 50%;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        fieldset legend i {
+            background-size: 100%;
+            width: 28px;
+            height: 28px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        fieldset legend i.list1 {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_content1.png");
+        }
+
+        fieldset legend i.list2 {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_content2.png");
+        }
+
+        fieldset legend i.list3 {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_content3.png");
+        }
+
+        fieldset legend i.list4 {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_content4.png");
+        }
+
+        fieldset legend i.list5 {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_content5.png");
+        }
+
+        fieldset legend i.list6 {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_content6.png");
+        }
+
+        fieldset legend i.list7 {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_content7.png");
+        }
+
+        fieldset legend i.list8 {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_content8.png");
+        }
+
+        fieldset .content {
+            text-align: left;
+            padding: 5% 3%;
+        }
+
+        fieldset:nth-child(6) .content, fieldset:nth-child(7) .content, fieldset:nth-child(8) .content {
+            padding-top: 0;
+        }
+
+        fieldset .content .small {
+            text-align: center;
+            font-size: 12px;
+            margin-top: -3.5%;
+        }
+
+        fieldset .content dl {
+            margin: 3% 0 1.5%;
+        }
+
+        fieldset .content dl dt.col {
+            margin: 0 5px 5px 0;
+
+        }
+
+        fieldset .content dl dt.col:nth-child(4) {
+            margin-right: 0;
+        }
+
+        .step {
+            text-align: center;
+            margin: 5% 0;
+        }
+
+        .step i {
+            width: 15px;
+            height: 15px;
+            background-repeat: no-repeat;
+            display: inline-block;
+            background-size: 100%;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .step1 i {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/one.png");
+        }
+
+        .step2 i {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/two.png");
+        }
+
+        .step3 i {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/three.png");
+        }
+
+        .step4 i {
+            background-image: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/four.png");
+        }
+
+        .step span {
+            background: url("http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_step.png") no-repeat;
+            width: 10px;
+            height: 15px;
+            display: block;
+            margin: 5px auto;
+            background-size: 100%;
+        }
+
+        .pic {
+            margin: 3% 0;
+        }
+
+    </style>
+</head>
+<body>
+<section class="header">
+    <div class="content navbar">
+        <div class="btn-navbar navbar-left"><a href="javascript:history.go(-1);" class="icon icon-return"></a></div>
+        <div class="navbar-main">正品保证</div>
+    </div>
+</section>
+<section class="pageA">
+    <div class="headerTop grid">
+        <img class="logo" src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/LOGO-.png"/>
+        <dl class="row">
+            <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_top1.png"/>品牌授权
+            </dt>
+            <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_top2.png"/>7天无理由退换
+            </dt>
+            <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/icon_top3.png"/>极速发货
+            </dt>
+        </dl>
+    </div>
+    <div class="list_item">
+        <fieldset>
+            <legend><i class="list1"></i>正品采购</legend>
+            <div class="content">迄今已有5000多家品牌与米酷签约合作，米酷
+                所售商品均从正规的品牌渠道进货并授权。<br/>
+                同时，我们对供应商资质进行了严格审核，五证及产品质检报告，缺一不可。
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><i class="list2"></i>真品联盟</legend>
+            <div class="content grid">
+                <div class="small">甄选优质、具口碑的品牌</div>
+                <p style="margin-top: 5%;">米酷团队精挑细选，既具备专业时尚眼光、更确保商品优质安全，每天逐一甄选上新100多个品牌。</p>
+                <dl class="row">
+                    <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo1.png"/>
+                    </dt>
+                    <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo2.png"/>
+                    </dt>
+                    <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo3.png"/>
+                    </dt>
+                    <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo4.png"/>
+                    </dt>
+                </dl>
+                <dl class="row">
+                    <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo5.png"/>
+                    </dt>
+                    <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo6.png"/>
+                    </dt>
+                    <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo7
+.png"/></dt>
+                    <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo8.png"/>
+                    </dt>
+                </dl>
+                <dl class="row">
+                    <dt class="col"><img src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo9.png"/>
+                    </dt>
+                    <dt class="col"><img
+                            src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo10.png"/></dt>
+                    <dt class="col"><img
+                            src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo11.png"/></dt>
+                    <dt class="col"><img
+                            src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/logo12.png"/></dt>
+                </dl>
+                </dl>
+                <div class="small" style="margin: 0">更多国际、国内大牌，敬请您来发现！</div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><i class="list3"></i>质量保险</legend>
+            <div class="content">在米酷上售卖的所有商品均为正品，由我们公司承保。<br/>如果您对商品存在怀疑，可到工商局或有资质的机构进行产品质量鉴定，如鉴定结果为非正牌正品，在收到商品后的90个工作日内，均可向我们公司依法定程序索取该商品售价的全额赔偿。我们将协助您进行全面的查证调研。
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><i class="list4"></i>无理由退换</legend>
+            <div class="content">
+                <div class="small">流程简单 全额退款 运费全免</div>
+                <div class="step">
+                    <div class="step1">
+                        <i></i> 申请退货
+                        <span></span>
+                    </div>
+                    <div class="step2">
+                        <i></i> 递交单号
+                        <span></span>
+                    </div>
+                    <div class="step3">
+                        <i></i> 快递回仓
+                        <span></span>
+                    </div>
+                    <div class="step4">
+                        <i></i> 收到退款
+
+                    </div>
+                </div>
+                <p>在米酷上购买的商品自签收之日起，商品在不影响二次销售的情况下，7日内无条件退货（部分特殊商品除外），退货所产生的运费由米酷承担。</p></div>
+        </fieldset>
+        <fieldset>
+            <legend><i class="list5"></i>闪电发货</legend>
+            <div class="content"><p>米酷拥有先进的仓库管理系统，全自动化的管理方式，全流水线无缝衔接。华南、华东、华北、西南四大仓库超10万平方米仓储，构建全国物流配送体系，确保商品以最快的速度送达你的手中。</p>
+                <img class="pic" src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/pic1.png"/>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><i class="list6"></i>千万用户信赖</legend>
+            <div class="content"><img class="pic"
+                                      src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/pic2.png"/>
+
+                <p>在米酷上购买商品的用户对我们的商品好评如潮，大部分都是回头客，全因为我们的商品值得信赖。</p>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><i class="list7"></i>正品实拍</legend>
+            <div class="content"><img class="pic"
+                                      src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/pic3.png"/>
+
+                <p>米酷为热衷网购的美妆达人提供实物拍摄，凭借庞大产品库网罗国内外各大品牌热卖单品、正品专柜高清实拍、包装质地全细节展现，让您足不出户也能成为美妆鉴定达人，从此不再为网购产品担忧。</p></div>
+        </fieldset>
+        <fieldset>
+            <legend><i class="list8"></i>金牌客服</legend>
+            <div class="content"><img class="pic"
+                                      src="http://unesmall.b0.upaiyun.com/common/images/qualityAssurance/pic4.png"/>
+
+                <p>365天客服热线，7x15小时微笑服务。</p></div>
+        </fieldset>
+    </div>
+</section>
+<script>
+    var type = getQueryString('type');
+    if (type == 1) {
+        document.getElementsByClassName('header')[0]['style'].display = 'block';
+    } else {
+        document.getElementsByClassName('pageA')[0]['style'].padding = '0';
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+</body>
+</html>

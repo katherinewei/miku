@@ -1,0 +1,82 @@
+/**
+ * Created by Spades-k on 2016/10/19.
+ * version 0.0.1
+ */
+
+.informationBox{
+  position: relative;
+  height: 100%;
+  .con{
+    position: absolute;
+    width: 422px;
+    height:536px;
+    left:50%;
+    top:50%;
+    margin-left: -211px;
+    margin-top: -233px;
+    border: 1px solid #C4C4C4;
+    .head{
+      height: 88px;
+      width: 100%;
+      background-color: #cfa972;
+      padding: 0 20px;
+      p{
+        color: white;
+        font-size: 26px;
+        height: 100%;
+        line-height: 88px;
+        width: 70%;
+        float: left;
+      }
+      .logo{
+        float: right;
+        height: 80px;
+        width: 80px;
+        img{
+          width: 80px;
+          height: 80px;
+          margin-top: 4px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .conBody{
+      ul{
+        li{
+          padding: 17px;
+          text-align: center;
+          color: #7C7C7C;
+          input{
+            width: 246px;
+            height: 40px;
+            border: 1px solid #996c33;
+            text-indent: 8px;
+          }
+          &:first-child{
+            padding-top: 62px;
+          }
+          &:last-child{
+            padding-bottom: 46px;
+          }
+        }
+      }
+    }
+    .btnList{
+      text-align: center;
+      a{
+        display: inline-block;
+        width: 150px;
+        height: 45px;
+        background-color: #cfa972;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #A8804C;
+        line-height: 45px;
+        &:first-child{
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}

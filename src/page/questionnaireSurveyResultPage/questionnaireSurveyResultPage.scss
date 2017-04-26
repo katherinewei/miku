@@ -1,0 +1,141 @@
+@import "../../common/style/_mixin";
+@mixin icon() {
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 12px;
+  height:12px;
+  margin-left:5px;
+  vertical-align: middle;
+}
+#questionContainer{
+  padding:5% 3% 48px;
+  overflow-y: auto;
+}
+.result{
+  border-bottom: 1px solid $borderColor;
+  padding-bottom:3%;
+  margin-bottom: 3%;
+  span{
+    color: $foreground;
+  }
+}
+
+.goodsList{
+  h3{
+    font-size: 16px;
+    &:before{
+      border-left:3px solid $foreground;
+      content: '';
+      margin-right: 5px;
+    }
+  }
+  li{
+    margin-top: 2%;
+    .thumb{
+      width:80px;
+    }
+    .goods{
+      margin:2% 2% 3% 2%;
+      position: relative;
+      .pricec-item{
+        //display: block;
+        span{
+          color: $colorDeep;
+          font-size: 16px;
+          margin-right: 3%;
+        }
+        del{
+          color: $colorLighter;
+        }
+      }
+      .title{
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        position: relative;
+        margin-bottom: 2%;
+      }
+    }
+    .buyBtn{
+      background-color: $foreground;
+      color: #fff;
+      line-height: 28px;
+      padding:0 4%;
+      border-radius: 5px;
+      position: absolute;
+      right:0;
+      bottom:0;
+    }
+    .narrowContent{
+      position: relative;
+      margin: 5px 10px 0;
+      .descBox{
+        border-bottom:1px solid $borderColor;
+      }
+      p{
+        color: $colorLighter;
+        line-height: 22px;
+        //height:44px;
+        margin-bottom:3%;
+
+        &.hide{
+          display:-webkit-box;
+          text-overflow:ellipsis;
+          overflow:hidden;
+          -webkit-line-clamp:2;
+          -webkit-box-orient:vertical;
+          position:relative;
+        }
+        &.show{
+          height:auto;
+        }
+
+      }
+      .viewMore{
+        width:100%;
+        display: block;
+        text-align: center;
+        background-color: #fff;
+        color: $colorLighter;
+
+        border-bottom:1px solid $borderColor;
+        padding:1.5% 0;
+
+        &:after{
+          @include icon();
+          margin:0 5px 0 2px;
+          content: "";
+          background-image: url("#{$img_path}common/images/icon_down.png");
+        }
+        &.hide{
+          background-color: transparent;
+          width:auto;
+          &:after{
+            background-image: url("#{$img_path}common/images/icon_up.png");
+          }
+        }
+      }
+    }
+  }
+}
+
+.bottom_bar{
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  width:100%;
+  left:0;
+  span{
+    width:90%;
+    margin: 5px auto;
+    text-align: center;
+    background-color: $foreground;
+    line-height:38px;
+    color: #fff;
+    display: block;
+    border-radius: 5px;
+  }
+}

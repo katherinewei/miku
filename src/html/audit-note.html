@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>审核注意事项</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no">
+    <meta name="editor" content="superman">
+    <link rel="stylesheet" href="../../h5/css/common.css">
+    <style>
+        .header {
+            position: relative;
+            display: none;
+        }
+
+        .audit-note {
+            padding: 0 5%;
+        }
+        .audit-note p {
+            line-height: 26px;
+            padding-top: 35px;
+            font-size: 15px;
+            color: #2e2e2e;
+        }
+        .audit-note .icon-sign {
+            display: inline-block;
+            width: 2px;
+            height: 20px;
+            margin: 0 10px;
+            background-color: #fa4f90;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+<script src="../libmain.js"></script>
+<script src="../../h5/js/page/orderList.js"></script>
+<section class="header">
+    <div class="content navbar">
+        <div class="btn-navbar navbar-left">
+            <a href="javascript:history.go(-1);" class="icon icon-return"></a>
+        </div>
+        <div class="navbar-main">审核注意事项</div>
+    </div>
+</section>
+
+<div class="">
+    <div class="audit-note">
+        <p>
+            <i class="icon-sign"></i>点“同意”按钮时，系统确认将该客户标记为下级，并给该客户开通分销权限。
+        </p>
+
+        <p>
+            <i class="icon-sign"></i>点“拒绝”按钮时，系统将该客户从盟友列表中清除，该客户可以重新申请成为其他人的下级。
+        </p>
+
+        <p>
+            <i class="icon-sign"></i>该审核功能仅对部分高级别有需要，且有效审核时效为48小时，超出48小时按“拒绝”处理。
+        </p>
+    </div>
+</div>
+
+
+<div class="waitting" style="margin-left: -44px; margin-top: -40px; display: none;">
+    <div class="loading"></div>
+    <div class="message">正在加载...</div>
+</div>
+<script>
+    var type = getQueryString('type');
+    if (type == 1) {
+        document.getElementsByClassName('header')[0]['style'].display = 'block';
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+</body>
+
+</html>

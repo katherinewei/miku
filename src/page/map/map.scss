@@ -1,0 +1,42 @@
+@import "../../common/style/_mixin";
+#sites-map {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #efefef;
+    .sites-list-layout{
+        width:100%;
+        height:100%;
+        overflow: auto;
+        padding:40px 10px;
+
+    }
+    h1 {
+        background-color: #fff;
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:40px;
+        line-height: 40px;
+        padding:0 20px;
+        @include border(0, 0, 1px, 0);
+        .sites-map-close{
+              position: absolute;
+              top: 50%;
+              right: 5px;
+              margin-top:-12px;
+              background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150313/vNTT-0-1426242975034.png);
+              background-size: 100%;
+              width: 24px;
+              height: 24px;
+        }
+    }
+    ul li {
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 20px 0;
+    }
+}

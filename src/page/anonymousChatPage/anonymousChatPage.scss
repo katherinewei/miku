@@ -1,0 +1,1985 @@
+@import "../../common/style/_mixin";
+
+$navbackground:#313943;//导航条颜色
+$navcolor:#adafb1;//导航条文字颜色
+$navsubbackground:#e1e2e6;//次导航条颜色
+$color:#ff6868;//渲染色
+$hover:#f6f6f6;//鼠标经过颜色
+$btncolor:#292929;//按钮颜色
+$border:#e5e5e5;//分割线颜色
+$color3:#b3b3b3;//次次文字颜色
+$colorFore:#42454C;//主色之一
+$fcolor:#7c7c7c;
+
+input,textarea{
+  outline: none;
+}
+iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+body{
+  position: relative;
+  overflow-y: hidden;
+  background-color: #F5F5F5;
+}
+.d_ib{
+  display: inline-block;
+}
+.tc{
+  text-align: center;
+}
+.fl{
+  float: left;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+  }
+  to {
+    -webkit-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+  }
+}
+
+.detailContent{
+  margin-top: 41px;
+}
+.closeReportPreview{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url("#{$img_path}common/images/personalTailor/csad/dialogue_delect.png");
+  background-size: 100%;
+  display: block;
+  cursor: pointer;
+  z-index:100;
+}
+.IframeBoxContent,.reportPreviewContent{
+  width: 100% !important;
+  height:100%;
+}
+.reportPreviewContent{
+  height: 100% !important;
+  margin: 0 !important;
+}
+.wl-trans-dialog{
+  z-index: 1000;
+}
+.IframeBoxContent{
+  .closeBtn{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url("#{$img_path}common/images/personalTailor/csad/dialogue_delect.png");
+    background-size: 100%;
+    display: block;
+    cursor: pointer;
+  }
+}
+.notData{
+  text-align: center;
+  padding: 12px 0;
+  img{
+    margin: 0 auto;
+    width: 15%;
+  }
+}
+.popDetails{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height:100%;
+  z-index:100;
+  background-color: transparent;
+  .poptools{
+    position: absolute;
+    left:0;
+    top:0;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    .backReturn{
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      background: url("#{$img_path}common/images/navBack.png") center no-repeat;
+    }
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+.waittingHtml{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top:0;
+  z-index: 100;
+  background: rgba(0,0,0,0.4);
+  .wait{
+    padding-top: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    border-radius: 3px;
+    display: block;
+    text-align: center;
+    height: 48px;
+    .loading{
+      background-image: url("#{$img_path}common/images/loading_icon.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 48px 48px;
+      min-width: 48px;
+      min-height: 48px;
+      animation-name: rotate;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    &:after{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "";
+      background: url("#{$img_path}common/images/main_progress_centre.png") center no-repeat;
+      background-size: 25px auto;
+      display: block;
+      width: 30px;
+      height: 6px;
+      margin-top: 3px;
+      margin-left: -15px;
+      vertical-align: middle;
+    }
+  }
+  .message{
+    padding: 3px 10px;
+  }
+}
+
+
+::-webkit-scrollbar{width:0px}
+
+.box{
+  .mainContainer{
+    height:100%;
+    overflow: auto;
+    background-color: white;
+  }
+  .chat02{
+    border-top: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    height: 0;
+    //display: none;
+    .movePic{
+      padding: 0 10px;
+      height: 35px;
+      background-color: white;
+      border-top: 1px solid #EEEFF0;
+      display: none;
+      .inMove{
+        position: relative;
+      .moveIcon{
+        i{
+          display: block;
+          width: 40px;
+          height: 40px;
+          background: url("#{$img_path}common/images/find/icon_pictu.png") center no-repeat;
+          background-size: 100% auto;
+        }
+        #fileInput{
+          width: 35px;
+          height: 35px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+        }
+      }
+      }
+    }
+    .inToolbar{
+      padding: 6px 10px;
+      border: 1px solid white;
+      border-top: 1px solid #EEEFF0;
+      border-bottom: 1px solid #EEEFF0;
+      .inT{
+        float: left;
+        width: 73%;
+        .inInput{
+          height: 40px;
+          background-color: #FAFBFD;
+          border: 1px solid #EEEFF0;
+          border-radius: 5px;
+          text-indent: 10px;
+          width: 100%;
+        }
+      }
+      .inRight{
+        width: 27%;
+        height: 40px;
+        float: left;
+        .inPic{
+          width: 50%;
+          height:40px;
+          float: left;
+          text-align: center;
+          .chat02_title_btn{
+            background: url("#{$img_path}common/images/icon-small.png") center no-repeat;
+            background-size: 80% auto;
+            cursor: pointer;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+          }
+        }
+        .inMove{
+          text-align: center;
+          line-height: 40px;
+          width: 50%;
+          float: left;
+          height: 100%;
+          .moveIcon{
+            height: 100%;
+            width: 30px;
+            background: url("#{$img_path}common/images/icon-pic-get.png") center no-repeat;
+            background-size: 80% auto;
+            cursor: pointer;
+            float: right;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            #fileInput{
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top: 0;
+              opacity: 0;
+            }
+          }
+        }
+        .inMove2{
+          text-align: center;
+          line-height: 40px;
+          width: 50%;
+          float: left;
+        }
+        .sendText1{
+          background: white;
+          border-radius: 5px;
+          border: 1px solid rgb(229, 229, 229);
+          color: black;
+        }
+        .sendTo{
+          display: inline-block;
+          width: 100%;
+          height:100%;
+          cursor: pointer;
+        }
+      }
+    }
+    .moveList{
+      height: 0px;
+      overflow: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+      -webkit-overflow-scrolling: touch;
+      .swiper-container{
+        width: 100%;
+      }
+      .swiper-slide{
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+
+        height: 153px;
+        overflow: auto;
+      }
+      .emtionList{
+        width: 100%;
+        padding: 10px 0;
+        li{
+          width: 14.2857128%;
+          float: left;
+          margin: 10px 0;
+          img{
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    .wl_faces_box{
+      bottom: 58px;
+      .wlf_icon{
+        bottom: -2px;
+        right: 9% !important;
+        left: auto;
+        display: none;
+      }
+    }
+  }
+  .waitExpert{
+    .log{
+      color: #f56e4e;
+      cursor: pointer;
+    }
+
+    margin-top: 18px;
+  }
+  .wxMainContainer{
+    #chat01{
+      background-color: #fafbfd;
+      height: 80%;
+      padding-top: 10px;
+      #chatWindow{
+        -webkit-overflow-scrolling: touch;
+        background-color: white;
+
+        .right{
+          .chat-content-p3{
+            right: 60px;
+          }
+        }
+        .left{
+          .chat-content-p3{
+            left: 60px;
+            background-color: #f3f3f3;
+            &:after{
+              border-right: 8px solid #f3f3f3 ;
+            }
+          }
+        }
+        .userPhoto{
+          img{
+            border: 1px solid #ECECEE;
+          }
+        }
+      }
+    }
+  }
+  .mTitle{
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    display: none;
+    text-align: center;
+    background-color: white;
+    color: white;
+    .iBack{
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      position: absolute;
+      left: 0;
+      top:0;
+      vertical-align: middle;
+      background: url("#{$img_path}common/images/navBack.png") center center no-repeat;
+      background-size: 100% auto;
+    }
+  }
+  .addBox{
+    height: 55px;
+    background-color: white;
+    padding-top: 7px;
+    display: none;
+    .tabBanner{
+      width: 100%;
+      margin: 0 auto;
+      .t_record,.t_join{
+        width: 50%;
+        float: left;
+        .m_record{
+          width: 25px;
+          height: 21px;
+          margin: 0 auto;
+          display: block;
+          background: url("#{$img_path}common/images/icon_infor.png") center center no-repeat;
+          background-size: 100% auto;
+          &.joined{
+            background-image: url("#{$img_path}common/images/icon_injon.png");
+          }
+        }
+        &.active{
+          color: $foreground;
+          .m_record{
+            background: url("#{$img_path}common/images/icon_infor_ici.png") center center no-repeat;
+            background-size: 100% auto;
+            &.joined{
+              background-image: url("#{$img_path}common/images/icon_cli_injon.png");
+            }
+          }
+        }
+      }
+      .t_consult{
+        width: 50%;
+        float: left;
+        .m_consule{
+          width: 25px;
+          height: 21px;
+          margin: 0 auto;
+          display: block;
+          background: url("#{$img_path}common/images/icon_infor_tk.png") center center no-repeat;
+          background-size: 100% auto;
+        }
+        &.active{
+          color: $foreground;
+          .m_consule{
+            background: url("#{$img_path}common/images/icon_infor_clitk.png") center center no-repeat;
+            background-size: 100% auto;
+          }
+        }
+      }
+    }
+  }
+
+  .chatTitle{
+    position: relative;
+    color:white;
+    background-color: black;
+    height: 40px;
+    line-height: 40px;
+    .closeBtn{
+      position: absolute;
+      width: 17px;
+      height: 40px;
+      background: url("#{$img_path}website/pc/images/icon-suoxiao.png") center center no-repeat;
+      background-size: 100% auto;
+      right: 15px;
+      top:0;
+      cursor: pointer;
+    }
+  }
+  .chatMain{
+    //height: 352px;
+   // background-color: #eee;
+    .chatLogin{
+      //height: 352px;
+      .logo_text{
+        //height: 120px;
+        //border-bottom: 2px solid #F2F2F2;
+        .logoBox{
+          margin-top: 18px;
+        }
+        .logoPic{
+          //border: 1px solid #D3D3D4;
+          //border-radius: 50%;
+          //margin-right: 5px;
+          img{
+            //width: 80px;
+            //height: 80px;
+            //border-radius: 50%;
+          }
+        }
+        //微信
+        .wxLogo{
+          text-align: center;
+          border: none;
+          margin-right: 0;
+          padding:0 0 4% 0;
+          img{
+            width: 85%;
+            //height: auto;
+            //border: 1px solid #DCDCDD;
+            display: inline-block;
+          }
+        }
+
+
+        .logoText{
+          margin-top: 30px;
+        }
+      }
+      .inMsg{
+        .inBox{
+          width: 66%;
+          margin: 0 auto;
+          //position: relative;
+          p{
+            padding: 10px 0;
+          }
+          .inText{
+            padding: 10px 0 10px 18px;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border:1px solid #D3D3D4;
+            background-color: #F5F5F5;
+            color: #7c7c7c ;
+            appearance:none;
+            -moz-appearance:none; /* Firefox */
+            -webkit-appearance:none; /* Safari 和 Chrome */
+            &.redBorder{
+              border: 1px solid red;
+            }
+          }
+          .selectCheck{
+            background: url("#{$img_path}common/images/iconChatdown.png") 95% center no-repeat;
+            background-size: auto 20%;
+          }
+          .inBtn{
+            padding: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            background-color: #3C3E43;
+            border: 1px solid #3C3E43;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+          }
+          //.selectChange{
+          //  width: 100%;
+          //  height: 200px;
+          //  background: white;
+          //  position: absolute;
+          //  top: 84px;
+          //}
+        }
+      }
+    }
+  }
+  .wxChatMain{
+   // background-color: white;
+    .chatLogin{
+      .logo_text{
+        padding-top: 25px;
+        padding-bottom: 13px;
+        //height: auto;
+        //border-bottom: 2px solid #F2F2F2;
+        .logoBox{
+          margin-top: 0;
+          width: 100%;
+        }
+        .logoText{
+          margin-top:0;
+          p:first-child{
+            padding: 8px 0;
+          }
+        }
+      }
+      .inMsg{
+        .inBox{
+          width:100%;
+          padding: 0 20px;
+          p{
+            text-align: left;
+          }
+          .inText{
+            border-radius: 4px;
+           // background-color: white;
+            border: 1px solid #dedede;
+          }
+          .inBtn{
+            border-radius: 3px;
+            margin-top: 38px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/*头部*/
+#header{
+  width:100%;
+  padding:0 20px;
+  background: #313943;
+  color: #fff;
+  line-height: 40px;
+  #logout,#deleteAllData{
+    border: 1px solid #fff;
+    height: 27px;
+    margin: 7px 6px;
+    float: right;
+    display: inline;
+    line-height: 27px;
+    padding: 0 10px;
+    border-radius: 3px;
+  }
+}
+/*头像大小*/
+.img-circle-50{
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+/*内容*/
+.container{
+  width:100%;
+  height:100%;
+  //background-color: $background;
+  .leftNav{
+    width:150px;
+    height:100%;
+    float: left;
+    margin-right: -100%;
+    background-color: $navbackground;
+    .headPicCol{
+      height:80px;
+      background-color: $navsubbackground;
+    }
+    #headerimg{
+      padding:15px 0 15px 10px;
+    }
+    .login_user_title{
+      padding-left:5px;
+    }
+    .cur-online{
+      &:before{
+        width:5px;
+        height:5px;
+        border-radius: 50%;
+        background-color: #37B145;
+        display: inline-block;
+        content: '';
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+    ul{
+      border-bottom:1px solid #464F5B;
+      position: relative;
+      z-index: 1;
+    }
+    li{
+      height:100px;
+      color: $navcolor;
+      text-align: center;
+      border-bottom:1px solid #1C222A;
+      border-top:1px solid #464F5B;
+      position: relative;
+      cursor: pointer;
+      &:before{
+        background: {
+          size: 100%;
+        };
+        width:40px;
+        height:40px;
+        display: block;
+        margin: 16px auto 0;
+        content: '';
+      }
+      &.active{
+        background-color: #283039;
+        &:after{
+          content: '';
+          border-color: transparent transparent transparent #283039;
+          border-style: solid;
+          border-width: 6px;
+          height: 0;
+          width: 0;
+          position: absolute;
+          top: 45%;
+          right: -12px;
+        }
+      }
+      &.callCenter{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic1.png");
+        }
+      }
+      &.chatMessage{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic2.png");
+        }
+      }
+      &.managementList{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic3.png");
+        }
+      }
+      &.salesTracking{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic4.png");
+        }
+      }
+      &.payVisit{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic5.png");
+        }
+      }
+    }
+  }
+  .rightContainer{
+    float: left; width: 100%; height: 100%;
+    .wrap {
+      margin-left: 154px;/* background: $background; */height: 100%;
+      background-color: #F6F6F6;
+      /*顶部呼叫中心*/
+      .call_title{
+        background-color: $navsubbackground;
+        height:80px;
+        width:100%;
+        margin: 0 0 4px 0;
+        p{
+          float: left;
+          line-height: 80px;
+          padding-left: 36px;
+        }
+
+        ul{
+          float: left;
+          li{
+            position: relative;
+            padding: 7px 7px 0;
+            display: inline-block;
+            .badge{
+              top: 6px;
+              margin-left: 5px;
+            }
+          }
+          .callTitMore{
+            line-height: 80px;
+            display: inline-block;
+            height: 80px;
+            vertical-align: top;
+            margin-left: 40px;
+          }
+        }
+      }
+      section{
+        height:100%;}
+      .wrapper{
+        width:100%;overflow-y: auto
+      }
+    }
+  }
+}
+
+/*聊天消息为空*/
+#nullchater,#noCallMsg{
+  text-align: center;
+  width: 100%;
+  margin-top: 150px;
+  font-size: 20px;
+}
+
+.chatMessageIM{
+  height:100%;
+  section{
+    height:100%;
+  }
+}
+
+
+/*聊天列表*/
+/*聊天列表左*/
+.accordion-inner {
+  margin-right: 4px;
+  height:100%;
+  width:300px;
+  position: relative;
+
+}
+.visit_box,.accordion-inner{
+  .badge{
+    left: 30px;
+    top: 30px;
+  }
+}
+.currentWin{
+  background-color: $background;
+  &:before{
+    content: '';
+    border-color: transparent transparent transparent $borderColor;
+    border-style: solid;
+    border-width: 8px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 35%;
+    right: -17px;
+
+  }
+  &:after {
+    content: '';
+    border-color: transparent transparent transparent $background;
+    border-style: solid;
+    border-width: 8px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 35%;
+    right: -16px;
+
+  }
+}
+/*聊天列表右*/
+#chat01{
+  background-color: $background;
+  height:79%;
+  overflow: hidden;
+  //#ext{
+  //  border: 1px solid #e5e5e5;
+  //  padding: 6px 10px;
+  //  display: inline-block;
+  //  border-radius: 5px;
+  //  font-size: 12px;
+  //}
+
+  .chatMess{
+    position: relative;
+    min-height:67px;
+    margin-top: 8px;
+    p1.ex_center{
+      background: #e5e5e5;
+      padding: 6px 25px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    p2{
+      position: absolute;
+      top: 0;
+
+    }
+    .chatTime{
+      width: 100%;
+      text-align: center;
+      color: $colorLighter;
+      margin-top: 5px;
+    }
+    .chatName{
+      position: absolute;
+      padding: 0 6px;
+      top: 10px;
+      display: block;
+      &.agent{
+        top: 24px;
+        font-size: 12px;
+      }
+    }
+    .userPhoto{
+      position: absolute;
+      top: 20px;
+
+      img{
+        width:50px;
+        height:50px;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+    }
+    .chat-content-p3{
+      text-align: left;
+      max-width: 400px;
+      min-height: 40px;
+      img{
+        max-width:200px;
+        &.emotionImg,&.em-emotion{
+          display: inline-block;
+          width: 23px;
+          height:23px;
+        }
+        &.em-emotion{
+          width: 23px;
+          height:23px;
+        }
+      }
+    }
+    .vB:before{
+      content: '';
+      position: absolute;
+      width: 20px;
+      left: -28px;
+      top: 50%;
+      margin-top: -13px;
+      height: 20px;
+      background-image: url("#{$img_path}common/images/loading_icon.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% auto;
+      -webkit-animation-name: rotate;
+      -o-animation-name: rotate;
+      -ms-animation-name: rotate;
+      -moz-animation-name: rotate;
+      animation-name: rotate;
+
+      -webkit-animation-duration: 1s;
+      -o-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+      animation-duration: 1s;
+
+      -webkit-animation-timing-function: linear;
+      -o-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+      -moz-animation-timing-function: linear;
+      animation-timing-function: linear;
+
+      -webkit-animation-iteration-count: infinite;
+      -o-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }
+
+    .boxMessage{
+     // background: #AAAAB4;
+      border-radius: 5px;
+      padding-bottom: 10px;
+      width: 200px;
+      display: inline-block;
+      text-align: left;
+      &.viewReport{
+        padding:0 18px;
+      }
+      .reportViewImg{
+        margin:10px auto 20px;
+      }
+      .title_p{
+        font-size: 16px;
+      }
+      .describe_p{
+        font-size: 12px;
+        // color: $colorLighter;
+        border-bottom: 1px solid #555;
+        line-height: 18px;
+        margin-bottom: 10px;
+      }
+      .viewReportInChat{
+        color: #555;
+        display: block;
+        margin: 0 auto;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+    .chat-content-p3{
+      position: relative;
+      //right: 66px;
+      //
+      line-height: 26px;
+      border-radius: 5px;
+      padding: 7px;
+      //top: 30px;
+      top:33px;
+      margin-bottom:30px;
+      display: inline-block;
+      max-width: 70%;
+      word-break: break-all;
+      &:after{
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        content: "";
+        position: absolute;
+        top: 6px;
+        width:0;
+        height:0;
+      }
+
+    }
+
+
+    &.right{
+      p{
+        right: 0;
+        display: none;
+      }
+      p2{
+        right:0;
+      }
+      .userPhoto{
+        right: 0;
+      }
+      .chat-content-p3{
+        right:6px;
+        background-color: $foreground;
+        color: white;
+        &:after{
+          border-left: 8px solid $foreground;
+          right: -6px;
+        }
+
+      }
+
+    }
+    &.left{
+      padding: 15px 0;
+      p2{
+        left:0;
+      }
+      .userPhoto{
+        left: 0;
+      }
+      .chat-content-p3{
+        left:6px;
+        background-color: white;
+        &:after{
+          border-right: 8px solid white;
+          left: -6px;
+        }
+        &.viewBoxInChat{
+          img{
+            margin: 10px auto 0;
+            &.boxImg{
+              width:180px;
+            }
+          }
+        }
+      }
+      p{
+        left: 0;
+        &.agent{
+          left: 50px;
+        }
+      }
+    }
+  }
+}
+.chat01_title{
+  min-height: 129px;
+  height:100%;
+  overflow: hidden;
+}
+.chat01_content {
+  height: 100%;
+  overflow-y: auto;
+  //margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  .waitExpert{
+    color: #7c7c7c;
+    &:before{
+      content:"";
+      background: url("#{$img_path}common/images/icon-attation-chat.png") center no-repeat;
+      display: inline-block;
+      width: 21px;
+      height: 21px;
+      background: url("http://unesmall.b0.upaiyun.com/common/images/icon-attation-chat.png") center no-repeat;
+      background-size: auto 100%;
+      vertical-align: -5px;
+    }
+    .mobile{
+      color: #f56e4e;
+      cursor: pointer;
+      display: inline-block;
+    }
+  }
+}
+#callCenterUL{
+  &.chat03_content_ul{
+    height:100%;
+  }
+}
+.chat03_content_ul{
+  position: absolute;
+  height:90%;
+  border: 1px solid $borderColor;
+  overflow-y: auto;
+  resize: none;
+  width:100%;
+  background-color: #fff;
+  &.badge{
+    margin-left: -100px;
+    top: 30px;
+  }
+
+  li{
+    height:100px;
+    border-bottom:1px solid $borderColor;
+    padding: 20px 10px;
+    position: relative;
+    cursor: pointer;
+    img{
+      width:50px;
+      height:50px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin:10px 10px 0 0 ;
+    }
+    .message_main_item{
+      span{
+        margin-top: 20px;
+        display: block;
+      }
+      i{
+        display: block;
+        font-size: 12px;
+        font-style: normal;
+        color: $colorLighter;
+      }
+    }
+    .message_main_time{
+      text-align: center;
+      .message_main_time_span{
+        //margin-top: 5px;
+        display: inline-block;
+        color: $colorLighter;
+      }
+    }
+    .responseBtn{
+      span{
+        border: 1px solid #FF6868;
+        display: block;
+        width: 80%;
+        margin: 0px auto 0;
+        text-align: center;
+        padding: 5px 0;
+        color: #FF6868;
+      }
+    }
+
+  }
+  .chat-content-p3 {
+    border: 1px solid $borderColor;
+    white-space: pre-wrap;
+    background-color: #C0C0C0;
+
+    position: relative;
+    line-height: 26px;
+    border-radius: 5px;
+    padding: 7px;
+    top: 30px;
+    margin-bottom: 30px;
+    display: inline-block;
+    max-width: 70%;
+    word-break: break-all;
+    img {
+      max-width: 200px;
+      &.emotionImg{
+        display: inline-block;
+
+      }
+    }
+    &:after {
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      content: "";
+      position: absolute;
+      top: 6px;
+      width: 0;
+      height: 0;
+    }
+  }
+  .chatMess{
+    position: relative;
+    min-height:67px;
+    p1.ex_center{
+      background: #e5e5e5;
+      padding: 6px 25px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    p2{
+      position: absolute;
+      top: 5px;
+
+    }
+    .userPhoto{
+      position: absolute;
+      top: 20px;
+
+      img{
+        width:50px;
+        border-radius: 50%;
+      }
+    }
+    .boxMessage{
+      //background: #AAAAB4;
+      border-radius: 5px;
+      padding-bottom: 10px;
+      width: 200px;
+      display: inline-block;
+    }
+    &.right{
+      p2{
+        right:0;
+      }
+      .userPhoto{
+        right: 0;
+      }
+      .chat-content-p3{
+        right:6px;
+        background-color: #AAAAB4;
+        &:after{
+          border-left: 8px solid #AAAAB4;
+          right: -6px;
+        }
+      }
+      p{
+        right: 0;
+        display: none;
+      }
+
+    }
+    &.left{
+        padding: 15px 0;
+      p2{
+        left:0;
+      }
+      .userPhoto{
+        left: 0;
+      }
+      .chat-content-p3{
+        left:6px;
+        background-color: #fff;
+        &:after{
+          border-right: 8px solid #fff;
+          left: -6px;
+        }
+      }
+    }
+  }
+}
+.chatRight {
+  position: relative;
+  width:100%;
+  overflow: hidden;
+  height:100%;
+}
+.chatExtend{
+  width: 100%;
+  height:auto;
+  overflow: auto;
+  display: none;
+  .wBframe{
+    overflow: auto;
+    background-color: #fafbfd;
+    .topBanner{
+      position: relative;
+      z-index: 2;
+      background-color: white;
+      margin-top: 10px;
+      &:after{
+        content: "";
+        background: url("#{$img_path}common/images/e-home_head.png") no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        left:0;
+        bottom:0;
+        display: inline-block;
+        width: 100%;
+        height:80px;
+        z-index: -1;
+      }
+    }
+    .extendCon{
+      background-color: #fafafa;
+    }
+    .topBannerAdd{
+      &:after{
+        content: "";
+        background: url("#{$img_path}common/images/e-home_head.png") no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        left:0;
+        bottom:-5px;
+        display: inline-block;
+        width: 100%;
+        height:150px;
+        z-index: -1;
+      }
+    }
+    .extendCon{
+      .eExpertIntroduction{
+        ul{
+          background-color: #fafbfd;
+          li{
+            background-color: white;
+            padding: 20px 4% 20px 4%;
+            margin-bottom: 5px;
+            .eIntroductionList{
+              width:100%;
+              .eintroPic{
+                float: left;
+                width: 15%;
+                height: 100%;
+                img{
+                  display: inline-block;
+                  width:30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  border: 1px solid #8E8F92;
+                  margin: 0 auto;
+                }
+              }
+              .eintroDescribe{
+                width: 85%;
+                float: left;
+              }
+            }
+          }
+        }
+      }
+      .eMyArticle{
+        ul{
+          background-color: #fafbfd;
+          li{
+            background-color: white;
+            margin-bottom: 5px;
+          }
+          .bottomArtBtn{
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 0;
+          }
+        }
+        .eArticleConHead{
+          padding: 3% 13px 2% 5px;
+          .eAtrHeadPic{
+            width: 46px;
+            height: auto;
+            img{
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              margin: 0 auto;
+            }
+          }
+          .eAtrHeadTitFTit{
+            width: 60%;
+            padding-left: 5px;
+            .eHTD{
+              .DTitle{
+                width: 70%;
+                height: 100%;
+                font-size: 16px;
+                color: #f56e4e;
+              }
+              .DData{
+                width:30%;
+                height:100%;
+                text-align: right;
+                color: #9e9e9e;
+              }
+            }
+            .eAtrDescribe{
+              color: #9e9e9e;
+            }
+          }
+        }
+        .eAtrHeadSurface{
+          padding: 0 3%;
+          img{
+            width: 100%;
+            height:auto;
+          }
+        }
+        .eDperationData{
+          padding: 10px 3% 1px 3%;
+          .browse{
+            color: #9e9e9e;
+            line-height: 28px;
+          }
+          .rExtend{
+            float: right;
+            a{
+              display: inline-block;
+              vertical-align: sub;
+              color: #9e9e9e;
+              height:30px;
+              width: 30px;
+            }
+            .clikes{
+              margin-left: 20px;
+              span{
+                vertical-align: 9px;
+              }
+              i{
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+                background: url("#{$img_path}common/images/find/num_like.png") center center no-repeat;
+                background-size:auto 100%;
+                &.active{
+                  background: url("#{$img_path}common/images/find/article_liked.png") center center no-repeat;
+                  background-size:auto 100%;
+                }
+              }
+            }
+            .comment{
+              span{
+                vertical-align: 9px;
+              }
+              i{
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+                background: url("#{$img_path}common/images/find/num_comment.png") center center no-repeat;
+                background-size:auto 100%;
+              }
+            }
+            .repeat{
+              background: url("#{$img_path}common/images/find/num_share.png") center center no-repeat;
+              background-size:100% auto;
+              margin-left: 20px;
+              margin: 0 0 0 20px !important;
+            }
+          }
+        }
+        .clikesShow{
+          display: none;
+          padding: 0 10px 4px 10px;
+          i{
+            display: none;
+            width: 20px;
+            height: 20px;
+            background: url("#{$img_path}common/images/find/article_liked.png") no-repeat;
+            background-size: auto 100%;
+            vertical-align: -4px;
+          }
+          span{
+            color: $fcolor;
+          }
+        }
+        .commentShow{
+          ul{
+            display: none !important;
+            li{
+              border: none;
+              margin-bottom: 0;
+              padding: 0 10px;
+              .heCommentName{
+                color: $fcolor;
+              }
+              .myCommentName{
+                color: $fcolor;
+              }
+              .myComment{
+                img{
+                  width: 16px;
+                  height: 16px;
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+      .eMessageB{
+        margin-top: 5px;
+        ul{
+          background-color: #fafbfd;
+          li{
+            background-color: white;
+            padding: 5% 7px;
+            margin-bottom: 5px;
+            .eMessageBBox{
+              .eBBoxPic{
+                width: 10%;
+                height: 100%;
+                margin-top: 3px;
+                img{
+                  width:30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  margin: 0 auto;
+                }
+              }
+              .eBBoxMessage{
+                width: 90%;
+                padding-left: 7px;
+                .eTitle{
+                  //font-size: 16px;
+                  .delectMsg{
+                    color: red;
+                    float: right;
+                  }
+                }
+                .eData{
+                  color: #9e9e9e;
+                }
+                .eMessage{
+                  word-wrap:break-word;
+                  word-break:break-all;
+                }
+              }
+            }
+          }
+          .bottomMsgBtn{
+            height: 40px;
+            line-height: 40px;
+            padding: 0;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .eTCon{
+      .ePortrait{
+        padding: 6% 0;
+        img{
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          margin:auto;
+        }
+        p{
+          //font-size: 14px;
+        }
+      }
+      .eIpMsg{
+        .eMsgList{
+          position: relative;
+          padding-left: 35px;
+          p{
+            width:100%;
+          }
+          &:before{
+            display: inline-block;
+            content: "";
+            width: 20px;
+            height:20px;
+            background: url("#{$img_path}common/images/e-icon-friend.png") no-repeat;
+            background-size: 100% auto;
+            position: absolute;
+            left: 0;
+            top:50%;
+            margin-top: -10px;
+          }
+        }
+      }
+    }
+    .tabBtnList{
+      padding:8px 0 5px 0;
+      ul{
+        li{
+          width: 33.33333333333%;
+          p{
+            display: inline-block;
+            &.active{
+              border-bottom: 1px solid #A2A2A2;
+            }
+          }
+        }
+      }
+    }
+    .eLeaveMessageIn{
+      display: none;
+      background-color: #fafbfd;
+      input{
+        display: block;
+        width:85%;
+        padding: 9px 0;
+        text-indent: 24px;
+        background-color: white;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        border-right: 1px solid #e5e5e5;
+        float: left;
+      }
+      span{
+        display:block;
+        width: 15%;
+        height: 41px;
+        line-height: 41px;
+        text-align: center;
+        background-color: #fafbfd;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        float: left;
+      }
+    }
+  }
+}
+.chat02 {
+  border-top: 1px solid #e5e5e5;
+  height:21%;
+  background-color: #fff;
+}
+.chat02_title {
+  height: 30px;
+  position: relative;
+  padding-left:10px;
+  background-color:white;
+  .chat02_title_btn {
+    cursor: pointer;
+    float: left;
+    display: block;
+    width: 30px;
+    height: 30px;
+    &.showEmotionDia{
+      background: url("#{$img_path}common/images/icon-small.png") center no-repeat;
+      background-size: 70% auto;
+    }
+    &.startRecord{
+      background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic4.png") center no-repeat;
+    }
+    &.stopRecord{
+      background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic5.png") center no-repeat;
+    }
+    &.sendPic{
+      background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic2.png") center no-repeat;
+    }
+    &.sendAudio{
+      background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic3.png") center no-repeat;
+    }
+  }
+
+}
+.chat02_content {
+  height: 100px;
+  textarea {
+    resize: none;
+    width: 100%;
+    border: none;
+    height: 100%;
+    text-indent: 10px;
+  }
+}
+.chat02_bar {
+  //text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  display: none;
+  span {
+    border: 1px solid #DEDEDE;
+    background-color: #DEDEDE;
+    padding: 5px 25px;
+    color: #FDFCFC;
+    border-radius: 3px;
+    margin-right: 10px;
+    outline: none;
+    cursor: pointer;
+  }
+  .chang_b{
+    border: 1px solid #42B8F4;
+    background-color: #42B8F4;
+  }
+}
+
+/*表情*/
+.wl_faces_box {
+  background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/wlf_bg.png') repeat 0 0;
+  position: absolute;
+  width: 92%;
+  height: 225px;
+  bottom: 22px;
+  display: none;
+  .wl_faces_content {
+    background: #fff;
+    border: 1px #ccc solid;
+    width: 100%;
+    height: 216px;
+    margin: 3px 4px;
+    .title {
+      background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/wlf_title_bg.jpg') repeat-x 0 0;
+      height: 40px;
+      position: relative;
+      li {
+        position: absolute;
+        display: block;
+        &.title_name {
+          background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/wlf_title_btn.jpg') no-repeat 0 0;
+          width: 82px;
+          height: 30px;
+          bottom: 0;
+          _bottom: -2px;
+          left: 15px;
+          text-align: center;
+          line-height: 32px;
+          font-weight: bold;
+          color: #333;
+          cursor: pointer;
+        }
+        &.wl_faces_close {
+          right: 8px;
+          top: 6px;
+        }
+        &.wl_faces_close span {
+          background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/icon.png') repeat-x 0 0;
+          cursor: pointer;
+          display: block;
+          width: 30px;
+          height: 30px;
+          background-repeat: no-repeat;
+          background-size: 70% auto;
+          background-position: 9px 9px;
+        }
+      }
+    }
+  }
+  .wl_faces_main ul {
+    //margin: 12px 28px;
+    overflow: hidden;
+    border-top: 1px $borderColor solid;
+    border-left: 1px $borderColor solid;
+    width: 100%;
+    li {
+      float: left;
+      border-right: 1px $borderColor solid;
+      border-bottom: 1px$borderColor solid;
+      height: auto;
+      width: 10%;
+      margin: -1px 0 0 -1px;
+      padding: 4px 2px;
+      text-align: center;
+      max-width: 40px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .wlf_icon {
+    background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/layer_arrow.png') no-repeat 0 0;
+    position: absolute;
+    width: 22px;
+    height: 9px;
+    bottom: -4px;
+    _bottom: -2px;
+    left: 5px;
+    display: none;
+  }
+}
+#large_container{
+  position: fixed;
+  z-index: 10;
+  left:0;
+  bottom: 0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,.5);
+  z-index: 1001;
+  .bigImgContent{
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    img{
+      max-width: 1920px;
+    }
+  }
+  .closeBigImg{
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: url("#{$img_path}common/images/personalTailor/csad/icon-closeWhite.png") no-repeat;
+    background-size: 100% auto;
+    display: block;
+    text-indent: -999px;
+  }
+}
+
+//重新接入
+.reCallExp{
+  color: $foreground;
+  text-decoration: underline;
+}
+//评价
+.serviceComment{
+  border:1px solid $borderColor;
+  padding: 2%;
+  width: 85%;
+  margin: 5px auto;
+  overflow: hidden;
+  text-align: left;
+  .title{
+    color: $colorDeep;
+
+  }
+  .star-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    .icon-star {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background-image: url("#{$img_path}common/images/icon_star_comment_n.png");
+      background-size: cover;
+      &.active {
+        background-image: url("#{$img_path}common/images/icon_star_comment_h.png")
+      }
+    }
+  }
+  .comment-textarea {
+    width: 100%;
+    height: 70px;
+    padding: 2% 2% 0;
+    border: 1px solid $borderColor;
+    textarea{
+      width: 100%;
+      height: 100%;
+      border:none;
+    }
+  }
+  .btn-comment {
+    bottom: 2%;
+    width: 70px;
+    height: 36px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 36px;
+    text-align: center;
+    border: none;
+    float: right;
+    background-color: $colorFore;
+  }
+}
+
+
+//---------------分享模块css--------------------
+
+/*以下是样式代码*/
+#share{margin: 50px;text-align: center;}
+.bd_weixin_popup_main{padding: 0 !important;}
+.screenW{width: 100%; height: 100%; position: fixed; left: 0; top: 0; background-color: rgba(0,0,0,0.5); z-index: 999; display: none;}
+.subW{width: 100%;height: 218px; position: absolute; left: 0; bottom: -260px; background-color: #FFF; z-index: 999;}
+.subW.move{
+  animation:sidebar-move .5s ease;
+  -webkit-animation:sidebar-move .5s ease;
+  bottom:0px;
+}
+.subW.back{
+  animation:sidebar-back .5s ease;
+  -webkit-animation:sidebar-back .5s ease;
+  bottom:-260px;
+}
+.subW .title{width: 100%; height: 40px; line-height: 40px; text-align: center; font-size: .4rem;}
+.subW .close{width: 100%; height: 40px; line-height: 40px; text-align: center; font-size: 12px; color: #FFF; background: #2fc7c9;}
+.subW .info{width:100%;height: 178px; padding: 0 10px;}
+/*以下是对百度自带样式的改造*/
+.shareBox .bdshare-button-style0-16{
+  //background-image: -webkit-linear-gradient(bottom,rgba(0,0,0,.1) 50%,transparent 50%);
+  //background-image: linear-gradient(bottom,rgba(0,0,0,.1) 50%,transparent 50%);
+  background-size:  100% 1px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.shareBox .bdshare-button-style0-16:last-child{background: none;}
+.shareBox .bdshare-button-style0-16:after{
+  content: "";
+  visibility: hidden;
+  display: none;
+  height: 0;
+  clear: both;
+}
+.shareBox .bdshare-button-style0-16 a{
+  text-align: center;
+  float: none;
+  font-size: 12px;
+  padding: 35px 0 0 0;
+  line-height: normal;
+  height: auto;
+  cursor: pointer;
+  margin: 10px 0;
+  position: relative;
+  background: none;
+  -webkit-box-flex:1;
+  -webkit-flex:1;
+  flex:1;
+}
+.shareBox .bdshare-button-style0-16 a:after{
+  content: " ";
+  width:30px;
+  height:30px;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+}
+.shareBox .bdshare-button-style0-16 a.bds_qzone:after{
+  background: url("#{$img_path}common/images/baiduShare/icon_qqweibo_green.png") no-repeat; background-size: 100%;
+}
+.shareBox .bdshare-button-style0-16 a.bds_tsina:after{
+  background: url("#{$img_path}common/images/baiduShare/icon_xinlangweibo_red.png") no-repeat; background-size: 100%;
+}
+.shareBox .bdshare-button-style0-16 a.bds_sqq:after{
+  background: url("#{$img_path}common/images/baiduShare/icon_qqhaoyou_blue.png") no-repeat; background-size: 100%;
+}
+.shareBox .bdshare-button-style0-16 a.bds_tqq:after{
+  background: url("#{$img_path}common/images/baiduShare/icon_qqweibo_green.png") no-repeat; background-size: 100%;
+}
+.shareBox .bdshare-button-style0-16 a.bds_weixin:after{
+  background: url("#{$img_path}common/images/baiduShare/icon_weixin_green.png") no-repeat; background-size: 100%;
+}
+
+.shareBox .bdshare-button-style0-16 a.popup_more{width: 100%; margin: 20px 0;}
+.shareBox .bdshare-button-style0-16 a.popup_more:after{
+  width:40px;
+  height:40px;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  background: url("#{$img_path}common/images/baiduShare/icon_more_orange.png") no-repeat; background-size: 100%;
+
+}
+
+
+
+
+/*动画*/
+@keyframes sidebar-move {
+  0% {
+    bottom:-260px;
+  }
+  100% {
+    bottom:0px;
+  }
+}
+@keyframes sidebar-back {
+  0% {
+    bottom:0px;
+  }
+  100% {
+    bottom:-260px;
+  }
+}
+@-webkit-keyframes sidebar-move {
+  0% {
+    bottom:-260px;
+  }
+  100% {
+    bottom:0px;
+  }
+}
+@-webkit-keyframes sidebar-back {
+  0% {
+    bottom:0px;
+  }
+  100% {
+    bottom:-260px;
+  }
+}

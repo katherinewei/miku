@@ -1,0 +1,151 @@
+@import "../../common/style/_mixin";
+.leagueSuccess{
+  overflow-y: auto;
+
+}
+.successBox {
+  background-color: #f6f6f6;
+  padding-top: 45px;
+  .Top {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5% 0 0;
+    text-align: center;
+    img {
+      width: 43%;
+      margin: 0 auto;
+    }
+    p {
+      font-size: 15px;
+      margin-top: 4%;
+      &.tips{
+        font-size: 12px;
+        color: $colorLighter;
+        width: 80%;
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+    .btn{
+      border-radius: 20px;
+      border: 1px solid $foreground;
+      padding: 6px 7%;
+      outline: 0;
+      display: inline-block;
+      color: $foreground;
+      margin: 10px auto;
+    }
+    
+  }
+}
+.page-invite {
+
+  position: relative;
+  z-index: 9;
+  text-align: left;
+  margin-top: 3%;
+  .item-wrap {
+    background-color: #fff;
+    margin-bottom: 2%;
+    h3 {
+      font-size: 14px;
+      color: $foreground;
+      margin-bottom: 2%;
+    }
+    p {
+      font-size: 14px;
+      color: $colorLighter;
+      margin-top: 0;
+    }
+  }
+  .icon-wrap {
+    position: relative;
+    text-align: center;
+  }
+  .icon {
+    display: inline-block;
+    margin-top: 33px;
+    width: 66px;
+    height: 66px;
+    background: {
+      size: 100%;
+    }
+    // background-color: #000;
+  }
+  .icon-invite {
+    background: {
+      image: url("#{$img_path}common/images/icon_success_mall.png");
+    }
+  }
+  .icon-invite-qrcode {
+    background: {
+      image: url("#{$img_path}common/images/invite_erweima.png");
+    }
+  }
+  .text-wrap {
+    width: 100%;
+    padding: 15px  0 15px 2%;
+  }
+  .next_gray{
+    margin-right: 2%;
+    &:before{
+      content: "";
+      width:30px;
+      height: 30px;
+      margin-right: 2%;
+      background: {
+        image: url("#{$img_path}common/images/next_gray@2x.png");
+        repeat: no-repeat;
+        size: 100%;
+      }
+    }
+  }
+}
+.explainBox {
+  background-color: #fff;
+  padding: 0 8px 5%;
+  h4 {
+    font-size: 15px;
+    color: #7c7c7c;
+    font-weight: normal;
+    padding: 3% 0;
+  }
+  .line {
+    width: 1px;
+    height: 260px;
+    position: absolute;
+    background-color: #fb4e90;
+    left: 11px;
+    top: 6%;
+  }
+  .list {
+    position: relative;
+    overflow: hidden;
+  }
+  ul {
+    border-top: 1px solid #e5e5e5;
+    li {
+      padding: 10px 0;
+      &:last-child {
+        padding-bottom: 0;
+        line-height: 20px;
+      }
+      span {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        color: #fff;
+        background-color: #fb4e90;
+        display: block;
+        float: left;
+        line-height: 20px;
+        text-align: center;
+        position: relative;
+        z-index: 9;
+      }
+      p {
+        margin-left: 30px;
+      }
+    }
+  }
+}

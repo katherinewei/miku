@@ -1,0 +1,365 @@
+@import "../../common/style/_mixin";
+@import "../../common/style/_translate";
+
+body {
+    //background-color: #eee;
+    /*  overflow-x: hidden;
+     overflow-y: auto;
+      min-height: 100%;*/
+    height: 100%;
+}
+
+.page-content {
+    padding-bottom: 0;
+
+}
+header {
+    padding: 8px 25px;
+    font-size: 14px;
+    color: #2e2e2e;
+    background-color: transparent;
+    margin: 0 25%;
+    width: auto;
+    //width: 100%;
+    height: 50px;
+    .row {
+        line-height: 30px;
+        height: 30px;
+        overflow: hidden;
+
+    }
+    .col {
+        text-align: center;
+
+        &.active {
+            border-bottom-color: $foreground;
+            color: $foreground;
+            span {
+                border-bottom-color: $foreground;
+            }
+        }
+        span {
+            border-bottom: 1px solid #fff;
+            padding-bottom: 5px;
+        }
+    }
+
+    &.mainNav {
+        margin: 0 5%;
+        .row {
+            //  border: 1px solid $foreground;
+            border-radius: 5px;
+            background: #fff;
+            border: 1px solid $foreground;
+            color: #2e2e2e;
+        }
+        .col {
+            border-bottom: none;
+            &.active {
+                background-color: $foreground;
+                color: #fff;
+
+            }
+            &.obtainNav {
+                border-left: 1px solid $foreground;
+            }
+        }
+    }
+}
+.couponList {
+    padding: 0 10px;
+}
+.couponItem {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 9px 5px;
+    border-radius: 4px;
+    background-color: #fff;
+    .col {
+        &:first-child {
+            min-width: 192px;
+            min-height: 73px;
+        }
+        &:last-child {
+            text-align: center;
+            p {
+                font-size: 12px;
+                color: #999;
+                height: 40px;
+                @include gridborder(0, 0, 1px);
+                margin-bottom: 5px;
+            }
+            h2 {
+                font-size: 15px;
+                color: $foreground;
+            }
+        }
+    }
+    .coupon {
+        /* background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150303/vNTT-0-1425363229885.png);
+        background-size: 100%; */
+
+        width: 192px;
+        height: 73px;
+        position: relative;
+        h2 {
+            font-size: 40px;
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            color: #de6a3f;
+            width: 54px;
+            height: 54px;
+            text-align: center;
+            line-height: 54px;
+        }
+        p {
+            font-size: 12px;
+            position: absolute;
+            left: 75px;
+            top: 18px;
+            color: #fff;
+        }
+    }
+}
+.overflow-wrap, .mainContainerAssets {
+
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.overflow-x-wrap, .mainContainerA {
+    // background: #eee;
+    width: 200%;
+    overflow: hidden;
+    transition: transform 0.5s;
+    &.show-right {
+        transform: translateX(-50%);
+    }
+}
+.mainContainerA{
+    width: 300%;
+    &.show-right {
+        transform: translateX(-33%);
+    }
+    &.show-right-double {
+        transform: translateX(-66%);
+    }
+
+}
+.overflow-y-wrap, .wrapOut {
+    width: 50%;
+    float: left;
+    overflow-y: auto;
+    /* height: 100%;*/
+}
+.wrapOut{
+    width:33%;
+}
+
+.null-msg {
+    padding: 5% 0;
+    text-align: center;
+    font-size: 16px;
+    color: #f00;
+
+    img{
+        width: 70%;
+        margin-left: 14%;
+    }
+}
+
+#obtainCouponPage {
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff0af;
+    background-image: url("#{$img_path}common/images/cupon_botttom.jpg");
+    background-size: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    h1 {
+        background-image: url("#{$img_path}common/images/copon_top.jpg");
+        background-size: 100%;
+        width: 226px;
+        height: 112px;
+        position: absolute;
+        left: 50%;
+        margin-left: -113px;
+        top: 30px;
+    }
+    .signinBtnLayout {
+        padding: 180px 0 50px 0;
+    }
+    .signinBtn {
+        position: relative;
+        /* z-index:1; */
+
+        left: 16px;
+        top: 16px;
+        border-radius: 50%;
+        background-image: url("#{$img_path}common/images/user_intgral_red.png");
+        background-size: 100%;
+        width: 138px;
+        height: 138px;
+        color: #fff;
+        &.disable {
+            background-image: url("#{$img_path}common/images/user_intgral_grad.png");
+            background-size: 100%;
+        }
+        p {
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+            strong {
+                font-size: 15px;
+                margin: 0 0.3em;
+            }
+        }
+        h1 {
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+    .signinBtnBg {
+        background-color: rgba(255, 255, 255, 0.45);
+        width: 170px;
+        height: 170px;
+        position: absolute;
+        /* z-index:0; */
+
+        border-radius: 50%;
+        &.animation {
+            background-image: url("#{$img_path}common/images/user_integral_wait.png");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            @include animation();
+        }
+    }
+    .signinBtnFlex {
+        position: relative;
+        width: 170px;
+        height: 170px;
+    }
+    .signinCentent {
+        text-align: center;
+        color: #de1439;
+        .totalPoint {
+            font-size: 30px;
+            font-weight: normal;
+        }
+        .descript {
+            font-size: 15px;
+        }
+    }
+    .obtain-button {
+        text-align: center;
+    }
+    .guaguaka {
+        width: 200px;
+        height: 73px;
+        position: absolute;
+        top: 220px;
+        left: 50%;
+        margin-left: -100px;
+    }
+    .lottery {
+        img {
+            width: 200px;
+            height: 73px;
+        }
+        .xiexiecanyu {
+            line-height: 73px;
+            font-size: 36px;
+            text-align: center;
+        }
+    }
+
+}
+
+.usedCoupons img {
+    -webkit-filter: grayscale(0.6); /* Webkit */
+    filter: gray; /* IE6-9 */
+    filter: grayscale(0.6); /* W3C */
+}
+
+/**
+*积分
+*/
+.slider-header {
+    //position: fixed;
+
+    //width: 50%;
+    background-color: #fff;
+    background-size: 100%;
+    height: 80px;
+    // top: 45px;
+    //margin-top:45px;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    h1 {
+        text-align: center;
+        color: $foreground;
+        font-size: 18px;
+        padding-top: 10px;
+    }
+    p {
+        text-align: center;
+        font-size: 16px;
+    }
+    a {
+        position: absolute;
+        top: 25px;
+        right: 10px;
+        color: #989898;
+
+    }
+}
+.slider-p {
+    height: 100%;
+    overflow-y: auto;
+    background-color: $background;
+}
+.sliderPage {
+    position: relative;
+    // padding: 80px 0 0;
+    width: 100%;
+    //height: 400px;
+    overflow-y: auto;
+    .point-list {
+        padding: 0 10px;
+        margin: 3% 0;
+        background-color: #fff;
+        border-top: 1px solid #e5e5e5;
+        .row {
+            @include gridborder(0, 0, 1px);
+            padding: 10px 0;
+        }
+        .title {
+            font-size: 16px;
+            color: #666;
+        }
+        .datetime {
+            font-size: 12px;
+            color: #999;
+        }
+        .value {
+            color: $foreground;
+            font-size: 18px;
+        }
+    }
+}
+.not-has-msg{
+    width:60%;
+    margin: 5% auto;
+}
+
+

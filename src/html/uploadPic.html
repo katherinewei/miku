@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传图片</title>
+    <style type="text/css">
+         .addPic {
+            position: relative;
+            width: 90px; }
+         .addPic img {
+            position: relative;
+            z-index: 0; }
+        .addPic .file {
+            width: 100%;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9;
+            height: 100%; }
+         .uploadPicDiv dd{
+             width:60px;
+             display: inline-block;
+             margin-right:5px;
+             position: relative;
+         }
+         .uploadPicDiv dd img{
+             width:100%;
+         }
+         .uploadPicDiv .deleteImg{
+             width:27px;
+             height:27px;
+            background-image: url("http://ninelab.b0.upaiyun.com/common/images/personalTailor/pic_delete.png");
+             background-size: 100%;
+             display: block;
+             position: absolute;
+             right:0;
+             top:0;
+         }
+    </style>
+</head>
+<body>
+
+    <form id="my_form" enctype="multipart/form-data">
+        <dl class="uploadPicDiv">
+        <dd class="addPic"><img class="uploadpic" src="http://ninelab.b0.upaiyun.com/common/images/personalTailor/pic_add.png"/>
+        <input type="hidden" name="type" value="1"/>
+        <input type="file" class="file" name="file"  multiple="multiple"/></dd>
+        </dl>
+    </form>
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            //判断图片路径
+            reader.onload = function (e) {
+                if (!/image/.test(e.target.result)) {
+                    alert('请上传图片格式...');
+                    return false;
+                }
+                //预览图
+                $('.addPic').before('<dd class="active"><img src="'+ e.target.result+'"  alt=""><i class="deleteImg"></i></dd>');
+
+                //删除图片
+                $('.deleteImg').click(function(){
+                    $(this).parent().remove();
+                })
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $('.file').change(function(event){
+        uploadImages('#my_form', 'http://test.unesmall.com//api/h/1.0/upYunUploadPics.json',this).done(function(res) {
+            alert('上传图片成功');
+            $('.addPic').prev().find('img').attr('src',res.pic)//设置上传后的路径
+
+        }).fail(function() {
+            $(this).val('');
+            alert('上传图片失败！');
+        });
+    })
+
+
+    //上传图片
+    function uploadImages(form, url,$this){
+        var pomi = $.Deferred();
+        var data = new FormData($(form)[0]);
+        //读取图片预览图
+        readURL($this);
+        //上传
+        $.ajax({
+            url: url,
+            type: 'POST',
+            //dataType : "jsonp",//数据类型为jsonp
+            data: data,
+            dataType: 'JSON',
+            cache: false,
+            processData: false,
+            contentType: false
+        }).done(function(res){
+            console.log(res);
+            res = JSON.parse(res);
+            pomi.resolve(res);
+        });
+        return pomi.promise();
+    }
+</script>
+</body>
+</html>

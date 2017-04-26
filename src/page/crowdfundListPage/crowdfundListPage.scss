@@ -1,0 +1,185 @@
+@import "../../common/style/_mixin";
+$colorDeep:#2e2e2e; //深色
+$colorLighter:#7c7c7c; //浅色
+
+@mixin icon() {
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 12px;
+  height:12px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+
+#indexPage {
+  position: relative;
+  padding-top: 45px;
+  //padding-bottom: 50px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: $background;
+  .scroll-content {
+    position: relative;
+  }
+  .title,.top-nav,.banner{
+    background: #fff;
+  }
+
+  .title-content{
+    width: 100%;
+    background: #fff;
+    clear: both;
+    height: 44px;
+    line-height: 44px;
+    border-bottom:1px solid $borderColor;
+    .tit-content-left{
+      float: left;
+      margin-left: 5%;
+      font-size: 15px;
+      width: 50%;
+    }
+    .tit-content-right{
+      float: right;
+      margin-right: 5%;
+      font-size: 13px;
+      text-align: right;
+
+    }
+  }
+  .page-panel {
+    display: block;
+    height: auto;
+    background-color: #fff;
+   // margin-bottom: 10px;
+
+  }
+}
+//轮播
+#pic-carousel {
+  // min-height: 250px;
+  position: relative;
+
+  .carousel-outer {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .carousel-wrap {
+    .pic {
+      float: left;
+    }
+  }
+}
+//每日推荐
+.goods-list {
+  width: 90%;
+  margin: 0px auto;
+  padding: 10px 0 0;
+  position: relative;
+  li {
+    border-bottom: 1px solid $borderColor;
+    padding:5px 0;
+    position: relative;
+  }
+  .thumb{
+    margin-right: 2%;
+    width: 100px;
+    text-align: center;
+    min-height: 100px;
+    line-height: 100px;
+    text-align: center;
+    img{
+      display: inline-block;
+    }
+  }
+  .goodsname {
+    font-size: 12px;
+    color: $colorDeep;
+    max-height: 46px;
+    overflow: hidden;
+  }
+  .decs {
+    width: 80%;
+    padding: 5px 0;
+  }
+  .progress {
+    width: 100%;
+    background-color: $background;
+    height: 5px;
+    border-radius: 5px;
+    .progressBar {
+      background-color: $foreground;
+      position: relative;
+      height: 100%;
+      border-radius: 5px;
+      i {
+        height: 15px;
+        border-radius: 5px;
+        width: 28px;
+        display: block;
+        position: absolute;
+        right: -28px;
+        top: -5px;
+        background-color: $foreground;
+        text-align: center;
+        line-height: 15px;
+        font-size: 10px;
+        color: #fff;
+        font-style: normal;
+      }
+    }
+  }
+  .supportDetail {
+    padding: 5px 0;
+    p {
+      color: $colorLighter;
+      font-size: 12px;
+      b {
+        color: $colorDeep;
+        display: block;
+      }
+    }
+    .totleMoney{text-align: right}
+  }
+  .supportNum {
+    color: $colorLighter;
+    font-size: 12px;
+    .timeO{text-align: right;}
+    .supported {
+      @include icon();
+      background-image: url("#{$img_path}common/images/icon_people.png");
+      margin-top: -5px;
+    }
+
+    .time {
+      @include icon();
+      background-image: url("#{$img_path}common/images/icon_time.png");
+      margin-top: -2px;
+    }
+  }
+
+  .icon_share {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url("#{$img_path}common/images/icon_share.png");
+    background-size: 100%;
+    text-indent: -99999px;
+  }
+}
+.notData{
+  text-align: center;
+  margin-top: 30%;
+  img{
+    display: inline-block;
+    width:30%;
+    margin-bottom: 5%;
+  }
+}
+
+

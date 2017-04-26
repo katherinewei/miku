@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>米酷优客多</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no" />
+    <meta name="editor" content="superman">
+    <link rel="stylesheet" href="/h5/css/common.css?v=16593" />
+    <style>
+    body {
+        overflow: auto;
+    }
+    
+    img {
+        margin: 0 auto;
+    }
+    </style>
+    <script type="text/javascript" src="/h5/js/lib/gallery/zepto/1.1.6/zepto.js?v=16593"></script>
+    <script type="text/javascript" src="/h5/js/lib/component/image-loader/1.0.0/image-loader.js?v=16593"></script>
+</head>
+
+<body>
+    <section>
+        <div style="min-height:450px;">
+            <img data-lazyload-src="http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150609/vNTT-0-1433830140464.jpg" />
+        </div>
+        <div style="min-height:471px;">
+            <img data-lazyload-src="http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150609/vNTT-0-1433830140907.jpg" />
+        </div>
+        <div style="min-height:567px;">
+            <img data-lazyload-src="http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150611/vNTT-0-1433999609148.jpg" />
+        </div>
+        <div style="min-height:257px;">
+            <img data-lazyload-src="http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150610/vNTT-0-1433919830548.jpg" />
+        </div>
+        <div style="min-height:559px;">
+            <img data-lazyload-src="http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150609/vNTT-0-1433830146204.jpg" />
+        </div>
+        <div style="min-height:356px;">
+            <img data-lazyload-src="http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150610/vNTT-0-1433919831597.jpg" />
+        </div>
+        <div style="min-height:634px;">
+            <img data-lazyload-src="http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150609/vNTT-0-1433830146642.jpg" />
+        </div>
+        <div style="min-height:512px;">
+            <img data-lazyload-src="http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150609/vNTT-0-1433830147954.jpg" />
+        </div>
+    </section>
+    <script type="text/javascript">
+    if ($.isFunction(window['imageLoader'])) {
+        imageLoader($('body'), {
+            attr: 'data-lazyload-src',
+            enableScrollLoad: true
+        });
+    } else {
+        $('img[data-lazyload-src]').each(function() {
+            var $this = $(this),
+                src = $this.attr('data-lazyload-src');
+            $this.attr('src', src).removeAttr('data-lazyload-src');
+        })
+    }
+    </script>
+</body>
+
+</html>

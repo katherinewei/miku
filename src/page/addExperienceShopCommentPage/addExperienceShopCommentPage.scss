@@ -1,0 +1,110 @@
+@import "../../common/style/_mixin";
+.comment {
+  background-color: $background;
+  padding-bottom: 1px;
+  border-bottom: 1px solid $borderColor; }
+
+.addComm, .textD, #my_form {
+  border-bottom: 1px solid $borderColor;
+  border-top: 1px solid $borderColor;
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 10px; }
+
+.addComm {
+  font-size: 18px;
+  padding: 15px 10px;
+  .star-wrap {
+    display: inline-block;
+  }
+  .icon-star {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("#{$img_path}common/images/experienceStore/icon_big_star.png");
+    background-size: cover;
+    vertical-align: middle;
+    margin-top: -8px;
+    &.active {
+      background-image: url("#{$img_path}common/images/experienceStore/icon_big_cli_star.png");
+    }
+  }
+  .addCommBtn {
+    float: right;
+    width: 70px;
+    text-align: center;
+    line-height: 32px;
+    border: 1px solid$colorDeep;
+    border-radius: 3px;
+    margin-top: -5px;
+  }
+}
+
+.textD {
+  textarea {
+    border-width: 0;
+    height: 100px;
+    color: $foreground;
+    width: 100%;
+    resize: none;
+    font-size: 16px;
+    outline: none;
+  }
+  ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: $foreground;
+  }
+}
+  #my_form {
+    .upload {
+      position: relative;
+      width: 65px;
+      height: 65px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .file {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    label {
+      font-size: 16px;
+      color: $foreground;
+      margin-left: 15px;
+    }
+
+    .imgPreview {
+      overflow: hidden;
+    }
+
+    .tbumb-wrap {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      margin: 5px;
+      float: left;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .deleteBtn {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      text-align: center;
+      line-height: 20px;
+      font-size: 16px;
+    }
+}

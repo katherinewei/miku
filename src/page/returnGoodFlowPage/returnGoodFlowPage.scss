@@ -1,0 +1,333 @@
+@import "../../common/style/_mixin";
+select{
+  background-color: #fff;
+  -webkit-appearance:none;
+  background-image: url("#{$img_path}/common/images/icon_dropdown.png");
+  background-position: right center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+
+.header .navbar-right{
+  width:80px;
+}
+.header{z-index: 100;}
+.page-content{
+  background-color: $background;
+  padding:50px 0;
+}
+.border{
+  border-bottom:1px solid $borderColor;
+}
+//流程
+.flow,.returnGoods-status,.order,.buyerMemo{
+  background-color: #fff;
+  padding:10px;
+
+}
+.flow{
+  padding-top: 20px;
+  .grid{
+    position: relative;
+  }
+  .row .col{
+    text-align: center;color: #2e2e2e;padding-bottom: 5px;
+    i{
+      background-image: url("#{$img_path}/common/images/icon_step_n.png");
+      background-color: #fff;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width:40px;
+      height:20px;
+      background-size: 20px 20px;
+      display: block;
+      margin: 0px auto 7px;
+      z-index: 9;
+      position: relative;
+    }
+    &.active{
+      color: $foreground;
+      i{
+        background-image:url("#{$img_path}/common/images/icon_step_h.png") ;
+      }
+    }
+
+  }
+  .line{
+    height:1px ; background-color:#e5e5e5;
+    width:70%;z-index: 0;position: absolute;
+    top:10px;
+    left:15%;
+    &.line2{
+      width:60%;
+      left:20%;
+    }
+  }
+  .returnInstra{
+    width:90%;
+    margin: 5px auto;
+    font-size: 12px;
+  }
+  .audit{
+    position: absolute;
+    top:-7px;
+    color: $foreground;
+    width: 60px;
+    z-index: 99;
+    text-align: center;
+    &.audit1{
+      left:18%;
+    }&.audit2{
+      left:42%;
+     }
+    .dot{
+      border-radius: 100%;
+      width:5px;
+      height: 5px;
+      display:block;
+      background-color: $foreground;
+      position: relative;
+      left:45%;
+    }
+    .hide{
+      display: none;
+    }
+  }
+  //寄回商品
+  .sendGoods{
+    width:100%;
+    .box{
+      padding-top: 5px;
+      .inputDiv{
+        margin-top:5px;
+      }
+      .tip{
+        margin-left: 0;
+      }
+      label{
+        margin-right:10px;
+      }
+      input{
+        text-align: left;
+      }
+    }
+    .btnSubmitE{
+      width: 75px;
+      height: 30px;
+      line-height: 30px;
+      margin-top: 5px;
+      border-radius: 0;
+      font-size: 14px;
+    }
+  }
+}
+
+.order,.buyerMemo  {
+  background: #fff;
+  margin-bottom: 5px;
+  padding: 0 10px;
+  .summary{
+    @extend .border;
+    padding:5px 0;
+    font-size: 14px;
+  }
+  .create-time {
+    font-size: 12px;
+    color: #7c7c7c;
+  }
+}
+
+/*退款商品*/
+.order {
+  .totalFee{
+    color: $foreground;
+    font-size: 14px;
+  }
+  .thumb {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px 10px 0;
+    text-align: center;
+    overflow: hidden;
+  }
+  h3 {
+    font-weight: normal;
+    //color: #5b5b5b;
+  }
+  &.float-left {
+    float: left;
+  }
+  .count{
+    padding-left:10px;
+    &:before{
+      content: 'x';
+    }
+
+  }
+  .subsidyFee{
+    i{opacity: 0;}
+  }
+}
+#times{
+  color: #7c7c7c;
+  font-size: 11px;
+}
+
+/*退款状态*/
+.returnGoods-status{
+  .grid{
+    padding:5px 0;
+    margin-bottom: 10px;
+   @extend .border;
+  }
+  .state{
+    margin-left:  20px;
+    border-left: 1px solid #7c7c7c;
+    color: #7c7c7c;
+    position: relative;
+    padding-left: 10px;
+    .descItem{
+      padding-bottom: 5px;
+      font-size: 12px;
+    }
+    &:before{
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #7c7c7c;
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 5px;
+      z-index: 2;
+    }
+    &:after{
+      background-color: #fff;
+      position: absolute;
+      left: -1px;
+      width: 1px;
+      height: 20px;
+      content: "";
+      top: 0px;
+      z-index: 1;
+    }
+    &.active{
+      color: #2e2e2e;
+      &:before{
+        background-color: $foreground;
+      }
+    }
+  }
+  .viewMore{
+    border-top:1px solid $borderColor;
+    text-align: center;
+    width:95%;
+    margin: 10px auto 0;
+    padding-top: 10px;
+    color: #2e2e2e;
+  }
+}
+
+//退货原因
+  .box{
+    padding: 10px 10px 0;
+    color: #2e2e2e;
+    background-color: #fff;
+    p{
+      margin-bottom: 5px;
+    }
+   a{
+     width: 100%;
+     text-align: center;
+     display: block;
+     height: 30px;
+     color: #2e2e2e;
+     margin-top: 5px;
+     .icon_kf{
+       background-image:url("#{$img_path}/common/images/icon_contact.png") ;
+       width: 16px;
+       height:16px;
+       display: inline-block;
+       vertical-align: middle;
+       background-size: 100%;
+       margin-right: 5px;
+     }
+   }
+  }
+  select,input[type=text]{
+    padding: 0 5px;
+    font-size: 12px;
+    width:95%;
+    border:1px solid #2e2e2e;
+    height:30px;
+    line-height: 30px;
+    margin:0 auto;
+    display: block;
+  }
+  .ness{
+    color: $foreground;
+    margin-right: 5px;
+  }
+  .tip{
+    color: #7c7c7c;
+    font-size: 12px;
+    margin-left: 8px;
+    display: block;
+    line-height: 20px;
+  }
+  .uploadImg{
+    position: relative;
+    height:67px;
+    margin-top: 5px;
+    input[type=file]{
+      opacity: 0;
+      z-index: 99;
+      width:62px;
+      height:62px;
+      position: relative;
+    }
+    .fileBg{
+      position: absolute;
+      left:0;
+      top:0;
+      width:62px;
+      z-index: 1;
+    }
+    .thumbPic {
+      display: inline-block;
+      width: 62px;
+      height: 62px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .btnRG{
+
+    width:100%;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    background-color: $background;
+    span{
+      width:90%;
+    }
+
+  }
+.btn{
+  background-color: $foreground;
+  color: #fff;
+  border-radius: 3px;
+  margin: 3px auto;
+  display: block;
+  height:44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 16px;
+}
+.hide{
+  display: none;
+}
+.buyerMemo .box{
+  padding:10px;}

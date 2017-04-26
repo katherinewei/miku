@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no"/>
+    <meta name="editor" content="superman">
+    <style type="text/css">
+        video{
+            width:100%;}
+    </style>
+
+</head>
+<body>
+
+<video src="test.mp4" controls="controls" autoplay="autoplay">
+    您的浏览器不支持 video 标签。
+</video>
+<input onclick="oCopy(this)" value="你好.要copy的内容!">
+<script language="javascript">
+    function oCopy(obj){
+        obj.select();
+        js=obj.createTextRange();
+        js.execCommand("Copy")
+        alert("复制成功!");
+    }
+</script>
+</body>
+</html>

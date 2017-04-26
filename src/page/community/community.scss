@@ -1,0 +1,48 @@
+@import "../../common/style/_mixin";
+
+#communityPage{
+    .result-layout{
+        display:none;
+        h2{
+            padding-left:10px;
+        }
+    }
+    .location-msg{
+        text-align:center;
+    }
+    .scroll-container{
+        padding-top:100px;
+    }
+    .relocation{
+        margin-top:0px;
+    }
+    .keyword-layput{
+        margin-bottom:0px;
+    }
+    .scroll-top-location,
+    .search-result{
+        min-height:100%;
+    }
+    .community.row{
+        h3{
+            color:#333;
+        }
+        h4{
+            color:#aaa;
+            font-size:0.8em;
+        }
+    }
+    .keyword-search-layout{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #fff;
+        z-index:1;
+    }
+    .keyword-title{
+        height:50px;
+        line-height:50px;
+        padding:0 10px;
+    }
+}

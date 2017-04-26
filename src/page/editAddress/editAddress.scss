@@ -1,0 +1,115 @@
+@import "../../common/style/_mixin";
+
+
+
+.wl-edit-consignee-dialog{
+    .dialog-header{
+        height: 45px;
+        @include border(0,0,1px);
+        font-size: 16px;
+        line-height: 45px;
+        background-color: #fff;
+    }
+    .consignee-form{
+        padding:10px 0 0;
+        background: #fff;
+        .row{
+            padding:10px;
+            @include gridborder(0,0,1px);
+        }
+    }
+    .detail-address-text{
+        font-size:12px;
+        padding:10px 10px 0px 10px;
+        color:#999;
+        font-style: italic;
+    }
+    .button.submit{
+        margin:20px;
+        
+    }
+    .name,.mobile,.community,.addr,.idCard{
+        width:100%;
+    }
+}
+
+/* #editAddressPage {
+    .layout{
+        margin-top:50px;
+    }
+    .detail-address-text{
+        padding: 0 10px;
+        color: #999;
+        font-weight: normal;
+        font-size: 13px;
+    }
+} */
+
+/* 
+#communityPage{
+    .result-layout{
+        display:none;
+        h2{
+            padding-left:10px;
+        }
+    }
+    .location-msg{
+        text-align:center;
+    }
+    .scroll-container{
+        padding-top:100px;
+    }
+    .relocation{
+        margin-top:0px;
+    }
+    .keyword-layput{
+        margin-bottom:0px;
+    }
+    .scroll-top-location,
+    .search-result{
+        min-height:100%;
+    }
+    .community.row{
+        h3{
+            color:#333;
+        }
+        h4{
+            color:#aaa;
+            font-size:0.8em;
+        }
+    }
+    .keyword-search-layout{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #fff;
+        z-index:1;
+    }
+    .keyword-title{
+        height:50px;
+        line-height:50px;
+        padding:0 10px;
+    }
+}
+
+#app-bar{
+    display:none;
+} */
+
+ select {
+    padding: 0px;
+    width: 100%;
+    border: 1px solid transparent;
+    margin: 0 auto;
+    font-size: 14px;
+    display: block;
+    background-color: #fff;
+    -webkit-appearance: none;
+    background-image:url("#{$img_path}common/images/icon_dropdown.png");
+    background-position: right center;
+    background-size: auto 100%;
+    outline: none;
+    background-repeat: no-repeat;
+
+}

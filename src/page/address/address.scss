@@ -1,0 +1,182 @@
+@import "../../common/style/_mixin";
+
+.page-content {
+    padding-top: 0;
+    background-color: $background;
+}
+
+.dialog-body .icon-return {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-size: 100%;
+    background-image: url("#{$img_path}common/images/navBack.png");
+    position: absolute;
+    left: 0;
+}
+.address-item {
+    position: relative;
+    @include gridborder(0, 0, 1px);
+    margin-top: 7px;
+
+    &:last-child {
+        border-bottom-width: 0;
+    }
+    .row, .idCard {
+        position: relative;
+        background: #fff;
+        padding: 10px 4%;
+        transition: transform 0.3s;
+        border-bottom: 1px solid $borderColor;
+        &:last-child {
+            border-bottom-width: 0;
+        }
+    }
+    .check-icon:after {
+        width: 16px;
+        height: 16px;
+        padding: 5px 3px 2px 4px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        color: #fff;
+        margin-right: 5px;
+    }
+    &.checked, &.active {
+        .check-icon:after {
+            border: 1px solid $foreground;
+            background: $foreground;
+            color: #fff;
+        }
+    }
+    h1 {
+        font-size: 15px;
+    }
+    .contact {
+        color: #333;
+        font-size: 16px;
+    }
+    .mobile {
+        font-size: 16px;
+        font-weight: normal;
+        margin-left: 0.5em;
+    }
+    .addr, .idCard {
+        font-size: 13px;
+    }
+    .shop-name{
+        color:#777;
+        font-size: 12px;
+        font-style: italic;
+    }
+    .delete {
+        &:before {
+            content: '';
+            background-image: url("#{$img_path}common/images/addr_list_delete.png");
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+            background-size: 100%;
+        }
+    }
+    .consignee-content {
+        .row, .idCard {
+            padding: 3px;
+            border-bottom-width: 0;
+        }
+    }
+    .detailAddr {
+        padding-top: 0;
+    }
+    .idCard {
+        border-top: 1px solid $borderColor;
+        padding-top:5px !important;
+        margin-top: 5px;
+    }
+}
+.wl-consignee-dialog{
+    .dialog-header{
+        padding:0 10px;
+        background-color: #fff;
+        .add-button{
+            font-size:14px;
+            text-align: right;
+        }
+    }
+    .dialog-body{
+        min-height:200px;
+        .not-has-address{
+            font-size:15px;
+            padding:30px;
+        }
+    }
+    .dialog-content{
+        padding-bottom: 40px;
+    }
+    &.wl-fade-dialog{
+        .dialog-header{
+            @include border(0,0,1px);
+            height: 45px;
+            line-height: 45px;
+            .row h1{
+                height:100%;
+                font-size: 16px;
+            }
+        }
+        .consignee-list{
+            @include border(0,0,1px);
+            //margin-bottom: 6%;
+
+        }
+    }
+    .button.add-button{
+        //margin: 20px 0 0px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0;
+        //padding: 0.8em 0;
+        padding:0;
+        line-height: 40px;
+    }
+}
+.dialog-header{
+    font-size: 16px;
+    line-height: 45px;
+}
+.edit-button{
+    position: absolute;
+    top:0;
+    right:10px;
+}
+.edit-check{
+    display: none;
+}
+.wl-bottom-dialog{
+    .dialog-body .dialog-header{
+        background-color: #fff;
+        color: $colorDeep;
+
+    }
+    .address-item{
+        .edit-check {
+            display: flex;
+            .check-icon {
+                opacity: 0;
+                &:after{
+                border: 1px solid $foreground;
+                background: #fff;
+                color: $foreground;
+                }
+            }
+        }
+        &.active{
+                .check-icon{
+                    opacity: 1;
+                }
+            }
+        }
+    .idCard{
+        border-top-width:0;
+    }
+}

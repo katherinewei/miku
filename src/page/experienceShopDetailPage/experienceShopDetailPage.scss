@@ -1,0 +1,184 @@
+@import "../../common/style/_mixin";
+@mixin star-full() {
+  background-image: url("#{$img_path}common/images/experienceStore/icon_big_cli_star.png");
+  background-repeat: repeat;
+}
+
+@mixin star-empty() {
+  background-image: url("#{$img_path}common/images/experienceStore/icon_big_star.png");
+  background-repeat: repeat;
+}
+.page-content{
+  background-color: $background;
+  color: $colorLighter;
+}
+.navbar-right{
+  text-align: center;
+  vertical-align: middle;
+  img{
+    display: inline-block;
+  }
+}
+//
+.info,.addrTel,.moreInfo,.commtentList{
+  border-bottom:1px solid $borderColor;
+  background-color: #fff;
+  padding:2% 0;
+}
+.moreInfo,.commtentList{
+  border-top:1px solid $borderColor;
+    margin-bottom: 2%;
+}
+.commtentList{
+  border-bottom-width:0px;
+}
+.info{
+  padding:4% 2%;
+  h3{
+    font-size: 16px;
+    color: $colorDeep;
+  }
+  .star-wrap{
+    background: {
+      image: url('#{$img_path}common/images/experienceStore/icon_big_star.png');
+      size: 18px;
+    };
+    display: inline-block;
+    vertical-align: middle;
+    width:90px;
+    height:18px;
+    position: relative;
+    margin:3px 5px 3px 0;
+
+    .star-inner{
+      background: {
+        size: 18px;
+        image: url('#{$img_path}common/images/experienceStore/icon_big_cli_star.png');
+      };
+      height:18px;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+  }
+  p{
+    line-height: 24px;
+  }
+  .bespokeBtn{
+    span{
+      background-color: $colorfore;
+      color: #fff;
+      //padding: 6% 18%;
+      width: 90px;
+      line-height: 36px;
+      text-align: center;
+      border-radius: 3px;
+    }
+  }
+}
+.addrTel{
+  margin-bottom: 2%;
+  .addrIcon{
+    background:{
+      image: url('#{$img_path}common/images/experienceStore/icon_seat.png');
+      size: 100%;
+    };
+    width:36px;
+    height:36px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .addr{
+   // color: $colorLighter;
+    padding-right: 5px;
+  }
+  .tel{
+    border-left:1px solid $borderColor;
+    span{
+      background:{
+        image: url('#{$img_path}common/images/experienceStore/icon_tel.png');
+        size: 100%;
+      };
+      width:30px;
+      height:30px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+.title{
+  border-bottom:1px solid $borderColor;
+  line-height: 33px;
+  padding: 0 2%;
+  font-size: 15px;
+  color: $colorDeep;
+}
+.moreInfo{
+    p{
+      padding:2%;
+      //color: $colorLighter;
+    }
+}
+//评论
+.comments-list {
+  // border-top: 1px solid $borderColor;
+  li {
+    margin: 10px 10px 0;
+    border-bottom: 1px solid $borderColor;
+    color: $colorLighter;
+    &.not-has-comments-msg {
+      text-align: center;
+      padding: 10% 0;
+      border-bottom-width: 0;
+    }
+    .userPic{
+      width:55px;
+      margin-right: 5px;
+      border-radius: 50%;
+      overflow: hidden;
+      height: 55px;
+    }
+    .starWrap {
+      @include star-empty();
+      background-size: 18px;
+      width: 90px;
+      height: 18px;
+      margin: 3px 0;
+      .star {
+        @include star-full();
+        background-size: 18px;
+        width: 60%;
+        height: 18px;
+      }
+    }
+    .thumb-wrap {
+      margin-top: 10px;
+      .thumb {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .name{
+      color: $foreground;
+    }
+    .time{
+      font-size: 11px;
+      color: #b3b3b3;
+    }
+  }
+}
+.allComments {
+  padding-top: 10px;
+  .btnAll {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+  }
+}
+/*大图*/
+.large{width:100%;height:100%;position:fixed;top:0px;left:0px;background-color:rgba(0,0,0,.7);z-index: 99;}

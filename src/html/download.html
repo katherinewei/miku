@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>应用详情</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no"/>
+    <meta name="editor" content="superman">
+    <link rel="stylesheet" href="/h5/css/common.css"/>
+    <script src="/h5/js/lib/main.js"></script>
+    <style type="text/css">
+        body {
+
+        }
+
+        .downloadHead {
+            margin-top: -2px;
+            background-color: #f4f4f4;
+            color: #6f6f6f;
+
+        }
+
+        .headContent {
+            width: 73%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .downloadHead h3 {
+            color: #2e2e2e;
+            font-size: 20px;
+            border-bottom: 1px solid #6f6f6f;
+            padding-bottom: 5px;
+        }
+
+        .downloadHead .detail {
+            margin: 5px auto 0;
+            width: 75%;
+            font-size: 12px;
+            text-align: left;
+            line-height: 20px;
+            padding-bottom: 5px;
+        }
+
+        .downloadHead .detail span {
+            float: right;
+        }
+
+        .downloadHead .detail a {
+            border: 1px solid #2e2e2e;
+            color: #2e2e2e;
+            font-size: 16px;
+            width: 100px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            margin: 5px auto;
+        }
+
+        .pageB {
+            overflow: hidden;
+            padding-top: 5%;
+            position: relative;
+        }
+
+        .pic_SlideOut {
+            height: 100%;
+            margin-top: 5px;
+        }
+
+        .pic_SlideOut ul {
+
+            overflow: hidden;
+        }
+
+        .pageB ul li {
+            float: left;
+            margin-left: 1.7%;
+        }
+
+        .carousel-status {
+            width: 100%;
+            position: absolute;
+            top: 0%;
+            height: 20px;
+            text-align: center;
+        }
+
+        .carousel-status span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: rgba(251, 78, 144, .5);
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        .carousel-status span.sel {
+            background-color: rgba(251, 78, 144, 1);
+        }
+
+        .pageB ul li.marL {
+            margin-left: 5%;
+        }
+
+        @media only screen and (max-height: 570px) {
+            body {
+                overflow-y: auto;
+            }
+
+            .pic_SlideOut ul {
+                max-height: 340px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="downloadPage">
+    <section class="downloadHead">
+        <img src="http://unesmall.b0.upaiyun.com/common/images/topheader.png"/>
+
+        <div class="headContent">
+            <h3>米酷</h3>
+
+            <div class="detail">
+                <p>版本：1.0<span>15.95M</span></p>
+
+                <p>更新于：2016-01-14 17:39</p>
+                <a class="download" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.unesmall.miku">下载安装</a>
+            </div>
+        </div>
+    </section>
+    <section class="pageB ">
+        <div class="pic_SlideOut">
+            <ul>
+                <li><img src="http://unesmall.b0.upaiyun.com/common/images/1Guide-page.png"/></li>
+                <li><img src="http://unesmall.b0.upaiyun.com/common/images/2Guide-page.png"/></li>
+                <li><img src="http://unesmall.b0.upaiyun.com/common/images/3Guide-page.png"/></li>
+            </ul>
+        </div>
+        <div class="carousel-status"></div>
+    </section>
+</div>
+<script>
+    var ww = $(window).width();
+
+    $('.pageB .pic_SlideOut,.pageB  li').width(ww * 0.6);
+    $('.pageB  li:first-child').addClass('marL');
+    require('plugin/slider/1.0.0/slider2', function (Slider) {
+        var slide = new Slider('.pageB', {
+            loop: 1,
+            curIndex: 0,
+            useTransform: 1,
+            lazy: '.lazyimg',
+
+            //play: true, //动画自动播放
+            interval: 3000,
+            trigger: '.carousel-status',
+            activeTriggerCls: 'sel',
+            hasTrigger: 'tap',
+        });
+
+    })
+</script>
+</body>
+</html>

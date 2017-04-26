@@ -1,0 +1,23 @@
+@import "../../common/style/_mixin";
+.wl-map-dialog {
+    .dialog-header {
+        line-height: 40px;
+        padding-left: 20px;
+    }
+    .dialog-content {}
+    .amap-container {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+#shopNameList {
+    position: absolute;
+    top: 0;
+    background: #fff;
+    left: 0;
+    padding: 0 20px;
+    .shop-item{
+    	@include gridborder(1px);
+    }
+}

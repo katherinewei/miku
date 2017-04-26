@@ -1,0 +1,134 @@
+.fb, .grid .row{
+    @include flexbox;
+}
+.fvc{
+    @include fvc;
+}
+.fac{
+    @include fac;
+}
+.far{
+    @include far;
+}
+
+.grid .row{
+    .col {
+        @include flex(1, 100%);
+        min-height: 1em;
+        // @for $i from 1 to 24 {
+        //     &.col-#{$i} {
+        //         border: #{$i}px;
+        //         width: #{$i*4%};
+        //         flex: #{$i};
+        //     }
+        // }
+        &.col-1 {
+            // width:4%;
+            @include flex(4, 4%);
+        }
+        &.col-2 {
+            // width:8%;
+            @include flex(8, 8%);
+        }
+        &.col-3 {
+            // width:12%;
+            @include flex(12, 12%);
+        }
+        &.col-4 {
+            // width:16%;
+            @include flex(16, 16%);
+        }
+        &.col-5 {
+            // width:20%;
+            @include flex(20, 20%);
+        }
+        &.col-6 {
+            // width:24%;
+            @include flex(24, 24%);
+        }
+        &.col-7 {
+            // width:28%;
+            @include flex(28, 28%);
+        }
+        &.col-8 {
+            // width:32%;
+            @include flex(32, 32%);
+        }
+        &.col-9 {
+            // width:36%;
+            @include flex(36, 36%);
+        }
+        &.col-10 {
+            // width:40%;
+            @include flex(40, 40%);
+        }
+        &.col-11 {
+            // width:44%;
+            @include flex(44, 44%);
+        }
+        &.col-12 {
+            // width:48%;
+            @include flex(48, 48%);
+        }
+        &.col-13 {
+            // width:52%;
+            @include flex(52, 52%);
+        }
+        &.col-14 {
+            // width:56%;
+            @include flex(56, 56%);
+        }
+        &.col-15 {
+            // width:60%;
+            @include flex(60, 60%);
+        }
+        &.col-16 {
+            // width:64%;
+            @include flex(64, 64%);
+        }
+        &.col-17 {
+            // width:68%;
+            @include flex(68, 68%);
+        }
+        &.col-18 {
+            // width:72%;
+            @include flex(72, 72%);
+        }
+        &.col-19 {
+            // width:76%;
+            @include flex(76, 76%);
+        }
+        &.col-20 {
+            // width:80%;
+            @include flex(80, 80%);
+        }
+        &.col-21 {
+            // width:84%;
+            @include flex(84, 84%);
+        }
+        &.col-22 {
+            // width:88%;
+            @include flex(88, 88%);
+        }
+        &.col-23 {
+            // width:92%;
+            @include flex(92, 92%);
+        }
+        &.col-24 {
+            // width:96%;
+            @include flex(96, 96%);
+        }
+        &.col-25 {
+            // width:25%;
+            @include flex(1, 25%);
+        }
+        &.col-33 {
+            // width:33.33%;
+            @include flex(1, 33.33%);
+        }
+        &.col-50 {
+            // width:50%;
+            @include flex(1, 50%);
+        }
+    }
+}

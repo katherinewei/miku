@@ -1,0 +1,153 @@
+@import "../../common/style/_mixin";
+.page-content{
+  overflow-y: auto;
+  padding-bottom: 0;
+  height:100%;
+}
+.user-info{
+  padding:3%;
+  img{
+    width:38%;
+   // max-width:95px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 2%;
+  }
+  .time{
+    padding-top:5%;
+    p{
+      padding-bottom: 2%;
+      span{
+        color: $colorLighter;
+        display: inline-block;
+        width:88px;
+        text-align:justify;
+       // overflow: hidden;
+        //&:after{
+        //  display: inline-block;
+        //  content: '';
+        //  overflow: hidden;
+        //  width: 100%;
+        //  height: 0;
+        //}
+      }
+    }
+  }
+}
+.content{
+  height:100%;
+  //overflow-y: auto;
+  border-top:1px solid $borderColor;
+  ul{
+    padding: 2% 0;
+    border-bottom: 10px solid $background;
+  }
+  li.userMsgTab{
+    color: $colorLighter;
+    font-size: 16px;
+    text-align: center;
+    &:before{
+      display: block;
+      width:20px;
+      height:20px;
+      content: '';
+      margin: 0 auto;
+      background: {
+        size: 100%;
+      };
+    }
+    &.active{
+      color: $foreground;
+    }
+    &.buyBoxList_tab{
+      &:before{
+        background: {
+          image: url("#{$img_path}common/images/personalTailor/icon_infor_ic1.png");
+        };
+      }
+      &.active{
+        &:before{
+          background: {
+            image: url("#{$img_path}common/images/personalTailor/icon_infor_ic2.png");
+          };
+        }
+      }
+    }
+    &.newReport_tab{
+      &:before{
+        background: {
+          image: url("#{$img_path}common/images/personalTailor/icon_infor_ic3.png");
+        };
+      }
+      &.active{
+        &:before{
+          background: {
+            image: url("#{$img_path}common/images/personalTailor/icon_infor_ic4.png");
+          };
+        }
+      }
+    }
+  }
+  article{
+    &.buyBoxList_content{
+      margin: 0 5% 3% 10%;
+      border-left: 1px solid $borderColor;
+      padding-top: 3%;
+    }
+    .getDetectRecord{
+      padding:5%;
+    }
+    }
+  .box{
+    position: relative;
+    i{
+      position: absolute;
+      left:-9px;
+      width:20px;
+      height: 20px;
+      display: block;
+      background-color: $foreground;
+      text-align: center;
+      line-height: 20px;
+      color: #fff;
+      border-radius: 50%;
+      font-style: normal;
+    }
+    .item{
+      margin-left: 25px;
+      margin-bottom: 5%;
+      .date{
+        border-radius: 5px;
+        background-color: $background;
+        display: inline-block;
+        padding: 1% 3%;
+        margin-bottom: 2%;
+      }
+      .boxList{
+        .row{
+          border-radius: 5px;
+          background-color: $background;
+          margin-bottom: 2%;
+          padding: 2%;
+          .price{
+            margin-left: 6%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .user-info
+  {
+    .time{
+      font-size: 12px;
+      p{
+        span{
+          width:80px;
+        }
+      }
+    }
+  }
+}

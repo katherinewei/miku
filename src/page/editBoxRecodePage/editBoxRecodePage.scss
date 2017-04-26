@@ -1,0 +1,165 @@
+/**
+ * Created by Spades-k on 2016/7/4.
+ * version 0.0.1
+ */
+@import "../../common/style/_mixin";
+
+.tc{
+  text-align: center;
+}
+
+.page-content{
+  padding: 0;
+  background-color: #F6F6F6;
+  overflow: auto;
+  position: static;
+  li{
+    padding: 0 20px;
+  }
+  .input_information{
+    textarea{
+      width:100%;
+      border: none;
+      background-color: #F6F6F6;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    p{
+      font-size: 16px;
+      color: #838383;
+      padding: 8px 0;
+    }
+  }
+  .use_time{
+    h3{
+      font-size: 16px;
+      padding: 5px 0;
+    }
+    .select_time{
+      select{
+        background-color: #E5E5E5;
+        -webkit-appearance:none;
+        background-image: url("#{$img_path}/common/images/dropdown.png");
+        background-position: right center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        padding: 0 10px;
+        font-size: 16px;
+        width:30%;
+        border:none;
+        height: 36px;
+        line-height: 36px;
+        margin: 0 3% 0 0;
+        display: inline-block;
+      }
+    }
+  }
+  .select_box{
+    margin-top: 20px;
+    h3{
+      font-size: 16px;
+      padding: 5px 0;
+    }
+    .select_con{
+      select{
+        background-color: #E5E5E5;
+        -webkit-appearance:none;
+        background-image: url("#{$img_path}common/images/dropdown.png");
+        background-position: right center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        padding: 0 10px;
+        font-size: 16px;
+        width:100%;
+        border:none;
+        height: 36px;
+        line-height: 36px;
+        display: inline-block;
+      }
+    }
+  }
+  .photo{
+    overflow: hidden;
+    margin-top: 20px;
+    dl{
+      padding-bottom: 0;
+    }
+    p{
+      padding: 0 0 2% 4%;
+    }
+    dl {
+      overflow: hidden;
+      padding: 3% 0;
+      dd {
+        overflow: hidden;
+
+        .addPic{
+          position: relative;
+          img{
+            position: relative;
+            z-index: 0;
+            width:100%;
+          }
+          .file{
+            width:100%;
+            opacity: 0;
+            position: absolute;
+            left:0;
+            top:0;
+            z-index: 9;
+            height:100%
+          }
+
+        }
+      }
+    }
+    dd{
+      //width: 22%;
+      //float: left;
+      //margin:0 1.5%;
+      width:60px;
+      height:60px;
+      float: left;
+      margin:0 8px 6px 0;
+      position: relative;
+      &.active:before{
+        background-image: url("#{$img_path}common/images/icon_class_choose.png");
+        background-repeat: no-repeat;
+        border-color:$foreground;
+        color: $foreground;
+        background-size: 100%;
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      .delete{
+        width: 27px;
+        height: 27px;
+        background: {
+          image:  url("#{$img_path}common/images/personalTailor/icon_record_delete.png");
+          size: 100%;
+        };
+        display: block;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+    }
+
+  }
+  .save{
+    padding: 10px 0 20px 0;
+    .save_btn{
+      border: none;
+      background-color: #E5E5E5;
+      padding: 8px 0;
+      width: 80%;
+      border-radius: 4px;
+    }
+  }
+}

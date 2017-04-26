@@ -1,0 +1,144 @@
+@keyframes translateouttofade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes translatefrominfade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes translateouttotop {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, -100%, 0);
+    }
+}
+@keyframes translatefromintop {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes translateouttoleft {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes translatefrominleft {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes translateouttoright {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(100%, 0, 0);
+    }
+}
+@keyframes translatefrominright {
+    0% {
+        transform: translate3d(100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes translateouttobottom {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 100%, 0);
+    }
+}
+@keyframes translatefrominbottom {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@mixin translateAnimation($duration:0.3s, $timing:ease){
+    animation-duration: $duration;
+    animation-timing-function: $timing;
+}
+.translate-top {
+    transform: translate3d(0, -100%, 0);
+}
+.translate-left {
+    transform: translate3d(-100%, 0, 0);
+}
+.translate-right {
+    transform: translate3d(100%, 0, 0);
+}
+.translate-bottom {
+    transform: translate3d(0, 100%, 0);
+}
+.translate-fade{
+    opacity: 0;
+}
+.translate-viewport {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+.translate-out-to-fade {
+    animation-name: translateouttofade;
+    @include translateAnimation();
+}
+.translate-from-in-fade {
+    animation-name: translatefrominfade;
+    @include translateAnimation();
+}
+
+.translate-out-to-top {
+    animation-name: translateouttotop;
+    @include translateAnimation();
+}
+.translate-from-in-top {
+    animation-name: translatefromintop;
+    @include translateAnimation();
+}
+.translate-out-to-left {
+    animation-name: translateouttoleft;
+    @include translateAnimation(0.3s);
+}
+.translate-from-in-left {
+    animation-name: translatefrominleft;
+    @include translateAnimation(0.3s);
+}
+.translate-out-to-right {
+    animation-name: translateouttoright;
+    @include translateAnimation(0.3s);
+}
+.translate-from-in-right {
+    animation-name: translatefrominright;
+    @include translateAnimation(0.3s);
+}
+.translate-out-to-bottom {
+    animation-name: translateouttobottom;
+    @include translateAnimation();
+}
+.translate-from-in-bottom {
+    animation-name: translatefrominbottom;
+    @include translateAnimation();
+}

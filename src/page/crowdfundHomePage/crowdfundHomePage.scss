@@ -1,0 +1,212 @@
+@import "../../common/style/_mixin";
+$colorDeep:#2e2e2e; //深色
+$colorLighter:#7c7c7c; //浅色
+
+@mixin icon() {
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 12px;
+  height:12px;
+  margin-right: 2px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+
+#indexPage {
+  position: relative;
+  padding-top: 45px;
+  //padding-bottom: 50px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: $background;
+  .scroll-content {
+    position: relative;
+  }
+  .title,.top-nav,.banner{
+    background: #fff;
+  }
+
+  .title-content{
+    width: 100%;
+    background: #fff;
+    clear: both;
+    height: 44px;
+    line-height: 44px;
+    border-bottom:1px solid $borderColor;
+    .tit-content-left{
+      float: left;
+      margin-left: 5%;
+      font-size: 15px;
+      width: 50%;
+    }
+    .tit-content-right{
+      float: right;
+      margin-right: 5%;
+      font-size: 13px;
+      text-align: right;
+
+    }
+  }
+  .page-panel {
+    display: block;
+    height: auto;
+    background-color: #fff;
+    //margin-bottom: 10px;
+
+  }
+}
+//轮播
+#pic-carousel {
+ // min-height: 250px;
+  position: relative;
+
+  .carousel-outer {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .carousel-wrap {
+    .pic {
+      float: left;
+    }
+  }
+}
+
+.cate-nav {
+  min-height: 25px;
+  margin: 10px 0;
+  background-color: #fff;
+  .cate-nav-ul {
+    width: 90%;
+    margin: 0 auto;
+    padding: 8px 0;
+  }
+  .cate-nav-li {
+    float: left;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    width: 33%;
+    margin: 5px 0;
+    font-size:15px;
+  }
+  .cate-li-img {
+    width: 45%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    img {
+
+      display: inline-block;
+    }
+  }
+}
+//每日推荐
+.goods-list {
+  width: 90%;
+  margin: 0px auto;
+  padding: 10px 0 0;
+  position: relative;
+  li {
+    border-bottom: 1px solid $borderColor;
+    padding:5px 0;
+    position: relative;
+  }
+  .thumb{
+    margin-right: 2%;
+    width: 100px;
+    text-align: center;
+    min-height: 100px;
+    line-height: 100px;
+    text-align: center;
+    img{
+      display: inline-block;
+    }
+  }
+  .goodsname {
+    font-size: 12px;
+    color: $colorDeep;
+    max-height: 46px;
+    overflow: hidden;
+  }
+  .decs {
+    width: 80%;
+    padding: 5px 0;
+  }
+  .progress {
+    width: 100%;
+    background-color: $background;
+    height: 5px;
+    border-radius: 5px;
+    .progressBar {
+      background-color: $foreground;
+      position: relative;
+      height: 100%;
+      border-radius: 5px;
+      i {
+        height: 15px;
+        border-radius: 5px;
+        width: 28px;
+        display: block;
+        position: absolute;
+        right: -26px;
+        top: -5px;
+        background-color: $foreground;
+        text-align: center;
+        line-height: 15px;
+        font-size: 10px;
+        color: #fff;
+        font-style: normal;
+      }
+    }
+  }
+  .supportDetail {
+    padding: 5px 0;
+    p {
+      color: $colorLighter;
+      font-size: 12px;
+      b {
+        color: $colorDeep;
+        display: block;
+      }
+    }
+    .totleMoney{text-align: right}
+  }
+  .supportNum {
+    color: $colorLighter;
+    font-size: 12px;
+    .timeO{text-align: right;}
+    .supported {
+      @include icon();
+      background-image: url("#{$img_path}common/images/icon_people.png");
+    }
+
+    .time {
+      @include icon();
+      background-image: url("#{$img_path}common/images/icon_time.png");
+    }
+  }
+
+  .icon_share {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url("#{$img_path}common/images/icon_share.png");
+    background-size: 100%;
+    text-indent: -99999px;
+  }
+}
+li.notData{
+  text-align: center;
+  padding:10% 0;
+  img{
+    display: inline-block;
+    width:30% !important;
+    margin-bottom: 5%;
+  }
+}

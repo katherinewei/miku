@@ -1,0 +1,188 @@
+/**
+ *文章添加
+ * Created by Spades-k on 2016/5/30.
+ * version 0.0.1
+ */
+
+@import "../../common/style/_mixin";
+$foreground:#fb4e90;
+@mixin choice() {
+  background-size: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 25px;
+  height:18px;
+  vertical-align: middle;
+  content: '';
+}
+body{
+  height:auto;
+}
+
+.resultPage{
+  width:92%;
+  margin: 2% auto;
+  overflow-y: auto;
+  ul {
+    li.skinCondition,li.lifeStyle,li.detailQ {
+      span{
+        color: #fb4e90;
+        text-decoration: underline;
+        padding:0 2%;
+        b{
+          height:16px;
+          width:40px;
+          display: inline-block;
+        }
+      }
+    }
+    h3 {
+      background-color: $foreground;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      display: inline-block;
+      padding: 0 5%;
+    }
+    dl {
+      overflow: hidden;
+      padding: 3% 5%;
+      dd {
+        padding-bottom: 3%;
+        overflow: hidden;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        .addPic{
+          position: relative;
+          img{
+            position: relative;
+            z-index: 0;
+          }
+          .file{
+            width:100%;
+            opacity: 0;
+            position: absolute;
+            left:0;
+            top:0;
+            z-index: 9;
+            height:100%
+          }
+
+        }
+      }
+    }
+    textarea{
+      width:100%;
+      border-bottom:1px solid $colorDeep;
+      height:90px;
+      resize: none;
+    }
+    input{
+      border-bottom:1px solid $colorDeep;
+      //max-width: 76px;
+      //text-align: center;
+      width:auto;
+      padding:0 5%;
+    }
+    textarea,input{
+      &.readonly{
+        border:none;
+        // max-width:20px;
+        // text-align: left;
+        padding:0;
+      }
+
+    }
+    li{
+      &.message{
+        .sex{display: inline-block}
+        .choice{
+          display: inline-block;
+          margin-right: 5%;
+          &:before{
+            @include choice();
+            background-image: url("#{$img_path}common/images/icon_choose_n.png");
+          }
+          &.active{
+            &:before{
+              background-image: url("#{$img_path}common/images/icon_choose_h.png");
+            }
+
+          }
+        }
+      }
+
+
+
+
+      &.photo{
+        overflow: hidden;
+        dl{
+          padding-bottom: 0;
+        }
+        p{
+          padding: 0 0 2% 4%;
+        }
+        dd{
+          //width: 22%;
+          //float: left;
+          //margin:0 1.5%;
+          width:60px;
+          height:60px;
+          float: left;
+          margin:0 4px 8px 4px;
+          position: relative;
+          &.active:before{
+            background-image: url("#{$img_path}common/images/icon_class_choose.png");
+            background-repeat: no-repeat;
+            border-color:$foreground;
+            color: $foreground;
+            background-size: 100%;
+            content: '';
+            width: 20px;
+            height: 20px;
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          }
+
+          .delete{
+            width:27px;
+            height:27px;
+            background: {
+              image:  url("#{$img_path}common/images/personalTailor/pic_delete.png");
+              size: 100%;
+            };
+            display: block;
+            position: absolute;
+            right:0;
+            top:0;
+          }
+        }
+
+      }
+    }
+  }
+  .bottom{
+    text-align: right;
+    .time{
+      margin-left: 3%;
+    }
+  }
+  .save,.saveCreate{
+    width:100%;
+    padding:7px 0;
+    span{
+      display: block;
+      background-color: $foreground;
+      color: #fff;
+      border-radius: 3px;
+      text-align: center;
+      line-height: 30px;
+    }
+  }
+}

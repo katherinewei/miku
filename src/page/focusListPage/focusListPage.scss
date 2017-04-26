@@ -1,0 +1,114 @@
+/**
+ * Created by Spades-k on 2016/6/29.
+ * version 0.0.1
+ */
+@import "../../common/style/_mixin";
+
+$bg:#FAFBFD;
+$imColor:#f56e4e;
+$fColor:#7c7c7c;
+
+body{
+  background-color: $bg;
+}
+
+#indexPage{
+  padding: 0;
+  position: static;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate3d(0, 0, 0);
+  background-color: #FAFBFD;
+  .header{
+    max-height: 160px;
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 4% 6%;
+    margin-bottom: 3%;
+    .face-img{
+      img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+    }
+    .userInfoDiv{
+      .user-info{
+        padding-left: 10px;
+        color: #2e2e2e;
+        font-size: 16px;
+        padding-top: 7px;
+        padding-bottom: 3px;
+      }
+    }
+    .right-icon{
+      color: #fff;
+      font-size: 22px;
+      display: none;
+    }
+  }
+  .focusList{
+    background-color: white;
+    ul{
+      border-top: 1px solid #e5e5e5;
+      .liList{
+        border-bottom: 1px solid #e5e5e5;
+        padding: 0 20px;
+        position: relative;
+        .focusListBox{
+          padding: 2% 0;
+          width: 90%;
+          .pic{
+            min-width: 55px;
+            img{
+              height: 55px;
+              width: 55px;
+              border-radius: 50%;
+            }
+          }
+          .listCon{
+            margin-left: 10px;
+            width: 80%;
+            .listName{
+              padding-left: 6px;
+              text-overflow:ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+              color: $imColor;
+            }
+            .listTitle{
+              text-overflow:ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+              color: $fColor;
+            }
+          }
+        }
+        &:after{
+          content: '';
+          display: inline-block;
+          position: absolute;
+          right:10px;
+          top:50%;
+          margin-top: -15px;
+          width: 30px;
+          height:30px;
+          background: url("#{$img_path}common/images/find/next_gray.png") center no-repeat;
+          background-size: 100% auto;
+        }
+      }
+      .notData {
+        text-align: center;
+        padding: 7px 0;
+        border-bottom: 1px solid #e5e5e5;
+        img {
+          margin: 0 auto;
+          width: 15%;
+        }
+      }
+    }
+  }
+}

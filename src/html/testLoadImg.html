@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>js 实现图片预加载 加载完后执行动作</title>
+</head>
+<style type="text/css">
+
+    *html{
+        margin:0;
+        padding:0;
+        border:0;
+    }
+    body{border:1px solid #f3f3f3; background:#fefefe}
+    div#loading{
+        width:950px;
+        height:265px;
+        line-height:265px;
+        overflow:hidden;
+        position:relative;
+        text-align:center;
+    }
+    div#loading p{
+        position:static;
+    +position:absolute;
+        top:50%;
+        vertical-align:middle;
+    }
+    div#loading p img{
+        position:static;
+    +position:relative;
+        top:-50%;left:-50%;
+        vertical-align:middle
+    }
+
+</style>
+<body>
+<div id="loading">
+    <p><img src="http://www.baidu.com/img/baidu_logo.gif" /></p>
+</div>
+<script>
+    var i=0;
+    var c=3;
+    var imgarr=new Array
+    imgarr[0]="http://www.baidu.com/img/baidu_logo.gif";
+    imgarr[1]="http://img.baidu.com/img/logo-img.gif";
+    imgarr[2]="http://img.baidu.com/img/logo-zhidao.gif";
+    var Browser=new Object();
+    Browser.userAgent=window.navigator.userAgent.toLowerCase();
+    Browser.ie=/msie/.test(Browser.userAgent);
+    Browser.Moz=/gecko/.test(Browser.userAgent);
+    function SImage(url,callback)
+    {
+        var img = new Image();
+        if(Browser.ie){
+            img.onreadystatechange =function(){
+                if(img.readyState=="complete"||img.readyState=="loaded"){
+                    ii=i+1;
+                    callback(i);
+                }
+            }
+        }else if(Browser.Moz){
+            img.onload=function(){
+                if(img.complete==true){
+                    ii=i+1;
+                    callback(i);
+                }
+            }
+        }
+        img.src=url;
+    }
+    function icall(v)
+    {
+        if(v<c){
+            SImage(""+imgarr[v]+"",icall);
+        }
+        else if(v>=c){
+            i=0;
+//location.replace('banner.html');//这里写自己的动作吧，
+        }
+    }
+    </script>
+</body>
+</html>

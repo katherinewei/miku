@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>如何赚钱</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no"/>
+    <meta name="editor" content="superman">
+    <link rel="stylesheet" href="/h5/css/common.css"/>
+    <style type="text/css">
+        .header {
+            position: relative;
+            display: none;
+        }
+
+        section.pageA {
+            font-size: 12px;
+            height: 100%;
+            overflow-y: auto;
+            background-color: #f6f6f6;
+            color: #2e2e2e;
+            padding-bottom: 0px;
+        }
+        section.pageAPB{
+            padding-bottom: 50px;
+        }
+        .banner {
+            overflow-y: auto;
+            height: 100%;
+        }
+        .slider-outer img{
+            width:80%;
+            margin: 10px auto;
+        }
+        .slider-outer img.img2{
+            width:75%;
+        }
+        .banner .carousel-status{
+            position: static;
+        }
+        .slider-outer li{
+            position: relative;
+        }
+        .slider-outer li a{
+            width: 55%;
+            margin: 0 auto;
+            border-radius: 30px;
+            border: 1px solid #fa4f90;
+            padding: 3% 0;
+            position: absolute;
+            bottom: 10%;
+            color: #fa4f90;
+            font-size: 14px;
+            left: 22%;
+            text-align: center;
+        }
+        @media (max-height : 480px) {
+            .slider-outer img{
+                width: 70%;
+            }
+            .img2{
+                width:65%;
+            }
+        }
+    </style>
+    <script src="/h5/js/lib/main.js"></script>
+</head>
+<body>
+<section class="header">
+    <div class="content navbar">
+        <div class="btn-navbar navbar-left"><a href="javascript:history.go(-1);" class="icon icon-return"></a></div>
+        <div class="navbar-main">如何赚钱</div>
+    </div>
+</section>
+<section class="pageA">
+    <div id="banner" class="banner">
+        <div class="slider-outer">
+            <ul>
+                <li><img _src="http://unesmall.b0.upaiyun.com/common/images/step1.png" /> </li>
+                <li><img _src="http://unesmall.b0.upaiyun.com/common/images/step2.png" /> </li>
+                <li><img _src="http://unesmall.b0.upaiyun.com/common/images/step3.png" /> </li>
+               <li><img _src="http://unesmall.b0.upaiyun.com/common/images/step4.png" /> </li>
+              <li><img _src="http://unesmall.b0.upaiyun.com/common/images/step5.png" /><a class="hideC" href="http://miku.unesmall.com/api/h/1.0/buyForJoinAgencyPage.htm" >我要成为米酷推广经理</a> </li>
+                <li><img _src="http://unesmall.b0.upaiyun.com/common/images/step6.png" /> <a class="hideC" href="http://miku.unesmall.com/api/h/1.0/buyForJoinAgencyPage.htm" >我要成为米酷推广经理</a> </li>
+            </ul>
+        </div>
+        <div class="carousel-status">
+            <ul></ul>
+        </div>
+    </div>
+</section>
+<script>
+    require('slider', function(Slider) {
+        Slider({
+            slideCell: "#banner",
+            titCell: ".carousel-status ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            mainCell: ".slider-outer ul",
+            effect: "leftLoop",
+            autoPlay: true,//自动播放
+            autoPage: true, //自动分页
+            switchLoad: "_src", //切换加载，真实图片路径为"_src"
+            interTime:5000
+        });
+    })
+
+    var type = getQueryString('type');
+    var isAgency = getQueryString('isAgency');
+    if (type == 1) {
+        document.getElementsByClassName('header')[0]['style'].display = 'block';
+        $('.slider-outer').find('img').addClass('img2');
+        $('.pageA').addClass('pageAPB');
+        $('.slider-outer').find('.hideC').attr('href','http://miku.unesmall.com/api/h/1.0/buyForJoinAgencyPage.htm?type=1');
+    }
+    if(isAgency == 1){
+        $('.hideC').hide();
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+</body>
+</html>

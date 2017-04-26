@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>关于我们</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no"/>
+    <meta name="editor" content="superman">
+    <link rel="stylesheet" href="/h5/css/common.css?v=16593"/>
+    <style type="text/css">
+        .header {
+            position: relative;
+            display: none;
+        }
+
+        section.pageA {
+            font-size: 14px;
+            padding: 10px 3% 50px;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 3%;
+        }
+
+    </style>
+</head>
+<body>
+<section class="header">
+    <div class="content navbar">
+        <div class="btn-navbar navbar-left"><a href="javascript:history.go(-1);" class="icon icon-return"></a></div>
+        <div class="navbar-main">关于我们</div>
+    </div>
+</section>
+<section class="pageA">
+    <h1>一、关于米酷</h1>
+    <div class="content">
+        <p>我们相信，选择可以很简单：我们能为特别的你推荐最合适的产品。</p>
+        <p>我们相信，创业其实也没那么难：我们能为你提供最优质的产品，最优质的消费群体，让你创业无忧。</p>
+        <p>我们相信，信任可以很简单：坚持7天无条件退货承诺，能让您的网购成为绝无风险的享受。</p>
+        <p>我们相信，沟通可以很简单：面对面般的贴心服务，能让您下的每一个订单都踏实安心。</p>
+        <p>我们相信，我们的每一个产品都会给您带来惊喜……</p>
+        <p>我们相信互联网平等而开放的力量，我们相信用户的信任是最大的依靠，我们是一群充满梦想的人，让你的美丽更简单！</p>
+    </div>
+
+    <h1>二、质量保证</h1>
+    <div class="content">
+        <p>所有合作商品都需先邮寄样品入库，职业验货师再对商品的包装、材质、细节、工艺等进行100%全检。 只有通过质检报告的商品才会与你相见。</p>
+    </div>
+    <h1>三、体贴的售后服务</h1>
+    <div class="content">
+        <p>下单并于48小时内发货。支持7天无理由退货，轻松购物有保障。</p>
+    </div>
+    <h1>四、联系我们</h1>
+    <div class="content">
+        <p>客户服务热线： 4006-234-336<br/>
+            服务时间：周一至周五<br/>
+            早上9点到下午6点</p>
+    </div>
+
+</section>
+</body>
+</html>
+<script>
+    var type = getQueryString('type');
+    if (type == 1) {
+        document.getElementsByClassName('header')[0]['style'].display = 'block';
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>

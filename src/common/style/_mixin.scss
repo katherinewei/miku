@@ -1,0 +1,167 @@
+$foreground: #f56e4e; //主前景色 //#89d148 // #fb4e90;
+$border:#b2b2b2; //边框色
+$gridbordercolor: #ccc; //网络线色
+$strongcolor: #f1377e; //#f46a4d;       //强调色
+$avianize: #626262; //弱化色
+$textcolor:#666; //正文文字
+$titlecolor:#333; //标题文字
+$hintcolor:#999; //提示文字
+$background:#f4f4f4; //页面背景
+$disablebackground:#ccc; //禁用时的背景色
+$disableforeground:#fff; //禁用时的前景色
+$hintbackground:#ffd148; //提示背景色
+$borderColor: #e5e5e5; //线条颜色
+$headerBackground: #42454C; //头部背景色
+$headerForeground: #fff; //头部前景色
+$colorLighter:#7c7c7c;  //浅色
+$colorDeep:#2e2e2e; //深色
+$colorfore:#42454C;//黑色主色
+
+$img_path:"http://ninelab.b0.upaiyun.com/";  //变量使用与字符串混合使用 "#{$ad}abd.png" 开发环境:http://unesmall.b0.upaiyun.com/ 生产环境:http://mikumine.b0.upaiyun.com/
+//9lab环境：http://ninelab.b0.upaiyun.com/
+$head-tit-img:"#{$img_path}common/images/profit_icon.png";
+
+
+@mixin position($left:auto, $top:auto, $right:auto, $bottom:auto, $position:absolute) {
+    position: $position;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+}
+@mixin size($width:auto, $height:auto) {
+    width: $width;
+    height: $height;
+}
+@mixin min-size($width:0, $height:0) {
+    min-width: $width;
+    min-height: $height;
+}
+@mixin fullwin {
+    @include position(0, 0);
+    @include size(100%, 100%);
+}
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin clampellipsis($clamp:2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $clamp;
+    -webkit-box-orient: vertical;
+}
+@mixin gridborder($top:0, $right:0, $bottom:0, $left:0, $style:solid) {
+    //  -webkit-border-image: url("http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20141226/vNTT-0-1419559242025.png") 2 stretch;
+    // -moz-border-image: url("http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20141226/vNTT-0-1419559242025.png") 2 stretch;
+    border-image: url("http://unesmall.b0.upaiyun.com/common/images/vNTT-0-1419559242025.png") 2 stretch; 
+    
+    // border-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAAGXy9/eAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2dpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpCNkE3RjlGRTY5NjYxMUU0OTgyRUFDMzc3QTc5MDc5RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0Q0ExQjQwOEUxOTUxMUU0QTJBN0NBNUQ2Nzk4QUY1OCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0Q0ExQjQwN0UxOTUxMUU0QTJBN0NBNUQ2Nzk4QUY1OCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDMTcxQkQ0NzhDQTIxMUU0ODQ0MkVDODVBNDJFQkNCMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDMTcxQkQ0ODhDQTIxMUU0ODQ0MkVDODVBNDJFQkNCMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PlSEgBsAAABGSURBVHjaYnj69Ol/gABiABEAAQQmgIABIIDADEYQCyCA4EIgDBBAjGBFMAATBQkyMSABgABD0YNbFRJgARHPnj37jy4BAD3BQryYtd4hAAAAAElFTkSuQmCC') 2 stretch; */
+    border-width: $top $right $bottom $left;
+    border-style: $style;
+}
+@mixin border($top:0, $right:0, $bottom:0, $left:0, $style:solid) {
+    // -webkit-border-image: url("http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20141226/vNTT-0-1419559242065.png") 2 stretch;
+    // -moz-border-image: url("http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20141226/vNTT-0-1419559242065.png") 2 stretch;
+    border-image: url("http://unesmall.b0.upaiyun.com/common/images/vNTT-0-1419559242065.png") 2 stretch;
+    border-width: $top $right $bottom $left;
+    border-style: $style;
+}
+@mixin clearfix {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+@mixin flexbox{
+    display: -webkit-box;
+    // OLD - iOS 6-, Safari 3.1-6
+    
+    display: -moz-box;
+    // OLD - Firefox 19- (buggy but mostly works)
+    
+    display: -ms-flexbox;
+    // TWEENER - IE 10
+
+    display: -webkit-flex;
+    // NEW - Chrome
+    
+    display: flex;
+    // NEW, Spec - Opera 12.1, Firefox 20+
+}
+@mixin flex($value:1, $width:100%) {
+    -webkit-box-flex: $value;
+    // OLD - iOS 6-, Safari 3.1-6
+    
+    -moz-box-flex: $value;
+    // OLD - Firefox 19-
+    
+    width: $width;
+    // For old syntax, otherwise collapses.
+    
+    -webkit-flex: $value;
+    // Chrome
+    
+    -ms-flex: $value;
+    // IE 10
+    
+    flex: $value;
+    // NEW, Spec - Opera 12.1, Firefox 20+
+}
+
+// 垂直居中
+@mixin fvc(){
+    // 老版本语法
+    -webkit-box-align: center; 
+    -moz-box-align: center;
+    // 混合版本语法
+    -ms-flex-align: center; 
+    // 新版本语法
+    -webkit-align-items: center;
+    align-items: center;
+}
+// 水平居中
+@mixin fac(){
+    // 老版本语法
+    -webkit-box-pack: center; 
+    -moz-box-pack: center; 
+    // 混合版本语法
+    -ms-flex-pack: center; 
+    // 新版本语法
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+@mixin far(){
+    // 老版本语法
+    -webkit-box-pack: end; 
+    -moz-box-pack: edn; 
+    // 混合版本语法
+    -ms-flex-pack: edn; 
+    // 新版本语法
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+@mixin checkicon{
+    width: 16px;
+    height: 16px;
+    padding: 5px 3px 2px 4px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: #fff;
+}
+@mixin animation($name:loading, $duration:10s, $function:ease-out){
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $function;
+}
+@mixin app-bar-bg{
+    //background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150515/vNTT-0-1431672589327.png);
+    background-color: #fff;
+    background-size: 320px 57px;
+    background-repeat: repeat-x;
+    background-position-x: 50%;
+}

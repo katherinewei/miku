@@ -1,0 +1,189 @@
+/**
+ * Created by Spades-k on 2016/10/19.
+ * version 0.0.1
+ */
+body{
+  min-height: 870px;
+  overflow: auto;
+}
+.skinPicBox{
+  .con{
+    min-width: 1280px;
+    margin: 7% auto 0 auto;
+    max-width: 1423px;
+    .headTit{
+      text-align: center;
+      .tit{
+        font-size: 46px;
+        color: #2e2e2e;
+      }
+      .stit{
+        font-size: 24px;
+        color: #2e2e2e;
+      }
+    }
+    .conBox{
+      .nowBox{
+        width: 50%;
+        float: left;
+        min-width: 636px;
+        max-width: 712px;
+        .sameSmallImg{
+          width: 334px;
+          float: left;
+          .title{
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 32px;
+            .time{
+              display: block;
+              font-size: 12px;
+            }
+          }
+          .imgs{
+            ul{
+              li{
+                float: left;
+                margin-bottom: 24px;
+                .img{
+                  position: relative;
+                  border: 1px solid #996c33;
+                  img{
+                    width: 140px;
+                    height: 114px;
+                    cursor: pointer;
+                  }
+                  p{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    text-align: center;
+                  }
+                }
+                .english{
+                  text-align: center;
+                }
+                &:nth-child(2n+1){
+                  margin-right: 50px;
+                }
+              }
+            }
+          }
+        }
+        .bigImg{
+          float: right;
+          margin-top: 68px;
+          padding-right: 15px;
+          img{
+            width: 284px;
+            height: 228px;
+            border: 1px solid #996c33;
+          }
+        }
+      }
+      .beforeBox{
+        width: 50%;
+        float: left;
+        min-width: 636px;
+        max-width: 712px;
+        .sameSmallImg{
+          width: 334px;
+          float: right;
+          .title{
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 32px;
+            .time{
+              display: block;
+              font-size: 12px;
+            }
+          }
+          .imgs{
+            ul{
+              li{
+                float: left;
+                margin-bottom: 24px;
+                .img{
+                  position: relative;
+                  border: 1px solid #996c33;
+                  img{
+                    width: 140px;
+                    height: 114px;
+                    cursor: pointer;
+                  }
+                  p{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    text-align: center;
+                  }
+                }
+                .english{
+                  text-align: center;
+                }
+                &:nth-child(2n+1){
+                  margin-right: 50px;
+                }
+              }
+            }
+          }
+        }
+        .bigImg{
+          float: left;
+          margin-top: 68px;
+          padding-left: 15px;
+          img{
+            width: 284px;
+            height: 228px;
+            border: 1px solid #996c33;
+          }
+        }
+      }
+    }
+    .bottomBtn{
+      display: inline-block;
+      float: right;
+      margin-top: 40px;
+      .last,.home,.back{
+        width: 94px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .last{
+        float: left;
+        background-color: white;
+        color: #bcbcbe;
+        border: 1px solid #bcbcbe;
+        margin-bottom: 8px;
+        &.active{
+          background-color: #cfa972;
+          color: white;
+          border: 1px solid #996c33;
+        }
+      }
+      .back{
+        float: left;
+        margin-right: 10px;
+        background-color: white;
+        color: #bcbcbe;
+        border: 1px solid #bcbcbe;
+        margin-bottom: 8px;
+        &.active{
+          background-color: #cfa972;
+          color: white;
+          border: 1px solid #996c33;
+        }
+      }
+      .home{
+        background-color: #cfa972;
+        color: white;
+        border: 1px solid #996c33;
+      }
+    }
+  }
+}

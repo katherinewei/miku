@@ -1,0 +1,422 @@
+@import "../../common/style/_mixin";
+$foreground:#292929;
+$color3:#E1E2E6;
+@mixin choice() {
+  background-size: 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 12px;
+  height:12px;
+  vertical-align: middle;
+  content: '';
+  margin-right: 5px;
+}
+body{
+  overflow-y: auto;
+}
+.containerQuestion{
+  input[type="submit"], input[type="reset"], input[type="tel"], input[type="button"], input[type="text"], input[type="password"], input{
+    border:1px solid $borderColor;
+    width:140px;
+    height:30px;
+    border-radius: 5px;
+  }
+  textarea{
+    width:100%;
+    min-height:90px;
+    padding:5px 2%;
+    border:1px solid $borderColor;
+    resize: none;
+    text-align: left;
+  }
+  .boxItem {
+    border:1px solid $color3;
+    margin-bottom:5px;
+    .title{
+      background-color: $background;
+      line-height: 40px;
+      padding:0 8px;
+    }
+    .contentItem{
+      padding: 8px;
+      .choice{
+        display: inline-block;
+        margin-right: 5%;
+        i{
+          @include choice();
+          background-image: url("#{$img_path}common/images/personalTailor/csad/report_unselect.png");
+
+        }
+        &.checkBox{
+          i{
+            background-image: url("#{$img_path}common/images/personalTailor/csad/icon-fangkuang12.png");
+          }
+        }
+      }
+      .active{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/report_selected.png");
+        }
+        .checkBox {
+          i {
+            background-image: url("#{$img_path}common/images/personalTailor/csad/icon-fangkuangdui.png");
+          }
+        }
+      }
+      .question_item{
+        padding: 5px;
+        dd{
+          line-height: 26px;
+          padding-left: 1.3em;
+        }
+      }
+      .textarea{
+        p{
+          margin-bottom: 5px;
+        }
+      }
+    }
+    &.basicMessage{
+      .contentItem{
+        overflow: hidden;
+        .basicItemL{
+          margin: 5px;
+          float: left;
+          width:220px;
+          height:30px;
+          position: relative;
+          label{
+            margin-right:5px;
+          }
+          .inputSpan{
+            position: absolute;
+            left: 150px;
+            top: 5px;
+            color: $colorLighter;
+          }
+        }
+      }
+    }
+  }
+  .addPic{
+    position: relative;
+    img{
+      position: relative;
+      z-index: 0;
+    }
+    .file{
+      width:100%;
+      opacity: 0;
+      position: absolute;
+      left:0;
+      top:0;
+      z-index: 9;
+      height:100%
+    }
+
+  }
+
+  .questionAnalysis{
+    margin-bottom: 60px;
+    dl{
+      dd{
+        width:60px;
+        display: inline-block;
+        margin-right:5px;
+        position: relative;
+        img{
+
+        }
+      }
+    }
+  }
+
+
+
+  table{
+    td,th{
+      border:1px solid $borderColor;
+      text-align: center;
+      width:25%;
+      span{
+        width:100%;
+        line-height:24px;
+        display: block;
+        background-color: transparent;
+        &.activeSpan{
+          background:{
+            image: url("#{$img_path}common/images/personalTailor/csad/report_select.png");
+            size: 25px;
+            position: center center;
+            repeat: no-repeat;
+          }
+        }
+      }
+      input[type=text]{
+        border-width:0 !important;
+        padding:0 5px;
+      }
+    }
+  }
+
+  .deleteImg{
+    width:27px;
+    height:27px;
+    background: {
+      image:  url("#{$img_path}common/images/personalTailor/pic_delete.png") !important;
+      size: 100%;
+    };
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
+  }
+}
+.presentList{
+  .footer{
+    //margin:10px 0;
+    margin: 10px 0 0;
+    position: fixed;
+    bottom: 0;
+    border-left: 1px solid $borderColor;
+    border-right: 1px solid $borderColor;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    //.row{
+    //  width:70%;
+    //  margin: 0 auto;
+    //}
+
+    span{
+      display: inline-block;
+      width: 150px;
+      margin: 5px 15px;
+      text-align: center;
+      background-color: $foreground;
+      border-radius: 5px;
+      color: #fff;
+      line-height: 34px;
+      cursor: pointer;
+      // margin: 3% 5%;
+    }
+  }
+}
+
+//预览
+.reportPreviewContent{
+  width: 360px;
+  margin: 5% auto 0;
+  background: #fff;
+  height: 80%;
+  overflow-y: auto;
+  position: relative;
+
+  .reportPreviewTitle{
+    background-color: $background;
+    line-height: 40px;
+    padding: 0 8px;
+    border-bottom: 1px solid $borderColor;
+    margin-bottom: 10px;
+  }
+  .detailContent{
+    padding:0 15px;
+
+  }
+
+  .footerTool{
+    text-align: center;
+    span{
+      background: $colorDeep;
+      border-radius: 5px;
+      width:100px;
+      line-height: 32px;
+      color: #fff;
+      display: inline-block;
+      margin: 10px 15px;
+      cursor: pointer;
+     // text-align: center;
+    }
+  }
+}
+.wantToSolve{
+  dl{
+    overflow: hidden;
+    dd{
+      width:33%;
+      float: left;
+    }
+  }
+}
+.addQuestionAanalysis{
+  min-height: 100px;
+  text-align: center;
+  width: 100%;
+  border: 1px solid $borderColor;
+  .addQues{
+   line-height: 100px;
+  }
+}
+.dictionary{
+  .dictionaryContent{
+    background-color: #fff;
+    width:80%;
+    margin:3% auto;
+   // overflow-y: auto;
+    height:80%;
+    position: relative;
+    .checkBox{
+      background-size: 12px;
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      vertical-align: middle;
+      margin-right: 5px;
+      background-image: url("#{$img_path}common/images/personalTailor/csad/icon-fangkuang12.png");
+      &.selected{
+        background-image: url("#{$img_path}common/images/personalTailor/csad/icon-fangkuangdui.png");
+      }
+    }
+    ul{
+      text-align: center;
+      height:100%;
+      background-color: $background;
+      padding-top:20%;
+      overflow-y: auto;
+      li{
+        line-height: 50px;
+        &.cur{
+          background-color: #fff;
+        }
+      }
+    }
+    .dictionaryContentTable{
+      height:100%;
+      overflow-y: auto;
+    }
+    table{
+      tr{
+        td{
+          border:1px solid $borderColor;
+          border-left-width:0;
+          border-top-width:0;
+          padding:10px 20px;
+          text-align: left;
+        }
+       td:first-child{
+         width:10%;
+         text-align: center;
+         padding:10px;
+       }
+        .causeD{
+          dd{
+            padding-left: 1.5em;
+          }
+        }
+      }
+    }
+    .submitDirBtn{
+      background: $colorDeep;
+      border-radius: 3px;
+      width:75%;
+      line-height: 32px;
+      color: #fff;
+      display: inline-block;
+      margin: 10px 15px;
+      cursor: pointer;
+    }
+  }
+  &#dictionary3{
+    table{
+      height:100%;
+      padding-top:20%;
+    }
+  }
+  &#dictionary2,&#dictionary3{
+    ul{
+      padding-top:7%;
+    }
+  }
+
+}
+.containerQuestion{
+  textarea{
+    min-height:90px;
+    height:auto;
+  }
+}
+
+
+  //滑动
+.skinData{
+  overflow: hidden;
+  .skinType{
+    float: left;
+  }
+  select{
+    margin: 0 5px;
+    width:100px;
+  }
+}
+.grade_warp{
+  height: 50px;
+  label{
+    vertical-align: middle;
+    line-height: 40px;
+    width: 70px;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+.grade_warp{width:245px;margin-left: 10px;}
+.User_grade{    width: 157px;  display: inline-block;  top: 10px;  position: relative;}
+.User_ratings {overflow: hidden;}
+//.User_ratings .ratings_title{width:815px;height:78px;font-size:24px;color:#aaaaaa;}
+.User_ratings .ratings_title01{width:100%;height:auto;font-size:14px;color:#aaaaaa;}
+.User_ratings .ratings_bars{width:100%;height:34px;padding-top: 5px;}
+.User_ratings .ratings_bars .title{width:25px;height:25px;text-align:center;border:1px solid #bfbebe;line-height:25px;font-size:14px;float:left;color:#a0a0a0;margin-left:10px;background:#fff;
+  padding:0;}
+.User_ratings .ratings_bars .bars_10{font-size:16px;line-height:25px;float:left;color:#a0a0a0;}
+.User_ratings .ratings_bars .scale{width:99px;height:13px;float:left;margin:7px 10px auto 10px;position:relative;border: 1px solid #e5e5e5;}
+.User_ratings .ratings_bars .scale div{width:0px;position:absolute;left:0;height:13px;bottom:0;background:#292929; }
+.User_ratings .ratings_bars .scale span{width:8px;height:20px;position:absolute;left:-2px;top:-7px;cursor:pointer;background:#292929 no-repeat;}
+
+#mainChart1,#mainChart2{
+  width: 230px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+
+//预览 && 保存
+.questionBtnG,.createBoxBtnG{
+
+  display: none;
+  margin-left: 20px;
+  float: right;
+  margin-top: 16px;
+  cursor: pointer;
+
+  &.show{
+    display: inline-block;
+  }
+  span{
+    width:34px;
+    height:34px;
+    display: inline-block;
+    background-size:100%;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+  .previewBtnI{
+    background-image:url("#{$img_path}common/images/personalTailor/csad/icon_look.png");
+  }
+  .saveQuetionI{
+    background-image:url("#{$img_path}common/images/personalTailor/csad/icon_keep.png");
+    width:32px;
+  }
+}
+.wl-trans-dialog{
+  margin-top: 62px;
+}

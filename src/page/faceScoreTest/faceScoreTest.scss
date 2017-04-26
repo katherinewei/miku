@@ -1,0 +1,276 @@
+@import "../../common/style/_mixin";
+
+body {
+  background-color: #f78ea8;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100%;
+  position: relative;
+}
+
+header {
+  padding: 10px 0;
+  font-size: 14px;
+  color: #2e2e2e;
+  width: 100%;
+  height: 50px;
+  z-index: 2;
+  position: relative;
+
+  .btn-navbar {
+    position: absolute;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    .icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+    }
+    .icon-return {
+      background-size: cover;
+      background-position: 10px -28px;
+      background-image: url("#{$img_path}common/images/profit_icon.png");
+    }
+  }
+  .row {
+    border-radius: 5px;
+    line-height: 30px;
+    height: 30px;
+    background: #fff;
+    overflow: hidden;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .col {
+    text-align: center;
+    &.active {
+      background-color: $foreground;
+      color: #fff;
+    }
+  }
+}
+
+.overflow-wrap {
+
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100%;
+  .overflow-x-wrap {
+    position: absolute;
+    top: 0;
+    width: 200%;
+    overflow-y: hidden;
+    transition: transform 0.5s;
+    &.show-right {
+      transform: translateX(-50%);
+    }
+    .overflow-y-wrap {
+      width: 50%;
+      float: left;
+      height: 100%;
+    }
+    .null-msg {
+      padding: 50px 0;
+      text-align: center;
+      font-size: 16px;
+      color: #f00;
+    }
+  }
+}
+
+.overflow-wrap, .overflow-x-wrap, .overflow-y-wrap:first-child {
+  height: 100%;
+}
+
+.shareCont {
+  z-index:3;
+}
+
+.takePhoto {
+  background-image: url("#{$img_path}common/images/faceScoreTest/bg_top.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+  .camera {
+    position: absolute;
+    left: 30%;
+    bottom: 20%;
+    width: 40%;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    #file {
+      opacity: 0;
+      z-index: 99;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+}
+
+.takeFooter {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  z-index: 1;
+}
+
+.photoList {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  overflow-y: auto;
+  .list {
+    width: 100%;
+    padding: 0 3%;
+  }
+  .item {
+    height: 45px;
+    line-height: 45px;
+    //padding: 1%;
+    //text-align: center;
+    color: #fff;
+    border-top: 1px solid #fec5d3;
+    &:first-child {
+      border: none;
+    }
+  }
+  .label {
+    display: inline-block;
+    width: 70%;
+    height: 26px;
+    line-height: 25px;
+    padding: 0 5%;
+    border: 1px solid #ffffff;
+    vertical-align: middle;
+  }
+  .icon-wrap {
+    text-align: center;
+    vertical-align: middle;
+  }
+  .icon {
+    display: inline-block;
+    width: 16px;
+    //height: 25px;
+    vertical-align: middle;
+    //background-size: contain;
+    //background-repeat: no-repeat;
+  }
+  .icon-rank-1 {
+    background-image: url("#{$img_path}common/images/faceScoreTest/face-rank-1.png");
+  }
+  .icon-rank-2 {
+    background-image: url("#{$img_path}common/images/faceScoreTest/face-rank-2.png");
+  }
+  .icon-rank-3 {
+    background-image: url("#{$img_path}common/images/faceScoreTest/face-rank-3.png");
+  }
+  .icon-rank-4 {
+    background-image: url("#{$img_path}common/images/faceScoreTest/face-rank-4.png");
+  }
+  .icon-rank-5 {
+    background-image: url("#{$img_path}common/images/faceScoreTest/face-rank-5.png");
+  }
+  .icon-rank-6 {
+    background-image: url("#{$img_path}common/images/faceScoreTest/face-rank-6.png");
+  }
+  .icon-rank-7 {
+    background-image: url("#{$img_path}common/images/faceScoreTest/face-rank-7.png");
+  }
+  .icon-rank-8 {
+    background-image: url("#{$img_path}common/images/faceScoreTest/face-rank-8.png");
+  }
+  .icon-rank-9 {
+    background-image: url("#{$img_path}common/images/faceScoreTest/face-rank-9.png");
+  }
+}
+
+#faceScroePage {
+  z-index: 3;
+  .header {
+    &.hide {
+      transform: translateZ(0);
+      -webkit-transition: opacity .5s linear 0s;
+      transition: opacity .5s linear 0s;
+    }
+    border: none;
+  }
+  .navbar {
+    background-color: transparent;
+  }
+  .page-content {
+    color: #fff;
+    background-color: #f78ea8;
+    overflow-y: auto;
+    -webkit-transition: all .5s linear 0s;
+    transition: all .5s linear 0s;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+.photo-wrap {
+  width: 65%;
+  //height: 270px;
+  margin: 10px auto;
+  background-color: #ff81a1;
+}
+
+.face-info,.action-bar {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  .item-info {
+    display: inline-block;
+    width: 33%;
+    font-size: 16px;
+  }
+}
+.face-tips {
+  padding-top: 10px;
+  text-align: center;
+  .tips-img {
+  }
+}
+
+.action-bar {
+  padding-top: 20px;
+  .item-action {
+    display: inline-block;
+    width: 33%;
+    padding: 0 2%;
+    color: #fff;
+  }
+  .icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+  }
+  .label {
+    display: inline-block;
+    margin-top: 5px;
+  }
+  .icon-exchange {
+    background-image: url("#{$img_path}common/images/faceScoreTest/icon-exchange.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .icon-again {
+    background-image: url("#{$img_path}common/images/faceScoreTest/icon-again.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .icon-invite {
+    background-image: url("#{$img_path}common/images/faceScoreTest/icon-invite.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+

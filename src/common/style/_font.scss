@@ -1,0 +1,122 @@
+@font-face {
+    font-family: "iconfont";
+    src: url('/h5/fonts/20150320/iconfont.eot');
+    /* IE9*/
+    /*   h5.unesmall.com   h5.7nb.com.cn  201501160338*/
+    
+    src: url('/h5/fonts/20150320/iconfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    
+    url('/h5/fonts/20150320/iconfont.woff') format('woff'),
+    /* chrome、firefox */
+    
+    url('/h5/fonts/20150320/iconfont.ttf') format('truetype'),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    
+    url('/h5/fonts/20150320/iconfont.svg#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    &.right-icon{
+        text-align:right;
+        &:after{
+            content: "\e60a";
+            font-size:18px;
+            /* font-size:1.5em; */
+        }
+    }
+    
+    &.top-icon:after {
+        content: "\e601";
+    }
+    &.bottom-icon:after {
+        content: "\e608";
+        
+    }
+    &.map-icon:after{
+        content: "\e60f";
+    }
+    &.prompt-swpie:after{
+        content:"\e60d";
+    }
+    &.close:after {
+        content: "\e603";
+    }
+    &.count-add:after {
+        content: "\e607";
+    }
+    &.count-diff:after {
+        content: "\e606";
+    }
+    &.address-icon:after {
+        content: "\e602";
+    }
+    &.edit-icon:after {
+        content: "\e602";
+    }
+    &.myorder-icon:after {
+        content: "\e604";
+    }
+    &.index-bar:before {
+        content: "\e613";
+    }
+    &.list-bar:before {
+        content: "\e611";
+    }
+    &.cart-bar:before {
+        content: "\e60c";  /*614*/
+    }
+    &.user-bar:before {
+        content: "\e615";
+    }
+    &.search-action:after {
+        content: "\e600";
+    }
+    &.add-cart:after {
+        content: "\e60e";
+    }
+    &.order-all-icon:after {
+        content: "\e61c";
+    }
+    &.help-icon:after {
+        content: "\e619";
+    }
+    &.wait-pay-icon:after {
+        content: "\e61a";
+    }
+    &.wait-send-icon:after {
+        content: "\e617";
+    }
+    &.wait-receive-icon:after {
+        content: "\e61b";
+    }
+    &.complete-icon:after {
+        content: "\e620";
+    }
+    &.check-icon:after{
+        content:"\e621";
+    }
+}
+
+&.active {
+    .iconfont {
+        color: $foreground;
+        &.index-bar:before {
+            content: "\e61e";
+        }
+        &.user-bar:before {
+            content: "\e616";
+        }
+        &.cart-bar:before {
+            content: "\e61f";
+        }
+        &.list-bar:before {
+            content: "\e611";
+        }
+    }
+}

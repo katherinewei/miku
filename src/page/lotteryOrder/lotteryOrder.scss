@@ -1,0 +1,539 @@
+/**
+ * Created by Spades-k on 2015/12/25.
+ * version 0.0.1
+ */
+
+@import "../../common/style/_mixin";
+@import "../../common/style/_media";
+@mixin place-icon($left, $top) {
+  background-image: url("#{$img_path}common/images/place_order_icon.png");
+  background-size: 26px 470px;
+  background-repeat: no-repeat;
+  background-position: $left $top;
+}
+
+@mixin icon-pay($left, $top) {
+  background-image: url("#{$img_path}common/images/icon-pay.png");
+  background-size: 25px 450px;
+  background-repeat: no-repeat;
+  background-position: $left $top;
+}
+@mixin place-border(){
+  border: 0px solid transparent;
+  border-width: 0 0 8px 0;
+  border-image: url("#{$img_path}common/images/cart_border.png") 0 0 20 0 round;
+}
+
+
+.right-icon, .iconfont.right-icon {
+  &:after {
+    display: block;
+    content: " ";
+    text-indent: -999px;
+    @include place-icon(right, -344px);
+    width: 13px;
+    height: 22px;
+  }
+}/*
+.address-item .right-icon:after{
+    background-image:none;
+} */
+.header {
+  .icon-return {
+    left: 0;
+  }
+}
+#placeOrderPage {
+  padding-bottom: 52px;
+  height: 100%;
+  .page-content {
+    padding: 45px 5px 50px 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .payment-value {
+    //color: #999;
+    img {
+      margin-right: 0.5em;
+    }
+  }
+  .tabs-trigger {
+    height: 57px;
+    line-height: 57px;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+  }
+  .distri-head {
+    h2 {
+      /* background-image: url("http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150309/vNTT-0-1425900642565.png");
+      background-size: 20px 20px;
+      background-position: left center;
+      background-repeat: no-repeat;
+      padding-left: 30px; */
+
+      min-height: 20px;
+    }
+    .time-value {
+      font-size: 14px;
+      color: #999;
+    }
+  }
+  .right-icon {
+    font-size: 18px;
+  }
+  .consignee {
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .distribution-layout {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .buy-detail-layout {
+    .page-layout-head {
+      /* background-image: url("http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150309/vNTT-0-1425906652812.png");
+      background-size: 20px 20px;
+      background-position: 10px center;
+      background-repeat: no-repeat;
+      padding-left: 40px; */
+
+      min-height: 20px;
+      padding-bottom: 0;
+      padding-top: 15px;
+      //background: #f3f3f3;
+    }
+  }
+  .only-user-fetch {
+    @include gridborder(0, 0, 1px);
+  }
+}
+
+.switch {
+  width: 44px;
+  height: 26px;
+  border-radius: 15px;
+  border: 1px solid #dadada;
+  overflow: hidden;
+  background: #dadada;
+  &:after {
+    width: 24px;
+    height: 24px;
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    //box-shadow: 1px 1px 2px #aaa;
+    background: #fff;
+  }
+  &.on {
+    border-color: #fb4e90;
+    background: #fb4e90;
+    text-align: right;
+    // &:after {
+    //     box-shadow: -1px 1px 2px #aaa;
+    // }
+  }
+}
+
+.page-layout {
+  background: #fff;
+  //@include place-border();
+  //   border: 0px solid transparent;
+  // border-width: 0 0 8px 0;
+  //  border-image: url("#{$img_path}common/images/cart_border.png") 0 0 20 0 round;
+  //margin: 0 0 10px 0;
+  //@include gridborder(1px, 0, 1px, 0);
+  .page-layout-head {
+    //@include gridborder(0, 0, 1px, 0);
+    padding: 5px;
+    font-size: 15px;
+    color: #5b5b5b;
+    .icon {
+      display: inline-block;
+      vertical-align: top;
+      width: 30px;
+      img {
+        display: inline-block;
+      }
+    }
+  }
+  .page-layout-content {
+    padding: 0 5px;
+    color: #666;
+    textarea {
+      width: 100%;
+      height: 42px;
+      border: 1px solid #e5e5e5;
+      border-radius: 2px;
+      padding: 5px;
+      font-size: 12px;
+      color: #666;
+      background-color: #fff;
+      resize: none;
+      &:focus, &:active {
+        outline: none;
+      }
+    }
+    .row {
+      //margin: 5px 0;
+      padding: 5px 0;
+      //@include place-border();
+      // border: 0px solid transparent;
+      //border-width: 0 0 8px 0;
+      //border-image: url("#{$img_path}common/images/cart_border.png") 0 0 20 0 round;
+      border-bottom: 1px solid #e5e5e5;
+      /* @include gridborder(0, 0, 1px);*/
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    .message-wrap {
+      height: 42px;
+    }
+  }
+}
+
+.buy-detail-layout .page-layout-content {
+  padding: 0;
+  overflow: hidden;
+  .row{
+    padding: 5px 0;
+    color: #2e2e2e;
+  }
+}
+
+footer {
+  //@include border(1px);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  //  background-image: url("http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150521/vNTT-0-1432209738088.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  //background: #fff;
+  font-size: 13px;
+  min-height: 50px;
+  //padding-top: 10px;
+  //  color: #fff;
+  &.disable{
+    // background-image: url("http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150608/vNTT-0-1433754003143.png");
+  }
+  .money {
+    // color: #fff;
+    font-size: 18px;
+    &:before {
+      vertical-align: middle;
+    }
+  }
+  .row {
+    padding: 0px;
+  }
+  .active-do-pay {
+    &:after {
+      content: "确认";
+      display: block;
+      @include place-icon(0, -451px);
+      padding-left: 35px;
+    }
+  }
+}
+
+.grid .row .active-do-pay{
+  background-color: #fb4e90;
+  height: 50px;
+  color: #fff;
+}
+
+.money {
+  &:before {
+    content: '￥';
+  }
+}
+
+.count {
+  &:before {
+    content: 'x';
+
+  }
+  margin-left:1em;
+}
+
+.order-sum {
+  p {
+    color: #2d2d2d;
+  }
+  .icon-pay, .payment-item {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 7px;
+  }
+  .icon-pay-wechat {
+    @include icon-pay(0, 0);
+    &.active {
+      @include icon-pay(0, -54px);
+    }
+  }
+  .icon-pay-alipay {
+    @include icon-pay(0, -212px);
+    &.active {
+      @include icon-pay(0, -265px);
+    }
+  }
+}
+
+.goods-list-layout {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.goods-list {
+  .goods {
+    padding-right: 5px;
+    .thumb {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin-right: 5px;
+      text-align: center;
+      overflow: hidden;
+    }
+    h3 {
+      padding-bottom: 20px;
+    }
+    img {
+      width: 120px;
+      border: 1px solid #e2e2e2;
+    }
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      &.count {
+        padding-left: 3px;
+      }
+    }
+    .price{
+      color:#5b5b5b;
+    }
+  }
+}
+
+.consignee-layout {
+  .page-layout-head {
+    display:none;
+    /* padding: 0;
+    border: 0;
+    .col {
+        padding: 8px;
+    } */
+  }
+  .consignee .row {
+    border: 0;
+    margin: 0;
+    .row {
+      margin: 0;
+      border-bottom: 0px;
+    }
+  }
+}
+
+.distribution-mode .col {
+  background-color: #dadada;
+  /* @include gridborder(1px, 1px, 1px, 1px);
+  &:last-child {
+      border-width: 1px 1px 1px 0;
+  } */
+
+  &.active {
+    color: #5b5b5b;
+    background-color: #fff;
+    //border-bottom-width: 0;
+  }
+}
+
+.null-message {
+  padding: 20px;
+  color: #f00;
+  text-align: center;
+  font-size: 18px;
+}
+
+.null-msg {
+  padding: 10px 0;
+  text-align: center;
+  color: #f00;
+}
+
+.warning {
+  color: #f00;
+}
+
+.not-in-range {
+  background: #ee693c;
+  /*  margin-top: -12px; */
+
+  color: #fff;
+  position: relative;
+  .topicon {
+    background: #ee693c;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: -7px;
+    left: 50px;
+  }
+  .row {
+    position: relative;
+    padding: 5px 10px;
+  }
+}
+/**
+ * 自提点列表
+ */
+
+#couponPage {
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: #eee;
+  .coupon-list-layout {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 43px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .coupon-list {
+    padding: 10px;
+  }
+  .couponItem {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 9px 5px;
+    border-radius: 4px;
+    background-color: #fff;
+    .col {
+      &:first-child {
+        min-width: 192px;
+        min-height: 73px;
+      }
+      &:last-child {
+        text-align: center;
+        p {
+          font-size: 12px;
+          color: #999;
+          height: 40px;
+          @include gridborder(0, 0, 1px);
+          margin-bottom: 5px;
+        }
+        h2 {
+          font-size: 14px;
+          //color: #89d148;
+          &.button {
+            color: #fff;
+            padding: 3px 5px;
+          }
+        }
+      }
+    }
+    .coupon {
+      background-image: url("#{$img_path}common/images/cash_coupon.png");
+      background-size: 100%;
+      width: 192px;
+      height: 73px;
+      position: relative;
+      h2 {
+        font-size: 40px;
+        position: absolute;
+        top: 12px;
+        left: 16px;
+        color: #de6a3f;
+        width: 54px;
+        height: 54px;
+        text-align: center;
+        line-height: 54px;
+      }
+      p {
+        font-size: 12px;
+        position: absolute;
+        left: 75px;
+        top: 18px;
+        color: #fff;
+      }
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 10px;
+    z-index: 99;
+    background-color: #eee;
+    //  background: #fff;
+    @include border(1px);
+  }
+}
+
+#time-select-dialog {
+  /* background: transparent;
+  .dialog-mask {
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+  }
+  .dialog-header {
+      display: none;
+  } */
+
+  .dialog-content {
+    /* padding-top: 0;
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    background: #eee;
+    header {
+        background: #333;
+        color: #fff;
+        font-size: 17px;
+        height: 48px;
+        line-height: 50px;
+        padding: 0 10px;
+    } */
+
+    .date-item {
+      height: 60px;
+      line-height: 60px;
+      @include border(0, 0, 1px);
+      font-size: 17px;
+      color: #999;
+      text-align: center;
+      &.active {
+        background: #fff;
+        color: #000;
+      }
+    }
+    .hours-options-layout {
+      background: #fff;
+      padding: 0 8px;
+    }
+    .hours-item {
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      font-size: 17px;
+      color: #000;
+      @include gridborder(0, 0, 1px);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../common/style/_mixin";
+$foreground:#292929;
+@mixin choice() {
+  background-size: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 25px;
+  height:18px;
+  vertical-align: middle;
+  content: '';
+}
+body{
+  height:auto;
+}
+.getDetectRecord{
+  padding:10px;
+}

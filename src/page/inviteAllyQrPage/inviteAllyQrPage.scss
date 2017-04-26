@@ -1,0 +1,46 @@
+//二维码邀请
+@import "../../common/style/_mixin";
+
+.Page_wrap {
+  height: 100%;
+  text-align: center;
+  img{
+    display: inline-block;
+  }
+}
+
+.inviteQrBottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.page-invite-qrcode {
+  text-align: center;
+  color: #fff;
+  width: 65%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+ // margin-top: -30%;
+  margin-left: -32.5%;
+  line-height: 20px;
+  padding-bottom: 3%;
+  .title {
+    font-weight: normal;
+    font-size: 13px;
+    margin-top: 2%;
+  }
+  .qrcode-wrap {
+    margin-bottom: 1%;
+    img {
+      display: inline-block;
+      width: 50%;
+      border: 3px solid #fff;
+    }
+  }
+}
+@media (max-height: 480px) {
+  .page-invite-qrcode{
+    margin-top: -17%;
+  }
+}

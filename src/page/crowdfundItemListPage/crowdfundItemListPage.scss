@@ -1,0 +1,188 @@
+@import "../../common/style/_mixin";
+$colorDeep:#2e2e2e; //深色
+$colorLighter:#7c7c7c; //浅色
+
+@mixin icon() {
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 12px;
+  height:12px;
+  margin-left:5px;
+  vertical-align: middle;
+}
+@mixin choice() {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 25px;
+  height:26px;
+  vertical-align: middle;
+}
+.page-content{
+  background-color: $background;
+  padding-bottom: 50px;
+  overflow-y: auto;
+}
+//风险
+.tips{
+  margin: 5px;
+  background-color: #fff;
+  padding-bottom: 5px;
+
+  h3{
+    color: $colorDeep;
+    i{
+      background-size: 100%;
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 20px;
+      height:20px;
+      margin-right: 2px;
+      background-image: url("#{$img_path}common/images/icon_prompt.png");
+    }
+  }
+  .narrowContent{
+    position: relative;
+    margin: 5px 10px 0;
+
+    p{
+      color: $colorLighter;
+      line-height: 22px;
+      height:44px;
+      &.hide{
+        display:-webkit-box;
+        text-overflow:ellipsis;
+        overflow:hidden;
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+        position:relative;
+      }
+      &.show{
+        height:auto;
+      }
+      &:after{
+        content: " ";
+        display: inline-block;
+        width: 40px;
+      }
+    }
+    .viewMore{
+      width:100%;
+      display: block;
+      text-align: center;
+      background-color: #fff;
+      color: $foreground;
+      &:after{
+        @include icon();
+        margin:0 5px 0 2px;
+        content: "";
+        background-image: url("#{$img_path}common/images/icon_more.png");
+      }
+      &.hide{
+        background-color: transparent;
+        width:auto;
+        &:after{
+          background-image: url("#{$img_path}common/images/icon_recover.png");
+        }
+      }
+    }
+  }
+}
+
+.itemAll{
+  color: $colorLighter;
+  background-color: #fff;
+    h3{
+      line-height: 40px;
+      color: $colorDeep;
+      padding:0 15px;
+      font-size: 16px;
+    }
+  .item-list{
+    li{
+      padding: 0 10px;
+      border-top: 1px solid $borderColor;
+      margin-bottom: 10px;
+      .goodsItem{
+        display: -webkit-flex;
+        align-items: center;
+      }
+      .title{
+        font-size: 12px;
+        padding:2% 1%;
+        border-bottom: 1px solid $borderColor;
+        .nowPrice{
+          color: $foreground;
+          font-size: 14px;
+        }
+        .choice{
+          color: $colorDeep;
+          i{
+            @include choice();
+            background-image: url("#{$img_path}common/images/icon_choose_n.png");
+          }
+          &.active{
+            i{
+              background-image: url("#{$img_path}common/images/icon_choose_h.png");
+            }
+
+          }
+        }
+      }
+      .decs{
+        margin: 8px 0;
+        padding: 3px;
+        border-bottom: 1px solid $borderColor;
+      }
+      .num{
+        color: $colorDeep;
+      }
+      .thumb-wrap{
+          img{
+            display: inline-block;
+            margin:0 5px 5px 0;
+            width:70px;
+            border:1px solid $borderColor;
+          }
+      }
+      .promise{padding-bottom: 10px;font-size: 12px;}
+    }
+
+  }
+}
+
+//底部工具栏
+#toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  background-color: $background;
+  a {
+    width:90%;
+    margin: 0 auto;
+    vertical-align: middle;
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+    background-color: $foreground;
+    color: #fff;
+    border-radius: 3px;
+    &.disabled{
+      background-color: #b0b0b0;
+    }
+  }
+}
+.itemAll .item-list li.notData{
+   text-align: center;
+   margin-top: 20%;
+  border-top-color:transparent;
+   img{
+     display: inline-block;
+     width:30%;
+     margin-bottom: 5%;
+   }
+ }

@@ -1,0 +1,60 @@
+@import "../../common/style/_mixin";
+.getDetectRecord{
+  h4{
+    font-size: 16px;
+    margin-bottom: 5px;
+    &:before{
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+      width: 20px;
+      height:20px;
+      background:{
+        size: 100%;
+        image: url("#{$img_path}common/images/personalTailor/icon_infor_ic5.png");
+      }
+
+    }
+  }
+  dd{
+    &:first-child {
+      .condetail {
+        border-left: 1px solid $borderColor;
+        margin-top:0;
+      }
+    }
+  }
+  .condetail{
+    margin: 10px;
+    .basicP{
+      border-bottom: 1px solid $borderColor;
+      margin-left: 8px;
+      padding-left:10px;
+      line-height: 36px;
+      color: $colorLighter;
+      span{
+        color: $colorDeep;
+      }
+    }
+    .texta{
+      border:1px solid $borderColor;
+      min-height: 70px;
+      padding:10px;
+      color: $colorLighter;
+      margin-left: 15px;
+    }
+    .qaP{
+      margin:5px 10px;
+      color: $colorLighter;
+      & +  .texta{
+        margin-left:2em;
+      }
+    }
+  }
+}
+.noReport{
+  text-align: center;
+  font-size: 18px;
+  margin-top:50%;
+}

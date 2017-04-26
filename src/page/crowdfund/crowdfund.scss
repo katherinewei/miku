@@ -1,0 +1,131 @@
+@import "../../common/style/_mixin";
+@import "../../common/style/_grid";
+
+
+.top-nav {
+  width: 100%;
+  background-color: #fff;
+  .top-nav-li {
+    text-align: center;
+    font-size: 17px;
+    height: 39px;
+    line-height: 39px;
+  }
+  .active {
+    color: $foreground;
+    border-bottom: 1px solid $foreground;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.banner{
+  .time_day{
+      position: absolute;
+      top: 65%;
+      left: 25%;
+      width: 34%;
+      .time_img{
+        width: 50%;
+        float: left;
+
+      }
+  }
+}
+#subcategory {
+  background-color: #f6f6f6;
+  overflow-y: auto;
+}
+
+/*banner*/
+.banner {
+  position: relative;
+  min-height: 100px;
+  overflow: hidden;
+}
+
+.slider-wrap li {
+  float: left;
+}
+
+.carousel-status {
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: none;
+  div {
+    display: inline-block;
+    span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #d2d2d2;
+      margin-right: 10px;
+      display: inline-block;
+      &.sel {
+        background-color: #fb4e90;
+      }
+    }
+  }
+}
+
+.activity {
+  //padding: 0 2%;
+  h3 {
+    text-align: center;
+    color: #2e2e2e;
+    margin-top: 2%;
+    padding: 0 5%;
+    background: #fff;
+    height: 40px;
+    line-height: 40px;
+    .line {
+      background: #2e2e2e;
+      width: 100%;
+      height: 1px;
+      display: block;
+      top: 20px;
+      position: relative;
+    }
+    b {
+      padding: 0 5%;
+      background-color: #fff;
+      position: relative;
+      font-size: 18px;
+      font-weight: normal;
+      font-family: "Microsoft YaHei", "微软雅黑";
+    }
+  }
+  .item {
+    margin: 10px 0;
+    &:first-child{
+      margin: 0;
+    }
+    img {
+      min-height: 132px;
+    }
+    .textWrap {
+      background-color: #fff;
+      padding: 2%;
+      span {
+        display: block;
+        width: 70%;
+        float: left;
+      }
+    }
+    em {
+      font-style: normal;
+      float: right;
+      text-align: center;
+      display: block;
+      width: 25%;
+    }
+  }
+}
+
+.not-has-cate-msg {
+  text-align: center;
+  padding: 10% 0;
+  font-size: 16px;
+}

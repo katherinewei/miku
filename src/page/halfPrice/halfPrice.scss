@@ -1,0 +1,132 @@
+@import "../../common/style/_mixin";
+body {
+    background-color: #f06160;
+}
+
+#halfPage {
+    padding-bottom: 50px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .header-banner {
+        min-height: 124px;
+    }
+    .active-list-layout {
+        padding: 5px;
+        .active-list {
+            background-color: #fff;
+            li {
+                padding: 3px;
+                /* border-bottom: 1px solid #f06160; */
+                border-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAAGXy9/eAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2dpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpCNkE3RjlGRTY5NjYxMUU0OTgyRUFDMzc3QTc5MDc5RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0Q0ExQjQwNEUxOTUxMUU0QTJBN0NBNUQ2Nzk4QUY1OCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0Q0ExQjQwM0UxOTUxMUU0QTJBN0NBNUQ2Nzk4QUY1OCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDMTcxQkQ0NzhDQTIxMUU0ODQ0MkVDODVBNDJFQkNCMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDMTcxQkQ0ODhDQTIxMUU0ODQ0MkVDODVBNDJFQkNCMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Po+8aZwAAABESURBVHjaYviQmPAfIIAYQARAADGCWQwMjAABBOYxgVgAAYQQAgKAAIJxwIAJKsoI48ABQICh6EEC/5kYcAAWmAp0CQCftxTl+rC0VwAAAABJRU5ErkJggg==') 2 stretch;
+                border-width: 0 0 1px 0;
+                border-style: solid;
+            }
+        }
+        .goods {
+            border: none;
+            padding: 3px;
+            .goods-info {
+                padding: 0;
+            }
+            .add-cart {
+                bottom: 3px;
+            }
+            .price{
+                color:#000;
+                font-size:18px;
+            }
+            .refprice{
+                margin-left:0;
+                &:before{
+                    content:"￥";
+                }
+            }
+        }
+    }
+    .today-recommend {
+        color: #fff;
+    }
+    .goods {
+        .add-cart {
+            background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150421/vNTT-0-1429591751062.png);
+            background-size: 85px 94px;
+            background-repeat: no-repeat;
+            background-position: 0 -55px;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            bottom: 0px;
+            right: 8px;
+        }
+        .count {
+            bottom: 30px;
+            right: 12px;
+            background: #750f0c;
+        }
+    }
+}
+
+.main-goods {
+    min-height: 300px;
+    margin: 5px;
+    background-color: #fff;
+    .goods {
+        border: none;
+        .listimg {
+            min-height: 234px;
+            @include gridborder(0,0,1px);
+        }
+        .title {
+            color: #333;
+            padding: 5px 0;
+        }
+        .price-layout {
+            float: left;
+            border-radius: 4px;
+            border: 1px solid #dd2727;
+            background-color: #dd2727;
+            .price, .refprice {
+                float: left;
+            }
+            .price {
+                background-color: #fff;
+                border-radius: 4px 0 0 4px;
+                padding: 3px 5px 0 10px;
+            }
+            .refprice {
+                color: #fff;
+                padding: 3px 10px 0 5px;
+                text-decoration: none;
+            }
+        }
+    }
+    .main-goods-icon {
+        background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150421/vNTT-0-1429591751062.png);
+        background-size: 85px 94px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 85px;
+        height: 45px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.not-has-goods {
+    .goods {
+        border: none;
+    }
+}
+
+/* #page-footer {
+    position: fixed;
+    bottom: 49px;
+    width: 100%;
+    @include border(1px);
+    background: #fff;
+    .button.enter{
+        background: #f06160;
+    }
+} */

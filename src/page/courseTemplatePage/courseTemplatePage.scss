@@ -1,0 +1,49 @@
+@import "../../common/style/_mixin";
+@import "../../page/csadPage/csadPage";
+.templateCourseContent{
+  margin: 20px;
+  border: 1px solid $borderColor;
+}
+.courseMsg{
+  padding:10px;
+  width:100%;
+  border-bottom: 1px solid $borderColor;
+  overflow: hidden;
+  position: relative;
+  .basicItemL{
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 10px;
+  }
+  .courseCoverImg{
+    position: relative;
+    img{
+      position: relative;
+      z-index: 0;
+    }
+    .file{
+      width:100%;
+      opacity: 0;
+      position: absolute;
+      left:0;
+      top:0;
+      z-index: 9;
+      height:100%
+    }
+  }
+}
+.sectionMsg{
+  .courseTable{
+    border: 1px solid $borderColor;
+    td{
+      border: 1px solid $borderColor;
+    }
+  }
+}
+
+input[type="tel"]{
+  width:50px;
+}
+input[type="text"], input[type="tel"]{
+  border-bottom: 1px solid $borderColor;
+}

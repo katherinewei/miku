@@ -1,0 +1,31 @@
+/**
+ * Created by Spades-k on 2016/6/29.
+ * version 0.0.1
+ */
+@import "../../common/style/_mixin";
+$themelinecolor:#E7E7E7;
+$hcolor:#7c7c7c;//灰色字体颜色
+$bgcolor: #FAFBFD;
+
+.page-content{
+  position: static;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: $bgcolor;
+  padding-top: 15px;
+  padding-bottom: 0;
+  .allfans{
+    li{
+      background-color: white;
+      padding: 5px 20px;
+      border-bottom: 1px solid $themelinecolor;
+      .pic{
+        img{
+          height: 46px;
+          width: 46px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

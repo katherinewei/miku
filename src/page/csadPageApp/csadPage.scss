@@ -1,0 +1,1961 @@
+@import "../../common/style/_mixin";
+$navbackground:#313943;//导航条颜色
+$navcolor:#adafb1;//导航条文字颜色
+$navsubbackground:#e1e2e6;//次导航条颜色
+$color:#ff6868;//渲染色
+$hover:#f6f6f6;//鼠标经过颜色
+$btncolor:#292929;//按钮颜色
+$border:#e5e5e5;//分割线颜色
+$color3:#b3b3b3;//次次文字颜色
+/*
+*去掉安卓滚动条
+*/
+body, button, input, select, textarea {
+  font: 14px/1.5  'Microsoft YaHei', Arial;
+}
+.chat01_content::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+  background-color: #F5F5F5 !important;
+}
+
+.chat01_content::-webkit-scrollbar
+{
+  width: 6px !important;
+  background-color: #F5F5F5 !important;
+}
+
+.chat01_content::-webkit-scrollbar-thumb
+{
+  background-color: #a9abaf !important;
+}
+
+html,body{
+  -webkit-user-select:auto;
+}
+input,textarea{
+  outline: none;
+}
+iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+body{
+  overflow-y: auto;
+}
+
+/*头部*/
+#header{
+  width:100%;
+  padding:0 20px;
+  background: #313943;
+  color: #fff;
+  line-height: 40px;
+
+}
+#logout{
+  //border: 1px solid $navcolor;
+  //color: $navcolor;
+  height: 27px;
+  line-height: 27px;
+  border-radius: 3px;
+  position: absolute;
+  bottom:15px;
+  left:5%;
+  width:90%;
+  text-align: center;
+  background:{
+    image: url("#{$img_path}common/images/personalTailor/csad/icon_logout.png");
+    repeat: no-repeat;
+    position: center;
+  }
+}
+/*头像大小*/
+.img-circle-50{
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+/*头部*/
+header{
+  background-color: $navsubbackground;
+  position: relative;
+  z-index: 1;
+  .headPicCol{
+    height:80px;
+    //width: 120px;
+    background-color: $navsubbackground;
+   // text-align: center;
+    display: inline-block;
+  }
+  #headerimg{
+    padding:17px 0 17px 40px;
+    position: relative;
+    .img-circle-50{
+      position: relative;
+    }
+  }
+  .wxno-user{
+    color: $colorLighter;
+    font-size: 12px;
+
+  //  text-align: left;
+   // margin-left: 55px;
+  }
+  .login_user_title{
+    padding-left:5px;
+    display: inline-block;
+    padding-top: 5px;
+  }
+  .headImg{
+    position: relative;
+    width: 60px;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+  }
+  .cur-online{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width:15px;
+    height:15px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    &.online{
+      background-color: #37B145;
+    }
+    &.leave{
+    background:{
+      image: url("#{$img_path}common/images/personalTailor/csad/icon_logout.png");
+      size:100%;
+    }
+    &.offline{
+      background-color: $colorLighter;
+    }
+
+    }
+  }
+  /*顶部呼叫中心*/
+  .callWrap{
+    background-color: $navsubbackground;
+    height:80px;
+    width:100%;
+    margin: 0 0 4px 120px;
+    position: absolute;
+    top: 0;
+
+    p{
+      float: left;
+      line-height: 80px;
+      padding-left: 36px;
+    }
+
+    ul{
+      float: left;
+      li{
+        position: relative;
+        padding: 7px 7px 0;
+        display: inline-block;
+        text-align: center;
+        .badge{
+          top: 6px;
+          margin-left: 5px;
+        }
+      }
+      .callTitMore{
+        line-height: 80px;
+        display: inline-block;
+        height: 80px;
+        vertical-align: top;
+        margin-left: 40px;
+      }
+    }
+  }
+}
+
+/*内容*/
+.container{
+  width:100%;
+  height:100%;
+  position: absolute;
+  top: 0;
+  padding-top: 80px;
+  .leftNav{
+    width:60px;
+    height:100%;
+    float: left;
+    margin-right: -100%;
+    background-color: $navbackground;
+    position: relative;
+
+    ul{
+     // border-bottom:1px solid #464F5B;
+      position: relative;
+      z-index: 1;
+
+    }
+    li{
+      height:48px;
+      color: $navcolor;
+      text-align: center;
+     // border-bottom:1px solid #1C222A;
+      //border-top:1px solid #464F5B;
+      position: relative;
+      cursor: pointer;
+
+      .badgegroup{
+        top: 7px;
+      }
+      p{
+        background-color: rgba(40,48,57,.6);
+        position: absolute;
+        left: 70px;
+        width: 80px;
+        line-height: 38px;
+        border-radius: 2px;
+        top: 50%;
+        margin-top: -20px;
+        color: #fff;
+        opacity: 0;
+        z-index: -1;
+        display: none;
+        transition: opacity .5s ease-in 0s;
+        &.show{
+          opacity: 1;
+          z-index: 9;
+          display: block;
+        }
+        &:after{
+          content: '';
+          border-color: transparent rgba(40,48,57,.6) transparent transparent ;
+          border-style: solid;
+          border-width: 6px;
+          height: 0;
+          width: 0;
+          position: absolute;
+          top: 32%;
+          left: -12px;
+        }
+      }
+      i{
+        background: {
+          size: 100%;
+        };
+        width:60px;
+        height:48px;
+        display: block;
+        margin: 0 auto;
+        content: '';
+       // top: 7px;
+        position: relative;
+        background:{
+          size: 53%;
+          repeat: no-repeat;
+          position: center;
+        }
+        &:hover{
+          background-color: #202429;
+        }
+      }
+      &.active{
+
+        i{
+          background-color: #202429;
+        }
+        //&.callCenter{
+        //  i{
+        //    background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic1.png");
+        //  }
+        //}
+        //&.chatMessage{
+        //  i{
+        //    background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic2.png");
+        //  }
+        //}
+        //&.managementList{
+        //  i{
+        //    background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic3.png");
+        //  }
+        //}
+        //&.fillReportAndBox{
+        //  i{
+        //    background-image: url("#{$img_path}common/images/personalTailor/csad/icon_write.png");
+        //  }
+        //}
+        //
+        //&.salesTracking{
+        //  i{
+        //    background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic4.png");
+        //  }
+        //}
+        //&.payVisit{
+        //  i{
+        //    background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic5.png");
+        //  }
+        //}
+        //i{
+        //  background-color: $background;
+        //}
+      }
+      &.callCenter{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic1_h.png");
+        }
+      }
+      &.chatMessage{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic2_h.png");
+        }
+      }
+      &.managementList{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic3_h.png");
+        }
+      }
+      &.fillReportAndBox{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/icon_writeing.png");
+        }
+      }
+      &.salesTracking{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic4_h.png");
+        }
+      }
+      &.payVisit{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic5_h.png");
+        }
+      }
+      &.viewUserLog{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic6_h.png");
+        }
+      }
+      &.performanceQuery{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/guide_ic7_h.png");
+        }
+      }
+    }
+  }
+  .rightContainer{
+    float: left; width: 100%; height: 100%;  padding-top:4px;
+    .wrap {
+      margin-left: 64px;/* background: $background; */
+      height: 100%;
+      background-color: #edeff4;
+
+      section{
+        height:100%;}
+      .wrapper{
+        width:100%;overflow-y: auto;
+        height:100%
+      }
+      .contentWrap{
+        height:100%;
+      }
+
+    }
+  }
+}
+
+/*聊天消息为空*/
+#nullchater,#noCallMsg{
+  text-align: center;
+  width: 100%;
+  margin-top: 150px;
+  font-size: 20px;
+}
+
+.chatMessageIM{
+  height:100%;
+  section{
+    height:100%;
+  }
+}
+
+
+/*聊天列表*/
+/*聊天列表左*/
+.accordion-inner {
+  margin-right: 4px;
+  height:100%;
+  width:280px;
+  position: relative;
+
+}
+.visit_box,.accordion-inner{
+  .badge{
+    left: 30px;
+    top: 30px;
+  }
+}
+.currentWin{
+  background-color: $background;
+  &:before{
+    content: '';
+    border-color: transparent transparent transparent $borderColor;
+    border-style: solid;
+    border-width: 8px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 35%;
+    right: -17px;
+
+  }
+  &:after {
+    content: '';
+    border-color: transparent transparent transparent $background;
+    border-style: solid;
+    border-width: 8px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 35%;
+    right: -16px;
+
+  }
+}
+/*聊天列表右*/
+#chat01{
+  background-color: $background;
+  padding:0 10px;
+  height:75%;
+  //#ext{
+  //  border: 1px solid #e5e5e5;
+  //  padding: 6px 10px;
+  //  display: inline-block;
+  //  border-radius: 5px;
+  //  font-size: 12px;
+  //}
+
+  .chatMess{
+    position: relative;
+    min-height:67px;
+    p1.ex_center{
+      background: #e5e5e5;
+      padding: 6px 25px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    p2{
+      position: absolute;
+      top: 0;
+
+    }
+    .chatTime{
+      width: 100%;
+      text-align: center;
+      color: $colorLighter;
+    }
+    .userPhoto{
+      position: absolute;
+      top: 20px;
+
+      img{
+        width:50px;
+        height:50px;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+    }
+    .chat-content-p3{
+      text-align: left;
+     max-width: 360px;
+      //width:80%;
+      img{
+        max-width:200px;
+        &.emoji,&.em-emotion{
+          display: inline-block;
+          width:30px;
+        }
+      }
+    }
+
+    .boxMessage{
+      background: #AAAAB4;
+      border-radius: 5px;
+      padding-bottom: 10px;
+      width: 200px;
+      display: inline-block;
+      text-align: left;
+      &.viewReport{
+        padding:0 18px;
+      }
+      .reportViewImg{
+        margin:10px auto 20px;
+      }
+      .title_p{
+        font-size: 16px;
+      }
+      .describe_p{
+        font-size: 12px;
+       // color: $colorLighter;
+        border-bottom: 1px solid #555;
+        line-height: 18px;
+        margin-bottom: 10px;
+      }
+      .viewReportInChat{
+        color: #555;
+        display: block;
+        margin: 0 auto;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+    .curNickName{
+     position: absolute;
+    top: 9px;
+    left: 55px;
+    }
+    .chat-content-p3{
+      position: relative;
+      //right: 66px;
+      //
+      line-height: 26px;
+      border-radius: 5px;
+      padding: 7px;
+      top: 30px;
+      margin-bottom:30px;
+      display: inline-block;
+      word-wrap: break-word;
+      &:after{
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        content: "";
+        position: absolute;
+        top: 6px;
+        width:0;
+        height:0;
+      }
+
+    }
+
+
+    &.right{
+      p2{
+        right:0;
+      }
+      .userPhoto{
+        right: 0;
+      }
+      .chat-content-p3{
+        right:60px;
+        background-color: #AAAAB4;
+        &:after{
+          border-left: 8px solid #AAAAB4;
+          right: -6px;
+        }
+        &.viewBoxInChat{
+          background-color: #fff;
+          &:after{
+            border-left: 8px solid #fff;
+          }
+          .boxMessage{
+            background-color: #fff;
+          }
+          img{
+            margin: 20px auto 0;
+            &.boxImg{
+              width:180px;
+            }
+          }
+        }
+      }
+
+    }
+    &.left{
+      p2{
+        left:0;
+      }
+      .userPhoto{
+        left: 0;
+      }
+      .chat-content-p3{
+        left:60px;
+        background-color: #fff;
+        &:after{
+          border-right: 8px solid #fff;
+          left: -6px;
+        }
+      }
+    }
+  }
+}
+.chat01_title{
+  min-height: 100px;
+  height:18%;
+  border-bottom: 1px solid $borderColor;
+  overflow: hidden;
+}
+.chat01_content {
+  height: 78%;
+  overflow-y: auto;
+  padding-top:10px;
+}
+#callCenterUL{
+  &.chat03_content_ul{
+    height:100%;
+  }
+}
+.chat03_content_ul{
+  position: absolute;
+  height:90%;
+  border: 1px solid $borderColor;
+  overflow-y: auto;
+  resize: none;
+  width:100%;
+  background-color: #fff;
+  &.badge{
+    margin-left: -100px;
+    top: 30px;
+  }
+
+  li{
+    height:100px;
+    border-bottom:1px solid $borderColor;
+    padding: 20px 10px;
+    position: relative;
+    cursor: pointer;
+    img{
+      width:50px;
+      height:50px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin:10px 10px 0 0 ;
+    }
+    .message_main_item{
+      span{
+        margin-top: 20px;
+        display: block;
+      }
+      i{
+        display: block;
+        font-size: 12px;
+        font-style: normal;
+        color: $colorLighter;
+      }
+    }
+    .message_main_time{
+      text-align: center;
+      position: relative;
+      .message_main_time_span{
+        //margin-top: 5px;
+        display: inline-block;
+        color: $colorLighter;
+      }
+      .isTempIcon{
+        position: absolute;
+        right: 20px;
+        bottom: -13px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background-image:  url("#{$img_path}common/images/personalTailor/csad/icon-noname.png");
+      }
+    }
+    .responseBtn{
+      span{
+        border: 1px solid #FF6868;
+        display: block;
+        width: 80%;
+        margin: 0px auto 0;
+        text-align: center;
+        padding: 5px 0;
+        color: #FF6868;
+      }
+    }
+
+  }
+  .chat-content-p3 {
+    border: 1px solid $borderColor;
+    white-space: pre-wrap;
+    background-color: #C0C0C0;
+    position: relative;
+    line-height: 26px;
+    border-radius: 5px;
+    padding: 7px;
+    top: 30px;
+    margin-bottom: 30px;
+    display: inline-block;
+    word-wrap: break-word;
+    img {
+      max-width: 200px;
+      &.emoji{
+        display: inline-block;
+        width:30px;
+      }
+    }
+    &:after {
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      content: "";
+      position: absolute;
+      top: 6px;
+      width: 0;
+      height: 0;
+    }
+  }
+  .chatMess{
+    position: relative;
+    min-height:67px;
+    p1.ex_center{
+      background: #e5e5e5;
+      padding: 6px 25px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    p2{
+      position: absolute;
+      top: 5px;
+
+    }
+    .userPhoto{
+      position: absolute;
+      top: 20px;
+
+      img{
+        width:50px;
+        border-radius: 50%;
+      }
+    }
+    .boxMessage{
+      background: #AAAAB4;
+      border-radius: 5px;
+      padding-bottom: 10px;
+      width: 200px;
+      display: inline-block;
+    }
+    &.right{
+      p2{
+        right:0;
+      }
+      .userPhoto{
+        right: 0;
+      }
+      .chat-content-p3{
+        right:60px;
+        background-color: #AAAAB4;
+        &:after{
+          border-left: 8px solid #AAAAB4;
+          right: -6px;
+        }
+      }
+
+    }
+    &.left{
+      p2{
+        left:0;
+      }
+      .userPhoto{
+        left: 0;
+      }
+      .chat-content-p3{
+        left:60px;
+        background-color: #fff;
+        &:after{
+          border-right: 8px solid #fff;
+          left: -6px;
+        }
+      }
+    }
+  }
+}
+.chatRight {
+  position: relative;
+  width:100%;
+}
+.chat02 {
+  border: 1px solid #e5e5e5;
+  //padding-bottom: 10px;
+  height:25%;
+  background-color: #fff;
+
+}
+.chat02_title {
+  height: 50px;
+  position: relative;
+  padding-left:10px;
+  background-color: $background;
+  .chat02_title_btn {
+    cursor: pointer;
+    float: left;
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 7px 0;
+    &.showEmotionDia{
+      background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic1.png");
+    }
+    &.startRecord{
+      background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic4.png");
+    }
+    &.stopRecord{
+       background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic5.png");
+     }
+    &.sendPic{
+      background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic2.png");
+    }
+    &.sendAudio{
+      background: url("#{$img_path}common/images/personalTailor/csad/dialogue_ic3.png");
+    }
+    &.quickReplyBtn {
+      background: {
+        image: url("#{$img_path}common/images/personalTailor/csad/icon-speed.png");
+        repeat: no-repeat;
+        position: center center;
+      }
+    }
+    &.addQuickReplyBtn {
+      background: {
+        image: url("#{$img_path}common/images/personalTailor/csad/icon_dayjoin.png");
+        repeat: no-repeat;
+        position: center center;
+      }
+    }
+  }
+  #quickReply{
+    position: absolute;
+    bottom: 50px;
+    border: 1px solid $borderColor;
+    background-color: #fff;
+    left: 0;
+    width:300px;
+    dd{
+      line-height: 20px;
+      padding: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      max-height:54px;
+      border-bottom:1px solid $borderColor;
+      word-break: break-word;
+
+
+    }
+  }
+}
+.opareReply,.setCsadStatus{
+  position: absolute;
+  width: 80px;
+  background-color: rgba(0,0,0,.5);
+  color: #fff;
+  line-height: 22px;
+  padding: 5px;
+  z-index: 9;
+  li:first-child{
+    border-bottom: 1px dashed #fff;
+  }
+}
+//删除联系人按钮
+.deleteContactMan{
+  width: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  line-height: 22px;
+  padding: 5px 0;
+  text-align: center;
+}
+.chat02_content {
+  height: 129px;
+  border-top: 1px solid #e5e5e5;
+  textarea {
+    resize: none;
+    width: 100%;
+    border: none;
+    height: 100%;
+  }
+}
+.chat02_bar {
+  //text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  span {
+    border: 1px solid #e5e5e5;
+    padding: 7px 22px;
+    margin-right: 10px;
+  }
+}
+
+/*表情*/
+.wl_faces_box {
+  background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/wlf_bg.png') repeat 0 0;
+  position: absolute;
+  width: 428px;
+  height: 225px;
+  bottom: 36px;
+  left: -47px;
+  display: none;
+  .wl_faces_content {
+    background: #fff;
+    border: 1px #ccc solid;
+    width: 417px;
+    height: 216px;
+    margin: 3px 4px;
+    .title {
+      background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/wlf_title_bg.jpg') repeat-x 0 0;
+      height: 40px;
+      position: relative;
+      li {
+        position: absolute;
+        display: block;
+        &.title_name {
+          background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/wlf_title_btn.jpg') no-repeat 0 0;
+          width: 82px;
+          height: 30px;
+          bottom: 0;
+          _bottom: -2px;
+          left: 15px;
+          text-align: center;
+          line-height: 32px;
+          font-weight: bold;
+          color: #333;
+        }
+        &.wl_faces_close {
+          right: 8px;
+          top: 15px;
+        }
+        &.wl_faces_close span {
+          background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/icon.png') repeat-x 0 0;
+          cursor: pointer;
+          display: block;
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+  .wl_faces_main ul {
+    margin: 12px 28px;
+    overflow: hidden;
+    border-top: 1px $borderColor solid;
+    border-left: 1px $borderColor solid;
+    width: 360px;
+    li {
+      float: left;
+      border-right: 1px $borderColor solid;
+      border-bottom: 1px$borderColor solid;
+      height: 26px;
+      width: 26px;
+      margin: -1px 0 0 -1px;
+      padding: 4px 2px;
+      text-align: center;
+      img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+  .wlf_icon {
+    background: url('http://187.unesmall.com/h5/html/web-im-master/static/img/layer_arrow.png') no-repeat 0 0;
+    position: absolute;
+    width: 22px;
+    height: 9px;
+    bottom: -4px;
+    _bottom: -11px;
+    left: 61px;
+  }
+}
+
+
+//消息提醒
+.badgegroup,.badge{
+  position: absolute;
+  left: 50%;
+  min-width: 16px;
+  height: 16px;
+  background: $color;
+  text-align: center;
+  color: #fff;
+  line-height: 16px;
+  top: 20px;
+  font-size: 12px;
+  padding: 0 5px;
+  border-radius: 8px;
+  margin-left: 10px;
+  animation: rotateC .5s linear infinite;
+  &.badgeAnon{
+    background-color: $btncolor;
+  }
+}
+@keyframes rotateC {
+  0% {
+    transform: translateY(0);
+  }
+  33% {
+    transform: translateY(-2px) ;
+  }
+  66% {
+    transform: translateY(0px) ;
+    //border-bottom-right-radius: 50px;
+  }
+
+  100% {
+    transform: translateY(2px);
+  }
+}
+/*聊天列表*/
+.groupListUl,#momogrouplistUL{
+  //margin-top: 80px;
+}
+#momogrouplistUL{
+  position: relative;
+}
+#managementList_Wrap{
+  height:100%;
+}
+//.refreshGroupBtn{
+//  position: fixed;
+//  bottom: 5px;
+//  left: 280px;
+//  background-color: $navbackground;
+//  color: #fff;
+//  padding: 5px 15px;
+//  border-radius: 5px;
+//}
+
+/*分组以及搜索以及右键*/
+/*分组*/
+.groupsContent{
+
+  position: relative;
+  width:280px;
+  height:100%;
+  background-color: #fff;
+  overflow-y: auto;
+  border:1px solid $borderColor;
+
+  li{
+
+    &.hideGroupMember{
+      .title{
+        &:before{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/icon_fold.png");
+        }
+      }
+    }
+    .title{
+      height:54px;
+      border-bottom:1px solid $borderColor;
+      line-height: 54px;
+      margin: 0 0 0 5%;
+      width: 95%;
+      cursor: pointer;
+      &:before{
+        background: {
+          image:url("#{$img_path}common/images/personalTailor/csad/icon_unfold.png");
+          size: 100%;
+        }
+        vertical-align: middle;
+        width:30px;
+        height:30px;
+        content: '';
+        display: inline-block;
+      }
+      .number{
+        float: right;
+        color: $colorLighter;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+    }
+    dl{
+      dd{
+        padding-left: 4%;
+        line-height: 46px;
+        cursor: pointer;
+        position: relative;
+        &.cur{
+          background-color: $background;
+        }
+        span{
+          width: 190px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .edit{
+          position: absolute;
+          right:10px;
+          top:15px;
+          width:15px;
+          height:15px;
+          display: block;
+          background: {
+            image:url("#{$img_path}common/images/personalTailor/csad/icon_edit.png");
+            size: 100%;
+          };
+        }
+      }
+      img{
+        width: 36px;
+        height:36px;
+        border-radius: 50%;
+        margin:5px 10px;
+        display: inline-block;
+      }
+      em{
+        font-size: 18px;
+        margin-right: 5px;
+      }
+      i{
+        font-style: normal;
+
+      }
+    }
+    .groupMember{
+      transition: all 0.5s ease-in 0s;
+      //max-height:600px;
+      overflow-y: auto;
+    }
+    &.hideGroupMember{
+      .groupMember{
+        opacity: 0;
+        //height:0;
+        display: none;
+      }
+    }
+  }
+  .nextBtn{
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    border-top: 1px dashed $borderColor;
+    line-height: 22px;
+    padding-top: 5px;
+    margin-top: 5px;
+     border-bottom: 1px solid $borderColor;
+    cursor: pointer;
+  }
+}
+/*右键*/
+.rightMenu {
+  position:absolute;
+  top:-9999px;
+  left:-9999px;
+  ul {
+    float: left;
+    box-shadow: 0 0 5px #edecec;
+    background-color: #fff;
+    li {
+      clear: both;
+      height: 30px;
+      cursor: pointer;
+      line-height: 30px;
+      white-space: nowrap;
+      padding: 0 10px;
+
+      &.sub {
+        &:after{
+          background: {
+            image: url("#{$img_path}common/images/personalTailor/csad/icon_more.png");
+            size: 100%;
+          };
+          content: '';
+          width:20px;
+          height: 20px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      &:hover {
+        background-color: $background;
+      }
+    }
+    ul {
+      display: none;
+      position: absolute;
+    }
+  }
+}
+
+/*搜索*/
+@mixin icon-image($left, $top) {
+  background-image: url("#{$img_path}common/images/personalTailor/csad/icon_search.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: $left $top;
+}
+.search-wrap {
+  //margin: 0 8px;
+ // padding: 8px 0;
+  //overflow: hidden;
+  height:80px;
+  padding: 18px 0;
+  background-color: $navsubbackground;
+  //position: fixed;
+  width:280px;
+  .icon-search {
+    @include icon-image(center, center);
+  }
+
+  .search-box {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 25px;
+    background-color: #fff;
+    overflow: hidden;
+    margin: 0 75px 0 10px;
+  }
+  .icon-search, .icon-wrap {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .icon-search {
+    left: 0;
+  }
+  .icon-wrap {
+    right: 0;
+    top: 18px;
+    width: 75px;
+    i{
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin: 0 5px;
+      background:{
+        repeat: no-repeat;
+        size: cover;
+      }
+      cursor: pointer;
+    }
+  }
+  .input-wrap{
+    width:100%;
+
+  }
+  .search-input {
+    width: 100%;
+    height: 40px;
+    line-height: normal;
+    padding: 4px 4px 4px 40px;
+    border-radius: 4px;
+    border-bottom-width:0;
+  }
+  .icon-add {
+    background:{
+      image: url("#{$img_path}common/images/icon_accretion.png");
+    }
+  }
+  .icon-refresh {
+    background:{
+      image: url("#{$img_path}common/images/icon_refresh.png");
+    }
+  }
+}
+#append{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 84px;
+  left: 0;
+  background: #fff;
+  padding:10px 0;
+  height:100%;
+  border-top:1px solid $borderColor;
+  .search_result_tit {
+    color: $colorLighter;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+    dd{
+      img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 5px 10px;
+        display: inline-block;
+      }
+      span{
+        width: 190px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      i{
+        font-style: normal;
+      }
+  }
+
+  .resultItem{
+    margin-bottom:10px;
+  }
+}
+
+/*个人信息 轨迹 && 报告 && 盒子*/
+.rightNa{
+  height:100%;
+  overflow-y: auto;
+  border-left: 5px solid #fff;
+}
+.csadUserMessageContainer{
+  background-color: #fff;
+  overflow-y: auto;
+  .csadUserMsgTitle{
+    border-bottom:1px solid $borderColor;
+    width:100%;
+    height:62px;
+    margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: #fff;
+    ul{
+      border:1px solid $borderColor;
+      border-bottom-width:0;
+      display: inline-block;
+    }
+    li{
+      //width:160px;
+      text-align: center;
+      border-right:1px solid $borderColor;
+      border-bottom:1px solid $borderColor;
+      background-color: $background;
+      line-height: 60px;
+      display: inline-block;
+      padding:0 20px;
+      cursor: pointer;
+
+      &:last-child{
+        border-right-width:0;
+      }
+      &.activeTab{
+        border-bottom:1px solid #fff;
+        background-color: #fff;
+      }
+    }
+  }
+  .csadUserMsgContent{
+    padding-top: 72px;
+  }
+
+}
+
+/*呼叫中心*/
+.csadCallInUserMessageContainer{
+  background: #fff;
+  .callInCenterUserMsg{
+    margin: 0px 3%;
+    height:100%;
+    overflow-y: auto;
+  }
+  > .grid{
+    height:100%;
+    > .row{
+      height:100%;
+    }
+  }
+}
+.csadCallInRightContent{
+  height:100%;}
+
+/*** 用户轨迹**/
+.IframeBoxContent{
+  width: 650px;
+  margin: 5% auto 0;
+  height: 85%;
+  position: relative;
+}
+.csadUserMessageContainer{
+  height:100%;
+}
+#large_container{
+  position: fixed;
+  z-index: 10;
+  left:0;
+  bottom: 0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,.5);
+  .bigImgContent{
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    img{
+      max-width: 1920px;
+    }
+  }
+  .closeBigImg{
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: url("http://mikumine.b0.upaiyun.com/common/images/personalTailor/csad/icon-closeWhite.png") no-repeat;
+    background-size: 100% auto;
+    display: block;
+    text-indent: -999px;
+  }
+}
+
+//蜜月回访
+#homemoonretrn{
+  .chat_box{
+    height: 100%;
+   // overflow-y: auto;
+  }
+  .mainContainer{
+    height: 100%;
+    //overflow-y: auto;
+  }
+}
+/*专家信息*/
+.csadDetailMsgContent{
+  width:440px;
+  margin:10% auto;
+  height:80%;
+  overflow-y: auto;
+}
+
+
+/*课程模版*/
+#courseTemplateContainer{
+  margin: 20px;
+  .nav{
+    width:100%;
+    overflow: hidden;
+    li{
+      float: left;
+      border-top: 3px solid transparent;
+     // margin-bottom: -2px;
+     // margin-right: 5px;
+      display: block;
+      padding: 10px 15px;
+      &.active{
+        border-top: 3px solid $btncolor;
+        background-color: $background;
+      }
+    }
+  }
+}
+
+
+.ContentDiv{
+  margin: 20px;
+ // border: 1px solid $borderColor;
+  textarea{
+    width:auto;
+    vertical-align: middle;
+    height:40px;
+    border: 1px solid $btncolor;
+  }
+  .btn{
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    background-color: $btncolor;
+    border-radius: 5px;
+    color: #fff;
+    line-height: 34px;
+    padding:0 15px;
+  }
+  &.courseListContent,&.lessonListContent{
+    height: 650px;
+    overflow-y: auto;
+
+    ul{
+      border:1px solid $borderColor;
+      border-top-width:0;
+     // height:600px;
+      margin-top:50px;
+    }
+    .headerLi{
+      position: fixed;
+      width:100%;
+      background-color: #fff;
+      z-index: 2;
+      border-bottom:1px solid $borderColor;
+    }
+    li,.headerLi{
+      line-height: 50px;
+      text-align: center;
+    }
+    li{
+      border-bottom:1px solid $borderColor;
+      &:last-child{
+        border-bottom-width:0;
+      }
+      .btn{
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.courseMsg{
+  padding:10px;
+  width:100%;
+  border: 1px solid $borderColor;
+  border-bottom-width: 0;
+  overflow: hidden;
+  position: relative;
+  .basicItemL{
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 10px;
+  }
+  .courseCoverImg{
+    position: relative;
+    img{
+      position: relative;
+      z-index: 0;
+    }
+    .file{
+      width:100%;
+      opacity: 0;
+      position: absolute;
+      left:0;
+      top:0;
+      z-index: 9;
+      height:100%
+    }
+  }
+}
+.sectionMsg,.LessonMsg{
+  table{
+    width:100%;
+    text-align: center;
+    //border: 1px solid $borderColor;
+    td{
+      border: 1px solid $borderColor;
+    }
+  }
+  .courseTable,.LessonTable{
+    table{
+      min-height:265px;
+    }
+    .step_add{
+      text-align: left;
+    }
+  }
+  .section_add,.LessonTable{
+    dd{
+      margin: 10px 0;
+    }
+  }
+
+  .tdSectionLesson{
+    position: relative;
+    width:265px;
+  }
+  .btnGroupSC{
+    //position: absolute;
+    //bottom:0;
+  }
+  .lessonDetail{
+    text-align: left;
+  }
+}
+
+.userLessonListTemplate{
+  .chooseDialog{
+    width:960px;
+  }
+}
+/*销售追踪*/
+#salesTracking_Wrap{
+  .csadUserMsgContent,.containerQuestion{
+    height:100%;
+  }
+}
+//打印分析报告
+.printReportContent{
+  width: 756px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+
+//显示二维码
+.showUserQR{
+  position: fixed;
+  background-color: rgba(0,0,0,.5);
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index: 2;
+  section{
+    width:250px;
+    height:250px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+/*右上角*/
+.rightHead{
+  float: right;
+  padding: 23px;
+  span{
+    //padding: 0 10px;
+    line-height: 80px;
+    width:34px;
+    height:34px;
+    display: inline-block;
+    cursor: pointer;
+    background: {
+      repeat: no-repeat;
+      size: 100%;
+    };
+    margin: 0 15px;
+    &.addNewCsad{
+      background-image:  url("#{$img_path}common/images/personalTailor/csad/icon_add_expert.png");;
+    }
+    &.editCsad{
+      background-image:  url("#{$img_path}common/images/personalTailor/csad/icon_edit.png");;
+    }
+  }
+}
+
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url("#{$img_path}common/images/personalTailor/csad/dialogue_delect.png");
+  background-size: 100%;
+  display: block;
+  cursor: pointer;
+}
+//input[type="tel"]{
+//  width:50px;
+//}
+//input[type="text"], input[type="tel"]{
+//  border-bottom: 1px solid $borderColor;
+//}
+//用户日志
+#viewUserLog_Wrap{
+  position: relative;
+  overflow-y: auto;
+  background-color: #fff;
+  .logNav{
+//    padding-left: 45px;
+
+    border: 1px solid #e5e5e5;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    display: inline-block;
+    li{
+      //float: left;
+      //margin: 0 15px;
+      //line-height: 50px;
+
+      text-align: center;
+      border-right: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #f4f4f4;
+      line-height: 60px;
+      display: inline-block;
+      padding: 0 20px;
+      cursor: pointer;
+
+      &.active{
+        //color: $foreground;
+        //text-decoration: underline;
+
+        border-bottom: 1px solid #fff;
+        background-color: #fff;
+      }
+    }
+  }
+  .searchU{
+    position: absolute;
+    //height:50px;
+    //left:0;
+    //width:100%;
+    border-bottom: 1px solid #e5e5e5;
+    height: 62px;
+    margin-bottom: 10px;
+   // position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: #fff;
+
+    .search-wrap{
+     // position: absolute;
+      height: 60px;
+      padding: 8px 0;
+     // right: 0;
+      float: right;
+      background-color: transparent;
+      .search-box{
+        height:40px;
+        margin: 0 35px;
+        .icon-search{
+          width:40px;
+          height:40px;
+
+        }
+        .search-input{
+          height:40px;
+          line-height:40px;
+          background-color: $background !important;
+        }
+      }
+    }
+  }
+  .mainContent{
+    padding-top: 70px;
+    .userLogList,#searchContent{
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
+
+}
+#viewUserLog_Wrap, .detailTable{
+  .thead{
+    //font-weight: bold;
+    color: $colorDeep;
+    font-size: 14px;
+    line-height:50px;
+    background-color: $background;
+    border-bottom: 1px solid $borderColor;
+    border-top: 1px solid $borderColor;
+  }
+  dd{
+    width:9%;
+    text-align: center;
+    .search-wrap{
+      height:60px;
+      padding:10px 0;
+      background-color: $background;
+    }
+    &.headPic{
+      img{
+        width:30px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+    }
+    &.time{
+      font-size: 12px;
+    }
+
+    &.state{
+      img{
+        display: inline-block;
+        vertical-align: middle;
+        max-width:58px;
+      }
+
+    }
+    .readUserLogBtn{
+      text-align: center;
+      //color: #fff;
+      //background-color: #45a92b;
+      //&:before{
+      //  content: '删除';
+      //}
+      span.btn{
+        padding:3px 8px;
+        border-radius: 3px;
+        color: #fff;
+        background-color: #45a92b;
+        //display: none;
+      }
+    }
+
+    .checkbox{
+      &:before{
+        display: inline-block;
+        width: 12px;
+        height:12px;
+        vertical-align: middle;
+        content: '';
+        margin-right: 5px;
+        background:{
+          image: url("#{$img_path}common/images/personalTailor/csad/icon-fangkuang12.png");
+          repeat: no-repeat;
+          size: 12px;
+        }
+      }
+    }
+    .active{
+      &:before {
+        background-image: url("#{$img_path}common/images/personalTailor/csad/icon-fangkuangdui.png");
+      }
+    }
+    &.deleteAll{
+      display: none;
+    }
+  }
+}
+.detailTable dd {
+  width: 11%;
+}
+.detailTable,#viewUserLog_Wrap .mainContent{
+  li{
+    //line-height:50px;
+    color: $colorLighter;
+    font-size: 12px;
+    background-color: $background;
+    border-bottom: 1px solid $borderColor;
+    padding:10px;
+    &:nth-child(odd){
+      background-color: #fff;
+    }
+    &:nth-child(even){
+      background-color: $background;
+    }
+  }
+}
+
+$border_color:#d4d4d4;
+@mixin borderB() {
+  border-bottom: 1px solid $border_color;
+}
+@mixin borderT() {
+  border-top: 1px solid $border_color;
+}
+//业绩查询
+#performanceQuery_Wrap{
+  margin-left: 20px;
+  .title{
+    height: 45px;
+    line-height: 45px;
+    background-color: #fff;
+    padding-left: 20px;
+    font-size: 18px;
+    @include borderB;
+    margin-bottom: 10px;
+  }
+  section{
+    background: #fff;
+    @include borderT;
+    .searchGroup{
+      dl{
+        @include borderB;
+        padding: 20px 0 10px 20px;
+        overflow: hidden;
+        dd{
+          display: inline-block;
+          margin-right: 20px;
+          text-align: center;
+          float: left;
+          color: $colorLighter;
+          span{
+            &.active{
+              background-color: $navbackground;
+              color: #fff;
+            }
+            background-color: #fff;
+            border:1px solid $navbackground;
+            color:$navbackground;
+            border-radius:4px;
+            padding: 3px 10px;
+            display: block;
+            cursor: pointer;
+          }
+          label{
+
+          }
+          input[type=text]{
+            border-radius: 3px;
+            border:1px solid $border_color;
+            height:30px;
+            width:150px;
+            padding-left: 8px;
+          }
+          input[type=button]{
+            border:1px solid $navbackground;
+            height:30px;
+            background-color: $navbackground;
+            color: #fff;
+            line-height: 30px;
+            margin-left: 10px;
+            border-radius: 3px;
+            padding: 0 13px;
+
+          }
+        }
+      }
+    }
+    .searchResult{
+      overflow: hidden;
+      .item{
+        width:44%;
+        float: left;
+        max-height:480px;
+        margin:14px 0 28px 3%;
+        border:1px solid $border_color;
+        //background-color: #fff;
+        h3{
+          background-color: #e1e2e6;
+          padding: 15px;
+          @include borderB;
+        }
+        #echatsContainer{
+          width:600px;
+          height:430px;
+          margin: 0 auto;
+          text-align: center;
+          line-height: 430px;
+          font-size: 18px;
+        }
+        #pandect{
+          margin-top: 6px;
+          background-color: #eeeff1;
+          height:420px;
+
+          h4{
+            font-weight: bold;
+            font-size: 18px;
+            padding-left: 32px;
+            padding-top: 54px;
+          }
+          .detailD{
+            width:80%;
+            margin: 0 auto;
+          }
+          label{
+            display: inline-block;
+            width:250px;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+  .price:before, .money:before{
+    vertical-align: top;
+  }
+}
+.boxList{
+  height:240px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.noData{
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px;
+}

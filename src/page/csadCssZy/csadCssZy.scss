@@ -1,0 +1,1147 @@
+/**
+ * Created by Spades-k on 2016/7/15.
+ * version 0.0.1
+ */
+
+@import "../../common/style/_mixin";
+$linecolor:#E7E7E7;
+//---------------addBoxRecodePageCsad.css start----------
+@media screen and (max-width: 1697px) {
+  .addnotesContent .notes_box .notes{
+    width: 85% !important;
+  }
+}
+.tc{
+  text-align: center;
+}
+.fl{
+  float: left;
+}
+.f18{
+  font-size: 18px;
+}
+.f12{
+  font-size: 12px;
+}
+a{
+  cursor: pointer;
+}
+#hide{
+  display: none !important;
+}
+.page-content{
+  padding: 0;
+  background-color: #F6F6F6;
+  overflow: auto;
+  position: static;
+  li{
+    padding: 0 20px;
+  }
+  .input_information{
+    textarea{
+      width:100%;
+      border: none;
+      background-color: #F6F6F6;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    p{
+      font-size: 16px;
+      color: #838383;
+      padding: 8px 0;
+    }
+  }
+  .use_time{
+    h3{
+      font-size: 16px;
+      padding: 5px 0;
+    }
+    .select_time{
+      select{
+        background-color: #E5E5E5;
+        -webkit-appearance:none;
+        background-image: url("#{$img_path}/common/images/dropdown.png");
+        background-position: right center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        padding: 0 10px;
+        font-size: 16px;
+        width:30%;
+        border:none;
+        height: 36px;
+        line-height: 36px;
+        margin: 0 3% 0 0;
+        display: inline-block;
+      }
+    }
+  }
+  .select_box{
+    margin-top: 20px;
+    h3{
+      font-size: 16px;
+      padding: 5px 0;
+    }
+    .select_con{
+      select{
+        background-color: #E5E5E5;
+        -webkit-appearance:none;
+        background-image: url("#{$img_path}common/images/dropdown.png");
+        background-position: right center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        padding: 0 10px;
+        font-size: 16px;
+        width:100%;
+        border:none;
+        height: 36px;
+        line-height: 36px;
+        display: inline-block;
+      }
+    }
+  }
+  .photo{
+    overflow: hidden;
+    margin-top: 20px;
+    dl{
+      padding-bottom: 0;
+    }
+    p{
+      padding: 0 0 2% 4%;
+    }
+    dl {
+      overflow: hidden;
+      padding: 3% 0;
+      dd {
+        overflow: hidden;
+
+        .addPic{
+          position: relative;
+          img{
+            position: relative;
+            z-index: 0;
+            width:100%;
+          }
+          .file{
+            width:100%;
+            opacity: 0;
+            position: absolute;
+            left:0;
+            top:0;
+            z-index: 9;
+            height:100%
+          }
+
+        }
+      }
+    }
+    dd{
+      //width: 22%;
+      //float: left;
+      //margin:0 1.5%;
+      width:60px;
+      height:60px;
+      float: left;
+      margin:0 6px 6px 0;
+      position: relative;
+      &.active:before{
+        background-image: url("#{$img_path}common/images/icon_class_choose.png");
+        background-repeat: no-repeat;
+        border-color:$foreground;
+        color: $foreground;
+        background-size: 100%;
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      .delete{
+        width: 27px;
+        height: 27px;
+        background: {
+          image:  url("#{$img_path}common/images/personalTailor/icon_record_delete.png");
+          size: 100%;
+        };
+        display: block;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+    }
+
+  }
+  .save{
+    padding: 10px 0 20px 0;
+    .save_btn{
+      border: none;
+      background-color: #252525;
+      padding: 8px 0;
+      width: 80%;
+      border-radius: 4px;
+      color: white;
+    }
+  }
+}
+//---------------addBoxRecodePageCsad.css end----------
+//---------------csadUserTrajectory start----------
+
+#_index{
+  a{
+    color: #2e2e2e;
+  }
+  background-color: white;
+  .usertrajectory_user_box{
+    //.box_nav{
+    //  background-color: white;
+    //  li{
+    //    cursor: pointer;
+    //    padding: 21px 0;
+    //    width:100px;
+    //    text-align:center;
+    //    border: 1px solid $linecolor;
+    //    background-color: #F6F6F6;
+    //    &.active{
+    //      background-color: white;
+    //      border-bottom: none;
+    //    }
+    //    &:nth-child(1){
+    //      width: 20%;
+    //      border-right: none;
+    //    }
+    //    &:nth-child(2){
+    //      width:20%;
+    //      border-right: none;
+    //    }
+    //    &:nth-child(3){
+    //      width: 60%;
+    //      background-color: white;
+    //      border-top: none;
+    //      border-right: none;
+    //    }
+    //  }
+    //
+    //}
+    .con{
+      .buy_box_records{
+        margin-bottom: 10px;
+        position: relative;
+        .title{
+          background-color: #E1E2E6;
+          padding: 10px 0;
+          text-align: center;
+        }
+        .table_con{
+          background-color: white;
+          max-height: 741px;
+          overflow: auto;
+          ul{
+            display: inline-block;
+            li{
+              padding: 0;
+            }
+
+            li:nth-child(1){
+              margin-top: 14%;
+            }
+          }
+          table{
+            width:100%;
+            tr{
+              td{
+                text-align: center;
+                border-top: 1px solid $linecolor;
+                .createTimeB{
+                  display: none;
+                  padding: 1px 7px;
+                  background: #F6F6F6;
+                  border-radius: 18px;
+                }
+                &.theFirst{
+                  border-top: 1px solid #E7E7E7 !important;
+                  i{
+                    display: inline-block !important;
+                  }
+                  .createTimeB{
+                    display: inline-block;
+                  }
+                }
+              }
+
+              td:nth-child(1){
+                width: 5%;
+                text-align: center;
+                border-top: none;
+                font-size: 12px;
+
+                i{
+                  display: none;
+
+                  min-width: 16px;
+                  height: 16px;
+                  background: #ff6868;
+                  text-align: center;
+                  color: #fff;
+                  line-height: 16px;
+                  font-size: 12px;
+                  padding: 0 5px;
+                  border-radius: 8px;
+                }
+
+              }
+              td:nth-child(2){
+                text-align: center;
+                border-top: none;
+                //p{
+                //  //display: inline-block;
+                //  padding: 1px 7px;
+                //  background: #F6F6F6;
+                //  border-radius: 18px;
+                //}
+              }
+
+            }
+          }
+          .payStatus{
+            .tradeStatus{
+              color:#FF6868;
+              display: block;
+            }
+            .express{
+              span{
+                display: block;
+              }
+            }
+          }
+          .buy_boxs_page{
+            height: 30px;
+            cursor: pointer;
+            border-top: 1px solid #E7E7E7;
+            border-bottom: 1px solid #E7E7E7;
+          }
+          .report_page{
+            height: 30px;
+            cursor: pointer;
+            border-top: 1px solid #E7E7E7;
+            border-bottom: 1px solid #E7E7E7;
+          }
+          .record_page{
+            height: 30px;
+            cursor: pointer;
+            border-top: 1px solid #E7E7E7;
+            border-bottom: 1px solid #E7E7E7;
+          }
+          .nodata{
+            height: 70px;
+          }
+        }
+        .up_and_down{
+          cursor: pointer;
+          text-align: center;
+          //background-color: #F6F6F6;
+          padding: 6px 0;
+          position: absolute;
+          right: 0;
+          top: 5px;
+          p{
+            display: inline-block;
+            background: url("#{$img_path}common/images/personalTailor/csad/icon_open.png");
+            background-repeat: no-repeat;
+            background-position: 50% 45%;
+            padding-right: 45px;
+            margin-left: 45px;
+            &.active{
+              display: inline-block;
+              background: url("#{$img_path}common/images/personalTailor/csad/icon_close.png");
+              background-repeat: no-repeat;
+              background-position: 50% 50%;
+              padding-right: 45px;
+              margin-left: 45px;
+            }
+          }
+        }
+      }
+      .analysis_report_list{
+        margin-top: 10px;
+        td{
+          padding: 23px 0;
+        }
+      }
+      .product_usage_record{
+        .title{
+          position: relative;
+          .addrecord{
+            cursor: pointer;
+            display: inline-block;
+            position: absolute;
+            right: 40px;
+            color: #FF6868;
+          }
+        }
+        margin-top: 10px;
+        .buy_box_records{
+          tr{
+            td{
+              padding: 23px 0;
+            }
+            td:nth-child(2){
+              .record_p{
+                padding: 0;
+                background-color: white;
+                border-radius: 0;
+              }
+            }
+            img{
+              height: 50px;
+              width:auto;
+              display: inline-block;
+              margin: 3px 3px 0 0;
+            }
+          }
+        }
+
+
+      }
+      .chat_boxs_list{
+        td{
+          //line-height: 50px;
+          padding:15px 0;
+          border-bottom:1px solid $borderColor;
+          border-top-width:0;
+        }
+      }
+    }
+  }
+}
+
+//---------------csadUserTrajectory end----------
+//-------------csadDirectionCenter start---------
+#direction_box{
+  width: 100%;
+  height:100%;
+  background-color: #F6F6F6;
+  #direction_center{
+    background-color: #F6F6F6;
+    .con_box{
+      width: 57%;
+      margin: 0 auto 0 auto;
+      padding-top: 60px;
+      min-width: 1010px;
+      .leftbox{
+        width:42%;
+        height: 740px;
+        float: left;
+        .payment_list{
+          width:29%;
+          background-color: white;
+          height: 100%;
+          float: left;
+          border-right: 1px solid #DBDBDB;
+          ul{
+            li{
+              height:80px;
+              line-height: 80px;
+              text-align: center;
+              //border-right: 1px solid #DBDBDB;
+              cursor: pointer;
+              &.active{
+                color: #ff6868;
+               // border-right: 1px solid transparent;
+              }
+            }
+          }
+        }
+        .payment_people{
+          width: 71%;
+          float: left;
+          height: 100%;
+          overflow: auto;
+          background-color: #FEFEFE;
+          box-shadow: 0 0 5px #e8e8e8;
+          .box_next_page{
+            background-color: white;
+          }
+          ul{
+            li{
+              //border: 1px solid #DBDBDB;
+              border-top-width:0;
+              border-right-width:0;
+            border-bottom: 1px solid #DBDBDB;
+              //border-right: 1px solid #DBDBDB;
+              background-color: #F6F6F6;
+              //padding: 0 0 0 4px;
+              cursor: pointer;
+
+              .people_box{
+                background-color: #FEFEFE;
+                padding: 15px 10px;
+                box-shadow: 0 0 5px #e8e8e8;
+                &.active{
+                  border-left: 1px solid transparent;
+                  background-color: #F6F6F6;
+                }
+                .pic{
+                  img{
+                    width:50px;
+                    height:50px;
+                    border-radius: 50%;
+                  }
+                }
+                .people_msg{
+                  width:128px;
+                  padding-left: 14px;
+                  p:nth-child(2){
+                    color: #7c7c7c;
+                  }
+                  p:nth-child(3){
+                    color: #7c7c7c;
+                  }
+                }
+                .p_r{
+                  text-align: right;
+                  p:nth-child(1){
+                    color: #b3b3b3;
+                  }
+                  p:nth-child(2){
+                    color: #ff6868;
+                  }
+                }
+              }
+            }
+            li:nth-child(1){
+              border-top: 1px solid #DBDBDB;
+            }
+          }
+        }
+      }
+      .rightbox{
+        width:42%;
+        height: 740px;
+        float: right;
+        .payment_list{
+          width:29%;
+          background-color: white;
+          height: 100%;
+          float: left;
+          border-right: 1px solid #DBDBDB;
+          ul{
+            li{
+              padding: 20px 0;
+              text-align: center;
+              //border-right: 1px solid #DBDBDB;
+              cursor: pointer;
+              &.active{
+                color: #ff6868;
+                border-right: 1px solid transparent;
+              }
+              .list_box{
+                .box_l{
+
+                }
+                .box_r{
+
+                }
+              }
+            }
+          }
+        }
+        .payment_people{
+          width: 71%;
+          float: left;
+          height: 100%;
+          overflow: auto;
+          background-color: #FEFEFE;
+          .returning_next_page{
+            background-color: white;
+          }
+          ul{
+            li{
+              border-bottom: 1px solid #DBDBDB;
+              border-right: 1px solid #DBDBDB;
+              background-color: #F6F6F6;
+              //padding: 0 0 0 4px;
+              cursor: pointer;
+              .people_box{
+                background-color: #FEFEFE;
+                padding: 25px 10px;
+                box-shadow: 0 0 5px #e8e8e8;
+                &.active{
+                  background-color: #F6F6F6;
+                }
+                .pic{
+                  img{
+                    width:50px;
+                    height:50px;
+                    border-radius: 50%;
+                  }
+                }
+                .people_msg{
+                  width:128px;
+                  padding-left: 14px;
+                  line-height: 50px;
+                  p:nth-child(2){
+                    color: #7c7c7c;
+                  }
+                  p:nth-child(3){
+                    color: #7c7c7c;
+                  }
+                }
+                .p_r{
+                  text-align: right;
+                  p:nth-child(1){
+                    color: #b3b3b3;
+                  }
+                  p:nth-child(2){
+                    color: #ff6868;
+                  }
+                }
+              }
+            }
+            li:nth-child(1){
+              border-top: 1px solid #DBDBDB;
+              .people_box{
+                &.active{
+                  background-color: #F6F6F6;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//-------------csadDirectionCenter end---------
+
+//----------csadAddNotes start---------
+
+.addnotesContent{
+  overflow: hidden;
+  .notes_box{
+    margin: 0 auto;
+    padding-top: 14px;
+    .people_msg{
+      width: 35%;
+      min-width: 286px;
+      margin-right: 31px;
+      .pic{
+        min-width: 60px;
+        img{
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+      }
+      .name{
+        width: 23%;
+        word-wrap: break-word;
+        text-align: center;
+      }
+      .time{
+        .time_title{
+          font-size: 12px;
+          color: #7c7c7c;
+        }
+        .time_data{
+          color: #2e2e2e;
+        }
+      }
+    }
+    .notes{
+      //width:100%;
+      padding: 11px 0;
+      width: 60%;
+      position: relative;
+      .notes_con{
+        width:100%;
+        p{
+          padding: 3px 6px;
+          background-color: #f0f2f5;
+          color: #6a7682;
+          margin: 0 10px 10px 0;
+        }
+      }
+      .notes_add{
+        p{
+          height: 20px;
+          line-height: 20px;
+          cursor: pointer;
+          color: white;
+          background-color: #FF6868;
+          border-radius: 3px;
+         // padding-right: 3px;
+          display: inline-block;
+          width: 55px;
+          &:before{
+            content: " ";
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            position: relative;
+            top: 0;
+            background: url("#{$img_path}common/images/personalTailor/csad/label_add.png");
+            display: block;
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+  .pop_rment{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 170px;
+    height: 80px;
+    background: white;
+    border: 1px solid #eee;
+    display: none;
+    li{
+      height: 40px;
+      line-height: 40px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+      &:hover{
+        background-color: #0e90d2;
+      }
+    }
+  }
+}
+
+.addnotesContent2{
+  min-width: 400px;
+
+  .notes_box{
+    max-height: 60px;
+    overflow-y: auto;
+  }
+  .n_con{
+    width:100%;
+    margin: 0 auto;
+    background-color: #F6F6F6;
+    padding-bottom: 10px;
+    position: relative;
+    .n_conleft{
+      width: 71%;
+    }
+    .t_name{
+      font-size: 18px;
+      padding: 1% 0 1% 36px;
+    }
+    .time_l{
+      padding-left: 36px;
+      padding-bottom: 2%;
+      p:nth-child(1){
+        margin-right: 30px;
+      }
+      .time_title{
+        color: #7c7c7c;
+      }
+      .time_data{
+        color: #2e2e2e;
+      }
+    }
+    .notes_box{
+      .notes_list{
+        padding-left: 36px;
+        max-height: 60px;
+        overflow-y: auto;
+        p{
+          padding: 3px 6px;
+          background-color: #E1E2E6;
+          color: #6a7682;
+          margin: 0 10px 2% 0px;
+          font-size: 12px;
+        }
+      }
+      .notes_add{
+        p{
+          height: 20px;
+          line-height: 20px;
+          cursor: pointer;
+          color: white;
+          background-color: #FF6868;
+          border-radius: 3px;
+          padding-right: 3px;
+          width: 55px;
+          &:before{
+            content: " ";
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            position: relative;
+            top: 0;
+            background: url("#{$img_path}common/images/personalTailor/csad/label_add.png");
+            display: block;
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+    .close_page{
+      width: 40px;
+      height:40px;
+      background: url("#{$img_path}common/images/personalTailor/csad/dialogue_delect.png") no-repeat;
+      background-size: 100% auto;
+      position: absolute;
+      top: 5px;
+      right: 0px;
+      cursor: pointer;
+    }
+    .close_btn{
+      width: 14%;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 3px;
+      position: absolute;
+      border: 1px solid #CFCFCF;
+      text-align: center;
+      cursor: pointer;
+      top: 30px;
+      right: 50px;
+      min-width: 58px;
+    }
+  }
+  .pop_rment{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 170px;
+    height: 80px;
+    background: white;
+    border: 1px solid #eee;
+    display: none;
+    z-index: 9;
+    li{
+      height: 40px;
+      line-height: 40px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+      &:hover{
+        background-color: #0e90d2;
+      }
+    }
+  }
+
+  &.isTempNote{
+    .n_con{
+      .t_name{
+        padding: 5% 0 1% 36px;
+      }
+    }
+    .loginE{
+      position: absolute;
+      top: 55px;
+      left: 36px;
+    }
+  }
+}
+
+//csadSalesTrackingPage start
+#salestracking{
+  background-color: white;
+  .boxleft{
+    width: 80%;
+    margin-left: 4px;
+    height: 100%;
+    position: relative;
+    .rightdrag{
+      position: absolute;
+      right: 0;
+      top:0;
+      width:10px;
+      height:100%;
+      cursor: e-resize;
+    }
+    .top_banner{
+      background-color: #F6F6F6;
+      padding: 10px  0;
+      ul{
+        li{
+          width: 9%;
+          text-align: center;
+          height: 55px;
+          line-height: 55px;
+          background-color: #F6F6F6;
+          cursor: pointer;
+          &.active{
+            border-bottom: 2px solid #FF6868;
+            color: #FE7E7E;
+          }
+        }
+      }
+    }
+    .con_box{
+      height: 90%;
+      margin-top: 4px;
+      .leftbox{
+        width: 22%;
+        height: 100%;
+        min-width: 300px;
+        margin-right: 4px;
+        .payment_people{
+          width: 100%;
+          float: left;
+          height: 100%;
+          overflow: auto;
+          background-color: #FEFEFE;
+          border: 1px solid #DBDBDB;
+          .box_next_page{
+            background-color: white;
+          }
+          ul{
+            li{
+              border-bottom: 1px solid #DBDBDB;
+              background-color: #F6F6F6;
+              cursor: pointer;
+              .people_box{
+                background-color: #FEFEFE;
+                padding: 15px 10px;
+                //border-left: 1px solid #DBDBDB;
+                //border-right: 1px solid #DBDBDB;
+                &.active{
+                  background-color: #F6F6F6;
+                  border-left: none;
+                  border-right: none;
+                }
+                &:hover{
+                  background-color: #F6F6F6;
+                  border-left: none;
+                  border-right: none;
+                }
+                .pic{
+                  img{
+                    width:50px;
+                    height:50px;
+                    border-radius: 50%;
+                  }
+                }
+                .people_msg{
+                  width:128px;
+                  padding-left: 14px;
+                  p:nth-child(2){
+                    color: #7c7c7c;
+                  }
+                  p:nth-child(3){
+                    color: #7c7c7c;
+                  }
+                }
+                .p_r{
+                  text-align: right;
+                  p:nth-child(1){
+                    color: #b3b3b3;
+                  }
+                  p:nth-child(2){
+                    color: #ff6868;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .rightbox{
+        height:100%;
+        margin: 0 4px;
+      }
+    }
+  }
+  .boxright{
+    width:20%;
+    height:100%;
+    margin-left:4px;
+  }
+}
+//csadSalesTrackingPage end
+
+//csadManagementListPage start
+#homemoonretrn{
+  background-color: white;
+  .box_left{
+    width: 54%;
+    margin-left: 4px;
+    height:100%;
+    min-width: 730px;
+    .top_bannner{
+      background-color: #F6F6F6;
+      padding: 10px 0;
+      ul{
+        li{
+          width: 12%;
+          text-align: center;
+          height: 55px;
+          line-height: 55px;
+          background-color: #F6F6F6;
+          cursor: pointer;
+          &.active{
+            border-bottom: 2px solid #FF6868;
+            color: #FE7E7E;
+          }
+        }
+      }
+    }
+    .con_box{
+      margin-top: 4px;
+      height: 90%;
+      .visit_box{
+        width: 32%;
+        min-width: 300px;
+        float: left;
+        height: 100%;
+        overflow: auto;
+        background-color: #FEFEFE;
+        border: 1px solid #DBDBDB;
+        margin-right: 3px;
+        position: relative;
+        z-index: 0;
+        .payment_people{
+          width: 100%;
+          float: left;
+          height: 100%;
+          overflow: auto;
+          background-color: #FEFEFE;
+          box-shadow: 0 0 5px #e8e8e8;
+          .box_next_page{
+            background-color: white;
+          }
+          ul{
+            height: 100%;
+            border-width: 0;
+            li{
+              min-width: 300px;
+              //border-bottom: 1px solid #DBDBDB;
+              //background-color: #F6F6F6;
+              //cursor: pointer;
+              &:hover{
+                background-color: #F6F6F6;
+                border-left: none;
+                border-right: none;
+              }
+              .people_box{
+                background-color: #FEFEFE;
+                padding: 25px 10px;
+                //border-left: 1px solid #DBDBDB;
+                //border-right: 1px solid #DBDBDB;
+                &.active{
+                  background-color: #F6F6F6;
+                  border-left: none;
+                  border-right: none;
+                }
+                &:hover{
+                  background-color: #F6F6F6;
+                  border-left: none;
+                  border-right: none;
+                }
+                .pic{
+                  img{
+                    width:50px;
+                    height:50px;
+                    border-radius: 50%;
+                  }
+                }
+                .people_msg{
+                  width:128px;
+                  padding-left: 14px;
+                  line-height: 50px;
+                  p:nth-child(2){
+                    color: #7c7c7c;
+                  }
+                  p:nth-child(3){
+                    color: #7c7c7c;
+                  }
+                }
+                .p_r{
+                  p:nth-child(1){
+                    color: #b3b3b3;
+                  }
+                  text-align: right;
+                  p:nth-child(2){
+                    color: #ff6868;
+                  }
+                }
+              }
+            }
+            li:nth-child(1){
+              //border-top: 1px solid #DBDBDB;
+            }
+          }
+        }
+      }
+      .chat_box{
+
+      }
+    }
+  }
+}
+//csadManagementListPage end
+.pop_add,.addReplySentense{
+  position: fixed;
+  left: 0;
+  top:0;
+  width:100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9;
+
+}
+.pop_box{
+  position: absolute;
+  left:50%;
+  top:50%;
+  width:340px;
+  height:270px;
+  margin-left: -170px;
+  margin-top: -135px;
+  background-color: white;
+  border-radius: 5px;
+  .add_con{
+    input{
+      display: block;
+      height: 40px;
+      width: 310px;
+      padding-left: 15px;
+      margin: 20px auto 0 auto;
+      background-color: #F6F6F6;
+      color: #b3b3b3;
+      border-radius: 19px;
+      border: none;
+      text-align: left !important;
+    }
+    p{
+      color: #7c7c7c;
+      padding-left: 28px;
+      margin-top: 5px;
+    }
+  }
+  .pop_btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 41px;
+    line-height: 40px;
+    border-top: 1px solid #ECECEC;
+    .cancel, .cancelBtn{
+      text-align: center;
+      border-right: 1px solid #ECECEC;
+      cursor: pointer;
+    }
+    .confirm,.confirmBtn{
+      text-align: center;
+      color: #E55D5D;
+      cursor: pointer;
+    }
+    .confirmupdata{
+      text-align: center;
+      color: #E55D5D;
+      cursor: pointer;
+    }
+  }
+}
+//----------csadAddNotes end---------
+

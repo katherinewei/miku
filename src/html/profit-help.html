@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>名词解释</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no">
+    <meta name="editor" content="superman">
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/page/profit.css"/>
+    <style type="text/css">
+        body{
+            overflow: hidden;
+        }
+        .header {
+            position: relative;
+            display: none;
+        }
+        #profitPage{
+            overflow-y: auto;
+            padding-bottom: 46px;
+        }
+    </style>
+</head>
+
+<body>
+<section class="header">
+    <div class="content navbar">
+        <div class="btn-navbar navbar-left"><a href="javascript:history.go(-1);" class="icon icon-return"></a></div>
+        <div class="navbar-main">名词解释</div>
+    </div>
+</section>
+<section id="profitPage">
+    <div class="main">
+        <div class="explain">
+            <div class="exp-tit">提现审核</div>
+            <div class="exp-content">提现审核时间为24小时以内，24小时以内提现金额将会到账</div>
+        </div>
+        <div class="explain">
+            <div class="exp-tit">账户余额</div>
+            <div class="exp-content">账户当前的所有金额，由可提现金额与不可提现金额组成</div>
+        </div>
+        <div class="explain">
+            <div class="exp-tit">可提金额</div>
+            <div class="exp-content">由最终完成的订单产生的推广费组成</div>
+        </div>
+        <div class="explain">
+            <div class="exp-tit">不可提金额</div>
+            <div class="exp-content">由未完成的或出现异常的订单产生的推广费组成</div>
+        </div>
+        <div class="explain">
+            <div class="exp-tit">累计推广费</div>
+            <div class="exp-content">帮助米酷推广宣传产品和服务产生的费用之和</div>
+        </div>
+        <div class="explain">
+            <div class="exp-tit">累积单数</div>
+            <div class="exp-content">您的团队累计销售的订单总和</div>
+        </div>
+        <div class="explain">
+            <div class="exp-tit">提现中</div>
+            <div class="exp-content">目前已申请提现，等待平台审核的金额</div>
+        </div>
+        <div class="explain">
+            <div class="exp-tit">已提现</div>
+            <div class="exp-content">已成功提现的累计金额</div>
+        </div>
+    </div>
+</section>
+<script>
+    var type = getQueryString('type');
+    if (type == 1) {
+        document.getElementsByClassName('header')[0]['style'].display = 'block';
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>退货政策</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no"/>
+    <meta name="editor" content="superman">
+    <link rel="stylesheet" href="/h5/css/common.css?v=16593"/>
+    <style type="text/css">
+
+        .header {
+            position: relative;
+            display: none;
+        }
+
+        section.pageA {
+            font-size: 12px;
+            height: 100%;
+            overflow-y: auto;
+            background-color: #f6f6f6;
+            color: #2e2e2e;
+            padding-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 30px;
+            padding: 0 12px;
+        }
+
+        .contents {
+            background-color: #fff;
+            padding: 5px 12px;
+            color: #7c7c7c;
+        }
+        .grid{position: relative;}
+        .row .col {
+            text-align: center;
+            color: #2e2e2e;
+            padding-bottom: 5px;
+        }
+
+        .row .col i {
+            background: url("http://unesmall.b0.upaiyun.com/common/images/icon_step_n.png") no-repeat center center #fff;
+            width: 40px;
+            height: 20px;
+            background-size: 20px 20px;
+            display: block;
+            margin: 0px auto 7px;
+            z-index: 9;
+            position: relative;
+
+        }
+
+        .line {
+            height: 1px;
+            background-color: #e5e5e5;
+            width: 70%;
+            z-index: 0;
+            position: absolute;
+            top: 10px;
+            left: 15%;
+            display: inline;
+        }
+
+        .step {
+            padding-top: 10px;
+        }
+
+        .step h3 {
+            margin: 3px 0;
+            color: #2e2e2e;
+        }
+
+        .step p {
+        }
+    </style>
+</head>
+<body>
+<section class="header">
+    <div class="content navbar">
+        <div class="btn-navbar navbar-left"><a href="javascript:history.go(-1);" class="icon icon-return"></a></div>
+        <div class="navbar-main">退货政策</div>
+    </div>
+</section>
+<section class="pageA">
+    <h1>注意事项</h1>
+
+    <div class="contents">
+        1、个别特殊商品可能不享受该政策，请留意页面上特殊说明<br/>
+        2、米酷在法律允许范围内保留对该规则的最终解释权
+    </div>
+
+    <h1>退货流程</h1>
+
+    <div class="contents step">
+        <div class="grid">
+            <dl class="row">
+                <dt class="col"><i></i>填写申请</dt>
+                <dt class="col"><i></i>寄回商品</dt>
+                <dt class="col"><i></i>米酷收货</dt>
+                <dt class="col"><i></i>退款完成</dt>
+            </dl>
+            <div class="line"></div>
+        </div>
+
+        <h3>1. 填写“退货申请”</h3>
+
+        <p>在米酷个人中心点击“退货/退款”进入后填写“退货申请”</p>
+
+        <h3>2. 寄回退货商品 </h3>
+
+        <p>填写发货单背面的售后服务单，连同商品寄回到其中提示的
+            地址。 您退货产生的运费将由米酷承担。
+            邮费会根据发送地
+            点实报（最高退款金额15元）退回给您。 报销的运费将打
+            入您的米酷不可提现钱包
+            中，可用于下次消费。</p>
+
+        <h3>3. 客服收退货后退款</h3>
+
+        <p>
+            收到退货商品后， 我们会于7天内将退款发出。</p>
+
+        <h3>4. 退款完成</h3>
+
+        <p></p>
+    </div>
+    <h1>退货说明</h1>
+
+    <div class="contents">
+        <p> 客服人员为您确认退换货后，请您在三天内将商品尽快寄出，
+            超过10天未收到您的退货商品，将无法办
+            理退款。（快递延
+            迟问题可联系客服人员为您做特殊处理）感谢您的配合。<br/>
+
+            1、一笔订单米酷只能提供一次退换货服务，为了确保您
+            的权益，请您考虑周全。<br/>
+
+            2、米酷保证商品质量，如果您使用后对商品质量表示置
+            疑，请及时联系客服人员，并出具相关书面鉴定，我们会根据
+            国家相关规定予以处理。<br/>
+
+            3、礼包或套装中的商品不可以部分退货，因原礼包或套装中
+            商品将无法享受购买时优惠。<br/>
+
+            4、页面商品图片及信息仅供参照，因拍摄灯光及不同显示器
+            色差等问题可能造成商品图片与实物有一定色差，一切以实物
+            为准。<br/>
+
+            5、订单中如果使用优惠券以及红包的部分，退货不支持退款，
+            只退回订单中的现金支付部分。</p>
+    </div>
+
+</section>
+</body>
+</html>
+<script>
+    var type = getQueryString('type');
+    if (type == 1) {
+        document.getElementsByClassName('header')[0]['style'].display = 'block';
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>

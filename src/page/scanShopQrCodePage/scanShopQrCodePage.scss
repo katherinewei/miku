@@ -1,0 +1,102 @@
+@import "../../common/style/_mixin";
+
+
+//推广
+.inviteSP{
+  border-top: 10px solid #FAFBFD;
+  .banner{
+    text-align: center;
+    font-size: 16px;
+    margin:5% 0;
+    img{
+      width:90px;
+      margin: 3% auto;
+    }
+    .tips{
+      font-size: 14px;
+      color: $colorLighter;
+      margin:5% 0;
+    }
+  }
+  .inputBox{
+    width:75%;
+    margin:0 auto;
+    .row{
+      background: #fff;
+      padding:0 3%;
+      border-radius: 5px;
+      margin-bottom:5%;
+      border:1px solid $colorfore;
+      height:42px;
+      &:last-child{
+        background-color: transparent;
+        padding: 0;
+      }
+      &.imgVerCode{
+        padding:0 3%;
+
+      }
+      &.verCodeRow{
+        padding: 0;
+        overflow: hidden;
+        margin-bottom:10%;
+        input{
+          padding:0 5%;}
+      }
+    }
+    .sendvercode{
+      border:1px solid $colorfore;
+      display: block;
+      text-align: center;
+      transition: all 0.5s ease 0s;
+      margin: 5px 10%;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 3px;
+      &.disable{
+        background-color: #ccc;
+        color: #fff;
+      }
+    }
+  }
+  input {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    -webkit-appearance: none;
+    outline: none;
+    height:40px;
+    line-height:40px;
+    &[type=tel] {
+
+    }
+    &[type=submit] {
+      background: $colorfore;
+
+      border-radius: 5px;
+      color: #fff;
+      border: none;
+
+    }
+
+  }
+  ::-webkit-input-placeholder {
+    color: $colorfore;
+    font-size: 12px;
+  }
+  .btnGroup{
+    span{
+      display: block;
+      width: 90%;
+      margin: 2% auto 4%;
+      text-align: center;
+      line-height: 40px;
+      border: 1px solid $colorfore;
+      border-radius: 5px;
+      &.btn{
+        background-color: $colorfore;
+        color: #fff;
+      }
+    }
+  }
+}

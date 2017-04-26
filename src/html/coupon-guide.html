@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>米酷</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no" />
+    <meta name="editor" content="superman">
+    <script>
+        var pageConfig = {
+            openid: "",
+            appid: "",
+            shopid: "2011",
+            pid: "275"
+        }
+    </script>
+    <link rel="stylesheet" href="/h5/css/common.css"/>
+    <link rel="stylesheet" href="/h5/css/page/index.css"/>
+</head>
+
+<body>
+<section>
+
+    <style>
+        body {
+            overflow: auto;
+        }
+
+        .header {
+            position: relative;
+            display: none;
+        }
+
+        div.ccont {
+            width: 260px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #fb4e90;
+            font-size: 14px;
+            border-left: 5px solid #fb4e90;
+            padding-left: 6px;
+            margin-top: 15px;
+        }
+
+        p {
+            padding-left: 11px;
+            font-size: 12px;
+            color: #5b5b5b;
+            margin-top: 5px;
+        }
+    </style>
+    <section class="header">
+        <div class="content navbar">
+            <div class="btn-navbar navbar-left"><a href="javascript:history.go(-1);" class="icon icon-return"></a></div>
+            <div class="navbar-main">红包小课堂</div>
+        </div>
+    </section>
+    <div style="padding:40px 0 15px 0;">
+        <img src="http://unesmall.b0.upaiyun.com/common/images/bonus_help.png" width="184" style="margin:0 auto;"/>
+    </div>
+    <div class="ccont">
+        <h1>红包是什么？</h1>
+
+        <p>红包是由米酷提供用于在线支付时抵扣订单金额的一种有限使用的优惠措施。</p>
+
+        <h1>如何获取红包？</h1>
+
+        <p>1.登陆米酷并前往红包领取页面可随机领取红包，限每日三次。<br/>2.参加米酷活动或购买特殊商品，领取红包兑换码兑换红包。</p>
+
+        <h1>如何使用红包？</h1>
+
+        <p>1.单笔订单不可叠加使用；部分商品不可使用。<br/>2.请在有效期内使用，逾期作废。<br/>3.红包不可兑现；订单申请退款时红包不再返还。</p>
+
+        <p style="margin-top:20px;text-align:center; padding-bottom:30px">本规则解释权归米酷所有。</p>
+    </div>
+
+</section>
+
+<script src="http://h5.7nb.com.cn/h5/js/lib/main.js?v=16593"></script>
+<script>
+    var type = getQueryString('type');
+    if (type == 1) {
+        document.getElementsByClassName('header')[0]['style'].display = 'block';
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+
+</body>
+
+</html>

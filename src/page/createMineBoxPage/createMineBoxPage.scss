@@ -1,0 +1,1355 @@
+@import "../../common/style/_mixin";
+$navbackground:#313943;//导航条颜色
+$navcolor:#adafb1;//导航条文字颜色
+$navsubbackground:#e1e2e6;//次导航条颜色
+$color:#ff6868;//渲染色
+$hover:#f6f6f6;//鼠标经过颜色
+$btncolor:#292929;//按钮颜色
+$border:#e5e5e5;//分割线颜色
+$color3:#b3b3b3;//次次文字颜色
+$foreground:#292929;
+@mixin choice() {
+  background-size: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  content: '';
+  position: absolute;
+  right:0;
+  bottom:0;
+}
+iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+select{
+  background-color: #fff;
+  -webkit-appearance:none;
+  background-image: url("#{$img_path}/common/images/icon_dropdown.png");
+  background-position: right center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  padding: 0 5px;
+  font-size: 14px;
+  width:40%;
+  border:1px solid #2e2e2e;
+  height:30px;
+  line-height: 30px;
+  margin:0 5%;
+  display: inline-block;
+
+}
+textarea{
+  resize: none;
+  width:100%;
+  height:70px;
+}
+input[type="text"], input[type="tel"], input[type="password"], input[type="search"],input
+{
+  border-width: 0 ;
+  border-bottom: 1px solid #292929 ;
+  /*text-align: center ;*/
+  border-radius: 0; }
+input[type="tel"]{
+  width:30px;
+  text-align: center;
+}
+input.readonly{
+  border-width:0 !important;
+}
+/*t头部*/
+.boxTitleName{
+  background-color: $background;
+  height:60px;
+  margin-bottom:4px;
+  text-align: center;
+  padding:8px 0;
+  h3{
+    font-size: 18px;
+  }
+}
+.CreateBoxContainer{
+  padding-bottom:55px;
+}
+.CreateBoxContainer .boxItem,.coursePreviewContent .boxItem,#userLessonList,.addPOP,.templateCourseContent{
+  .choice{
+    display: inline-block;
+    margin: 0 2% 2% 0;
+    cursor: pointer;
+    &.chooseItem{
+      border:1px solid $borderColor;
+      width: 23%;
+      text-align: center;
+      padding: 5px 0;
+
+    }
+    &.active{
+      position: relative;
+      border:1px solid $foreground;
+      &:before{
+        @include choice();
+        background-image: url("#{$img_path}common/images/personalTailor/icon_choose.png");
+      }
+    }
+  }
+}
+.CreateBoxContainer,.coursePreviewContent{
+  .boxItem {
+    border:1px solid $borderColor;
+    margin-bottom:5px;
+    .title{
+      background-color: $background;
+      line-height: 40px;
+      padding:0 8px;
+
+    }
+    .contentItem{
+      padding: 8px;
+    }
+    .displayB{
+      display: block;
+    }
+    &.boxMessage{
+      .contentItem{
+        .row {
+          margin: 8px;
+        }
+        input[type=text]{
+          border: 1px solid #e5e5e5 !important;
+          height: 33px !important;
+          padding: 0 8px;
+        }
+        input[type=text].readonly{
+          border-width:0 !important;
+        }
+
+        label{
+          margin-right:8px;
+          line-height: 30px;
+        }
+        i{
+          color: $color;
+          padding-right:2px;
+        }
+        .box_img{
+          dd{
+            width: 150px;
+          }
+        }
+      }
+
+    }
+    &.courseMessage{
+      .chooseCourseTpl{
+        text-align: center;
+        text-decoration: underline;
+        padding: 10px 0;
+        cursor: pointer;
+      }
+    }
+    &.productMessage{
+      padding-bottom: 84px;
+      ul{
+        overflow: hidden;
+        border:1px solid $borderColor;
+        &.noBorder{
+          border-width:0;
+        }
+      }
+      li{
+        position: relative;
+        // width:100px;
+        //float: left;
+        margin-right:10px;
+        display: table;
+        border-bottom: 1px solid $borderColor;
+        width: 100%;
+        &:last-child{
+          border-bottom-width:0
+        }
+        &.boxProductActive{
+          width:100px;
+          text-align: center;
+          margin: 5px;
+          float: left;
+
+        }
+        .Ptitle{
+          display: table-cell;
+          vertical-align: middle;
+          width: 124px;
+          text-align: center;
+          border-right: 1px solid $borderColor;
+        }
+        dl{
+          width:100%;
+          overflow: hidden;
+        }
+        dd{
+          width:120px;
+          margin:10px;
+          float: left;
+          text-align: center;
+          .operateNum{
+            border:1px solid $borderColor;
+            overflow: hidden;
+            width:100px;
+            margin:0 auto;
+            input[type=tel]{
+              border-left: 1px solid $borderColor;
+              border-right: 1px solid $borderColor;
+              border-bottom-width:0;
+              width:34px;
+              display: block;
+              float: left;
+              text-align: center;
+
+            }
+          }
+          .minus-btn,.plus-btn{
+            width:32px;
+            height:22px;
+            background-color: $background;
+            text-align: center;
+            line-height: 22px;
+            display: block;
+            float: left;
+            cursor: pointer;
+          }
+          .prodImg{
+            position: relative;
+            cursor: pointer;
+            img{
+              width:100px;
+              max-height:100px;
+            }
+            .priceItem{
+              position: absolute;
+              left:0;
+              bottom:0;
+              color: #ff4777;
+              font-weight: bold;
+            }
+          }
+          .hasChoiceItem{
+            &:after{
+              background: {
+                size: 100%;
+                image: url("#{$img_path}common/images/personalTailor/csad/icon-duihao.png");
+              };
+              width:24px;
+              height:24px;
+              content: '';
+              display: block;
+              position: absolute;
+              right:0;
+              bottom:0;
+            }
+          }
+          .prod_Price,.prod_name{
+            font-size: 12px;
+          }
+
+          .prod_name{
+            line-height: 18px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            height:36px;
+          }
+        }
+
+      }
+      .deleteProduct{
+        width:27px;
+        height:27px;
+        background: {
+          image:  url("#{$img_path}common/images/personalTailor/pic_delete.png");
+          size: 100%;
+        };
+        display: block;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+    }
+    &.healthyAdvice{
+      .contentItem{
+        padding:20px;
+        textarea{
+          height: 120px;
+          border: 1px solid $borderColor;
+          padding: 10px;
+        }
+      }
+    }
+    &.report{
+      .viewReport{
+        cursor: pointer;
+      }
+    }
+  }
+  .box_img{
+    dd,div{
+      width: 60px;
+      display: inline-block;
+      margin-right: 5px;
+      position: relative;
+      .deleteImgBox{
+        width:27px;
+        height:27px;
+        background: {
+          image:  url("#{$img_path}common/images/personalTailor/pic_delete.png");
+          size: 100%;
+        };
+        display: block;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+    }
+  }
+
+  .addPic{
+    img{
+      position: relative;
+      z-index: 0;
+    }
+    .file{
+      width:100%;
+      opacity: 0;
+      position: absolute;
+      left:0;
+      top:0;
+      z-index: 9;
+      height:100%
+    }
+  }
+  //.footer{
+  //  margin:10px 0 0;
+  //  padding: 5px 0;
+  //  .row{
+  //    width:70%;
+  //    margin: 0 auto;
+  //  }
+  //  span{
+  //    display: inline-block;
+  //    // width: 35%;
+  //    //margin: 5px auto;
+  //    text-align: center;
+  //    background-color: $foreground;
+  //    border-radius: 5px;
+  //    color: #fff;
+  //    line-height: 34px;
+  //    margin: 5px 5%;
+  //    cursor: pointer;
+  //  }
+  //}
+  .lessonChoose{
+    border: 1px solid $foreground;
+    display: inline-block;
+    margin: 3px;
+    padding: 3px;
+  }
+  .boxOtherMsg{
+    padding: 15px 0 0 15px;
+    position: fixed;
+    bottom: 44px;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid $borderColor;
+  }
+
+  /*汇总*/
+  .courseGather {
+    position: relative;
+    padding-left:3.5px;
+    .gather_sectionName{
+      border-left: 2px solid $foreground;
+      padding-left:2%;
+    }
+    .box_img{
+      margin-top:10px;
+      .active{
+        width:100px;
+      }
+    }
+    //input{
+    //  border-width:0 !important;
+    //  border-bottom:1px solid $foreground !important;
+    //  text-align: center !important;
+    //  border-radius: 0 !important;
+    //
+    //}
+    .whiteDot{
+      background-color: #fff;
+      height:7px;
+      width:7px;
+      display: block;
+      position: absolute;
+    }
+    .sectionLs{
+      .sl_left {
+        border-left: 1px solid $foreground;
+        &:before{
+          border-radius:50%;
+          background-color: $foreground;
+          width:7px;
+          height:7px;
+          display: inline-block;
+          vertical-align: middle;
+          content: '';
+          margin: -2px 10% 0 -4px;
+        }
+      }
+
+      .stepDot{
+        &:before{
+          border-radius:50%;
+          background-color: $foreground;
+          width:5px;
+          height:5px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right:1%;
+          content: '';
+        }
+      }
+      .gather_stepList{
+        margin-left: -2.5%;
+        .row{
+          margin-left: 2em;
+        }
+      }
+      dd{
+        &:nth-last-child(2){
+          .sl_left{
+            position: relative;
+            &:after{
+              width: 1px;
+              height: 10px;
+              display: inline-block;
+              vertical-align: middle;
+              content: '';
+              position: absolute;
+              left: -1px;
+              bottom: -9px;
+              background-color:  $foreground;
+            }
+          }
+        }
+        &:last-child{
+          .sl_left{
+            border-left-width:0;
+          }
+        }
+      }
+    }
+  }
+}
+#courseBox,#BoxCover{
+  max-width:960px;
+  width:100%;
+  position: absolute;
+  left:50%;
+  top:50%;
+  margin-left:-480px;
+  margin-top:-233px;
+  height:466px;
+  background-color: #fff;
+  padding:20px 30px;
+  &.inIframe{
+    left:0;
+    top:5%;
+    margin:0;
+    li{
+      margin: 10px auto ;
+    }
+  }
+  ul{
+    margin-top: 25px;
+    height: 320px;
+    overflow-y: auto;
+    li{
+      width:290px;
+      margin: 10px 15px 10px 0;
+      display: inline-block;
+      position: relative;
+      &:nth-child(3n){
+        margin-right:0;
+      }
+      .tmpName{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 40%;
+        color: #fff;
+        font-size: 18px;
+      }
+      i{
+        position: absolute;
+        background-size: 100%;
+        width: 24px;
+        height: 24px;
+        right:0;
+        bottom:0;
+        display: block;
+        z-index: 9;
+      }
+      &.hasChoiceCourse,&.hasChoiceBoxCover{
+        i{
+          background-image: url("#{$img_path}common/images/personalTailor/csad/box_pic_select.png");
+        }
+      }
+    }
+  }
+  .selectedCourseTplBtn,.selectedBoxCoverBtn{
+    width: 180px;
+    height: 30px;
+    background: $foreground;
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    margin: 30px auto 0;
+  }
+}
+#BoxCover{
+  height: 546px;
+  &.inIframe{
+    li{
+      width: 180px;
+      margin:10px;
+    }
+  }
+  ul{
+    margin-top: 15px;
+    height: 422px;
+    overflow-y: auto;
+    li {
+      width: 236px;
+      margin: 10px 75px 10px 0;
+    }
+  }
+  .selectedBoxCoverBtn{
+    margin: 10px auto 0;
+  }
+}
+/*装载问卷容器*/
+.questionBox{
+  //width: 100%;
+  //height: 80%;
+  //overflow-y: auto;
+  //margin: 10% auto;
+  //position: relative;
+  width: 600px;
+  background: #fff;
+  height: 80%;
+  overflow-y: auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -300px;
+  top: 10%;
+  &.inIframe{
+    width:100%;
+    margin-left: 0;
+    left:0;
+  }
+}
+.closeBtn,.closeEditOrderBtn{
+  width:30px;
+  height:30px;
+  position: absolute;
+  right:0;
+  top:0;
+  background-image: url("#{$img_path}common/images/personalTailor/csad/dialogue_delect.png");
+  background-size: 100%;
+  display: block;
+  cursor: pointer;
+  &.closeprintReport{
+    right:50px;
+  }
+}
+.deleteIcon{
+  background: {
+    size: 100%;
+    image: url("#{$img_path}common/images/personalTailor/csad/box_edit.png");
+  };
+  width:24px;
+  height:24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+//获取课时
+#userLessonList {
+  padding: 2%;
+  overflow-y: auto;
+  z-index: 3;
+  li {
+    padding: 0 2% 2%;
+    margin-bottom: 2%;
+    border-bottom: 1px solid $borderColor;
+    line-height: 22px;
+    &:last-child{
+      border-bottom-width:0;
+    }
+    .answer{
+      color: $colorLighter;
+    }
+  }
+
+  .lessonChoice {
+    width: 80%;
+    margin: 3% auto 1%;
+    height: 30px;
+    background-color: $borderColor;
+    text-align: center;
+    i {
+      background: {
+        image: url("#{$img_path}common/images/personalTailor/icon_default.png");
+        size: 100%;
+      };
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      margin: 4px 0;
+    }
+    &.hasChoice {
+      background-color: $foreground;
+      i {
+        background: {
+          image: url("#{$img_path}common/images/personalTailor/icon_selection.png");
+        };
+      }
+    }
+  }
+  .borderl{
+    position: relative;
+    padding-left: 3%;
+    &:before{
+      content: '';
+      position: absolute;
+      width:2px;
+      background-color: $foreground;
+      height:16px;
+      top: 2px;
+      left:0;
+    }
+    b{
+      color: $colorLighter;
+    }
+
+  }
+
+  .stepItemDot{
+    border-left:1px solid $foreground;
+    position: relative;
+    margin: 0 2%;
+    padding-left: 2%;
+    &:before{
+      border-radius:50%;
+      background-color: $foreground;
+      width:7px;
+      height:7px;
+      display: inline-block;
+      vertical-align: middle;
+      content: '';
+      margin: -2px 10% 0 -4px;
+      position: absolute;
+      left: 0;
+      top:10px;
+      z-index: 2;
+    }
+    &:after{
+      width: 1px;
+      height: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      content: '';
+      position: absolute;
+      left: -1px;
+      bottom: -9px;
+      background-color:  $foreground;
+    }
+  }
+  .less_step{
+    padding:2% 0 0 5%;
+    position: relative;
+    .row:first-child{
+      i{
+        width: 1px;
+        height: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        left: -1px;
+        top: 0;
+        background-color:  #fff;
+        z-index: 1;
+      }
+
+    }
+    dd{
+      &:last-child{
+        .stepItemDot{
+          border-left-width: 0;
+          &:after{
+            width: 0;
+            height: 0;
+            display: inline-block;
+            vertical-align: middle;
+            content: '';
+          }
+        }
+
+      }
+    }
+    &:before{
+      background-color: #fff;
+      height:7px;
+      width:7px;
+      display: block;
+      position: absolute;
+    }
+    &:after{
+      background-color: $foreground;
+      height:7px;
+      width:1px;
+      display: block;
+      position: absolute;
+    }
+  }
+}
+#chooseBoxProduct{
+  z-index: 3;
+}
+//添加
+.translate-viewport{
+  background-color: rgba(0,0,0,.5);
+}
+.addContent,.chooseDialog,.coursePreviewContent,#chooseBoxProduct ul{
+  position: relative;
+  width: 500px;
+  margin: 5% auto 0;
+  background: #fff;
+  height: 80%;
+  padding: 20px;
+  overflow-y: auto;
+}
+#chooseBoxProduct ul{
+  li{
+    width:45%;
+    display: inline-block;
+    margin-right:3%;
+    position: relative;
+    &.hasChoiceProd2 {
+      .chooseProducti {
+        background-image: url("#{$img_path}common/images/personalTailor/icon_pro_selection.png");
+      }
+    }
+    .chooseProducti{
+      position: absolute;
+      background-image: url("http://mikumine.b0.upaiyun.com/common/images/personalTailor/icon_pro_default.png");
+      background-size: 100%;
+      width: 30px;
+      height: 30px;
+      right: 0;
+      top: 0;
+      display: block;
+      z-index: 9;
+    }
+
+  }
+}
+.addPOP{
+  dl{
+    dd{
+      padding-bottom: 2%;
+      p{
+        span:first-child{
+          border-left-width:0;
+          font-size: 12px;
+        }
+      }
+      span{
+        display: inline-block;
+        &:first-child{
+          border-left: 2px solid $foreground;
+          padding-left:2%;
+          margin-bottom:3%;
+        }
+      }
+    }
+    .btn{
+      line-height: 34px;
+      background-color: $foreground;
+      margin-right: 2%;
+      text-align: center;
+      color: #fff;
+      padding:0 5%;
+    }
+    input{
+      margin:0 5px;
+      text-align: center
+    }
+  }
+}
+//选择产品
+.chooseBoxProductDialog{
+  li{
+    width: 48%;
+    display: inline-block;
+    margin: 0.8% !important;
+    p{
+      margin-top:8px;
+    }
+  }
+}
+
+#chooseProduct{
+  z-index: 9;
+  .chooseProductContents{
+    overflow-y: auto;
+    background-color: $background;
+    width: 500px;
+    margin: 5% auto;
+    height: 80%;
+    position: relative;
+  }
+  #selectedProduct{
+    position: absolute;
+    width:100%;
+    line-height: 34px;
+    text-align: center;
+    background-color: $foreground;
+    color: #fff;
+    bottom: 0px;
+    z-index: 9;
+    left:0;
+    span{
+      display: block;
+    }
+
+  }
+  ul{
+    width:500px;
+    padding: 20px 0 25px;
+    height: 100%;
+    overflow-y: auto;
+
+    // margin: 10% auto;
+    // height:80px;
+  }
+  li{
+    margin: 2%;
+    &.notData{
+      img{
+        display: inline-block;
+        width: 30%;
+      }
+      p{
+        margin-top: 5%;
+      }
+      span{
+        background: $foreground;
+        padding: 5px 25px;
+        color: #fff;
+        margin-top: 20px;
+        display: inline-block;
+      }
+    }
+  }
+  .productItem{
+    padding: 1.5%;
+    font-size: 11px;
+    border-radius: 10px;
+    background-color: #fff;
+    border-left: 5px solid $background;
+    border-right: 5px solid $background;
+    position: relative;
+    dt{
+      position: relative;
+      span{
+        background-color: rgba(0,0,0,.1);
+        z-index: 2;
+        position: absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        display: block;
+      }
+      img{
+        margin: 0 auto;
+        z-index: 1;
+      }
+    }
+
+    i{
+      position: absolute;
+      background-image: url("#{$img_path}common/images/personalTailor/icon_pro_default.png");
+      background-size: 100%;
+      width: 30px;
+      height: 30px;
+      right:0;
+      top:0;
+      display: block;
+      z-index: 9;
+      &.currentSelectedProduct{
+        background-image: url("#{$img_path}common/images/personalTailor/icon_pro_selection.png");
+      }
+    }
+    &.hasChoiceProd{
+      i{
+        background-image: url("#{$img_path}common/images/personalTailor/icon_pro_selection.png");
+      }
+
+    }
+  }
+
+}
+
+//添加
+.addBtn {
+  line-height: 34px;
+  background-color: $foreground;
+  //margin-right: 2%;
+  text-align: center;
+  color: #fff;
+  // padding: 0 5%;
+  width: 120px;
+  display: inline-block;
+  margin: 10px 2% 0 0;
+}
+.addBoxProduct{
+  i{
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background:{
+      image: url("#{$img_path}/common/images/personalTailor/csad/icon_search.png");
+      size: 40px 40px;
+      repeat: no-repeat;
+      position: center center;
+    }
+  }
+  input{
+    background: $background;
+    border-bottom: 0;
+    padding: 8px 8px 8px 34px;
+    width:130px;
+  }
+  .addBoxProductBtn{
+    background: $foreground;
+    width: 100px;
+    display: block;
+    text-align: center;
+    line-height: 34px;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+}
+.canEditLayout{
+  overflow: hidden;
+  position: relative;
+  .boxBL{
+    width:64%;
+    // float: left;
+  }
+  .boxBR{
+    width:33%;
+    position: absolute;
+    right:0;
+    top:60px;
+    .box_img{
+      div{
+        width: 120px;
+        cursor: pointer;
+      }
+    }
+    // float: left;
+  }
+}
+
+/*盒子预览*/
+.coursePreviewContent{
+  width:360px;
+  background-color: $background;
+  padding: 0;
+  .boxTitle{
+    border-bottom:1px solid $borderColor;
+    text-align: center;
+    line-height: 36px;
+    background-color: #fff;
+  }
+  .boxItemM{
+    img{
+      margin: 0 auto;
+      &.boxImg{
+        margin:10px auto;
+      }
+    }
+    .boxPrice{
+      color: #fb4e90;
+      font-weight: bold;
+      font-size: 18px;
+      border-bottom:1px solid $borderColor;
+      padding:0 10px;
+    }
+    .boxDe{
+      background-color: #fff;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+    .boxName{
+      font-size: 15px;
+      line-height: 26px;
+      padding:0 10px ;
+    }
+    .boxIntro{
+      font-size: 12px;
+      color: $colorLighter;
+      margin: 5px 0;
+      padding:0 10px 10px ;
+      border-bottom: 1px solid $borderColor;
+    }
+    .csadName,.boxCreateTime{
+      font-size: 12px;
+      &:before{
+        width:12px;
+        height:12px;
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+        background-size: 100%;
+      }
+    }
+    .csadName:before{
+      background-image: url("#{$img_path}/common/images/personalTailor/csad/icon-peo.png");
+    }
+    .boxCreateTime:before{
+      background-image: url("#{$img_path}/common/images/personalTailor/csad/icon-biao2.png");
+    }
+
+    ul{
+      li{
+        border:1px solid $borderColor;
+        border-left-width:0;
+        border-top-width:0;
+        font-size:15px;
+        text-align: center;
+        line-height: 36px;
+        cursor: pointer;
+        &:last-child{
+          border-right-width:0;
+        }
+        &.current{
+          border-bottom:1px solid $foreground;
+        }
+      }
+    }
+    h4{
+      font-size: 16px;
+      margin-bottom: 5px;
+      &:before{
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        width: 20px;
+        height:20px;
+        background:{
+          size: 100%;
+          image: url("#{$img_path}common/images/personalTailor/csad/icon-3.png");
+        }
+
+      }
+    }
+    dd{
+      &:first-child {
+        .condetail {
+          border-left: 1px solid $borderColor;
+          margin-top:0;
+        }
+      }
+    }
+    .condetail{
+      margin: 10px;
+      .basicP{
+        border-bottom: 1px solid $borderColor;
+        margin-left: 8px;
+        padding-left:10px;
+        line-height: 36px;
+        color: $colorLighter;
+        span{
+          color: $colorDeep;
+        }
+      }
+      .texta{
+        border:1px solid $borderColor;
+        min-height: 70px;
+        padding:10px;
+      }
+      .qaP{
+        margin:5px 10px;
+        color: $colorLighter;
+      }
+    }
+
+    .solveWayView{
+      dt{
+        width:40%;
+        display: inline-block;
+        text-align: center;
+        margin-right: 10%;
+        &:nth-child(2n){
+          margin-right:0;
+        }
+      }
+      .suggest{
+        border:1px solid $borderColor;
+        min-height: 70px;
+        padding: 10px;
+      }
+    }
+
+    .coursePC{
+      position: relative;
+      .boxWrap{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 1px solid #fff;
+        width: 230px;
+        transform: translate(-50%, -50%);
+        height: 70px;
+        padding: 10px;
+        .boxInner{
+          background: rgba(255,255,255,0.8);
+          text-align: center;
+          line-height: 50px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .boxContentM {
+    background: #fff;
+    .contentM{
+      padding: 15px;
+    }
+  }
+  .footerT{
+    text-align: center;
+    span{
+      background: $colorDeep;
+      border-radius: 5px;
+      width:100px;
+      line-height: 32px;
+      color: #fff;
+      display: inline-block;
+      margin: 10px 15px;
+      cursor: pointer;
+      // text-align: center;
+    }
+  }
+}
+#large_container{
+  position: fixed;
+  z-index: 10;
+  left:0;
+  bottom: 0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,.5);
+  .bigImgContent{
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    img{
+      max-width: 1920px;
+    }
+  }
+  .closeBigImg{
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: url("http://mikumine.b0.upaiyun.com/common/images/personalTailor/csad/icon-closeWhite.png") no-repeat;
+    background-size: 100% auto;
+    display: block;
+    text-indent: -999px;
+  }
+}
+@mixin choice() {
+  background-size: 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 12px;
+  height:12px;
+  vertical-align: middle;
+  content: '';
+  margin-right: 5px;
+}
+//生成订单
+#createOrder{
+  .add_con{
+    padding:10px 20px;
+  }
+  dd{
+    line-height:36px;
+  }
+  p.prepay{
+    display: inline-block;
+    input{
+      display: inline-block;
+      height: 30px;
+      width: 70px !important;
+      margin: 0 10px;
+      border-radius: 10px;
+
+    }
+  }
+
+}
+span.radioDD{
+  i{
+    @include choice();
+    background-image: url("#{$img_path}common/images/personalTailor/csad/report_unselect.png");
+
+  }
+  &.choice{
+    i{
+      background-image: url("#{$img_path}common/images/personalTailor/csad/report_selected.png");
+    }
+  }
+}
+#createOrder{
+  .pop_box{
+    width: 580px;
+    height: 450px;
+    //margin-left: -220px;
+   // margin-top: -225px;
+    margin: 0 auto;
+    position: static;
+    dd{
+      margin-top:5px;
+    }
+    .boxR{
+      line-height: 45px;
+    }
+    .radioDD{
+      margin-right: 8px;
+    }
+    label{
+      width:80px;
+      display: inline-block;
+      text-align: right;
+      padding-right:15px;
+      line-height: 45px;
+    }
+    input{
+      width:450px;
+      margin-top:5px;
+    }
+
+    .buyerMemo{
+      resize: none;
+      height: 50px;
+      display: block;
+      width: 450px;
+      margin: 6px auto 0 auto;
+      background-color: #F6F6F6;
+      color: #b3b3b3;
+      border-radius: 19px;
+      border: none;
+      text-align: left !important;
+      padding: 5px 0 0 15px;
+    }
+
+    select{
+      width:30%;
+      margin:0 1%;
+      border-color: $borderColor;
+      color: #2e2e2e;
+    }
+    .prepay{
+      input{
+        width: 50px !important;
+        display: inline !important;
+        height: 30px !important;
+        border-radius: 5px !important;
+      }
+    }
+  }
+}
+.createOrderContainerNext
+{
+  .pop_box{
+    width: 800px;
+    margin-left: -400px;
+    height: 600px;
+    margin-top: -300px;
+  }
+}
+
+//选择微信
+.createOrderContainerNext{
+  .choiceItem{
+    border: 1px solid $borderColor;
+    width: 250px;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 10px 10px 0;
+    &.active{
+      position: relative;
+      border:1px solid $colorDeep;
+      &:before{
+        @include choice();
+        background-image: url("#{$img_path}common/images/personalTailor/icon_choose.png");
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width:20px;
+        height:20px;
+        background-size: 100%;
+      }
+
+    }
+    b{
+      color: #f00c3a;
+      margin-right: 10px;
+    }
+    .selDay,.selDeliveryDay{
+      margin-right: 10px;
+    }
+  }
+}
+//补发订单
+.reissueOrderWrap{
+  width:100%;
+  height:100%;
+  position: absolute;
+  background: #fff;
+  left:0;
+  top:0;
+  overflow-y: auto;
+  z-index: 9;
+}
+.reissueContent{
+  height:100%;
+}

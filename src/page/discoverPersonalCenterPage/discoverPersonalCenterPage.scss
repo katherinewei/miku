@@ -1,0 +1,339 @@
+/**
+ * Created by Spades-k on 2016/6/23.
+ * version 0.0.1
+ */
+@import "../../common/style/_mixin";
+$themelinecolor:#E7E7E7;
+$hcolor:#7c7c7c;//灰色字体颜色
+@mixin choice() {
+  background-size: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 25px;
+  height:18px;
+  vertical-align: middle;
+  content: '';
+}
+.f16{
+  font-size: 16px;
+}
+.f14{
+  font-size: 14px;
+}
+.tc{
+  text-align: center;
+}
+.f_c{
+  color: $hcolor;
+}
+.ml15{
+  margin-left: 15px;
+}
+.f_c_r{
+  color: red;
+}
+
+.page-content{
+  img{
+    max-width: 200%;
+    width: 100%;
+  }
+  position: static;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #FAFBFD;
+  padding-top: 15px;
+  padding-bottom: 0;
+  .personal_box{
+    border-bottom: 1px solid $themelinecolor;
+    padding:20px 0 20px 20px;
+    background: white;
+    .portrait{
+      margin-right: 15px;
+      img{
+        width: 80px;
+        height:80px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .switch_box{
+    background-color: white;
+    .me_dynamic{
+      padding: 16px 0;
+    }
+    .me_circle{
+      padding: 16px 0;
+    }
+  }
+  .article{
+    .circle_list{
+      .pic{
+        img{
+          height: 46px;
+          width: 46px;
+          border-radius: 50%;
+        }
+      }
+    }
+      a{
+        display: inline-block;
+      }
+    margin-top: 7px;
+    border-top: 1px solid $themelinecolor;
+    background: #FAFBFD;
+    li{
+      &:first-child{
+        border-top: none;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+      background-color: white;
+      padding: 5px 20px;
+      margin-bottom: 6px;
+      border-top: 1px solid $themelinecolor;
+      border-bottom: 1px solid $themelinecolor;
+      .list_head{
+        width:100%;
+        padding: 1% 0;
+        .head_pic{
+          margin-right: 5px;
+          img{
+            height: 46px;
+            width: 46px;
+            border-radius: 50%;
+          }
+        }
+        .head_title{
+          margin-left: 8px;
+          h4{
+            font-size: 16px;
+          }
+          p{
+            color: $hcolor;
+            font-size: 14px;
+          }
+        }
+        .head_follow{
+          div{
+            width: 112px;
+            text-align: center;
+            height:40px;
+            border-radius: 20px;
+            line-height: 40px;
+            border: 1px solid #8E8E8E;
+            font-size: 16px;
+          }
+        }
+      }
+      .content{
+        margin-top: 5px;
+        .pic_one{
+          max-height: 250px;
+          overflow: hidden;
+        }
+        .forward_word{
+          margin: 20px 0 15px 0;
+        }
+        .content_pic{
+          width: 100%;
+        }
+        .content_con{
+          h4{
+            padding: 7px 0 3px 0;
+            font-size: 16px;
+          }
+          p{
+            color: $hcolor;
+            font-size: 16px;
+          }
+        }
+        .content_p_con{
+          p{
+            color: $hcolor;
+            font-size: 16px;
+          }
+        }
+      }
+      .footer{
+        height:30px;
+        line-height: 30px;
+        margin-top: 2px;
+        .f_clikes{
+          margin-right: 6%;
+          padding-top: 4px;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url("#{$img_path}common/images/find/num_like.png") no-repeat;
+            background-size: auto 100%;
+            vertical-align: -5px;
+            margin-right: 2px;
+          }
+          span{
+            color: $hcolor;
+          }
+        }
+        .f_browse{
+          padding-top: 4px;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url("#{$img_path}common/images/find/article_browse.png") no-repeat;
+            background-size: auto 100%;
+            vertical-align: -5px;
+            margin-right: 2px;
+          }
+          span{
+            color: $hcolor;
+          }
+          margin-right: 6%
+        }
+        .f_reprint{
+          padding-top: 4px;
+          margin-right: 6%;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url("#{$img_path}common/images/find/article_share.png") no-repeat;
+            background-size: auto 100%;
+            vertical-align: -5px;
+            margin-right: 2px;
+          }
+          span{
+            color: $hcolor;
+          }
+        }
+      }
+      .f_likes{
+        margin-right: 6%;
+        padding-top: 4px;
+        i{
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background: url("#{$img_path}common/images/find/article_collect.png") no-repeat;
+          background-size: auto 100%;
+          vertical-align: -5px;
+          margin-right: 2px;
+        }
+        span{
+          color: $hcolor;
+        }
+      }
+      .f_comment{
+        padding-top: 4px;
+        margin-right: 6%;
+        i{
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background: url("#{$img_path}common/images/find/article_comment.png") no-repeat;
+          background-size: auto 100%;
+          vertical-align: -5px;
+          margin-right: 2px;
+        }
+        span{
+          color: $hcolor;
+        }
+      }
+      .f_f_reprint_l{
+        padding-top: 4px;
+      }
+    }
+  }
+}
+.con{
+  margin-top: 52px;
+  background-color: white;
+  .con_box{
+    width:92%;
+    margin: 2% auto;
+    overflow-y: auto;
+
+    li.skinCondition,li.lifeStyle,li.detailQ {
+      span{
+        color: #fb4e90;
+        text-decoration: underline;
+        padding:0 2%;
+        b{
+          height:16px;
+          width:40px;
+          display: inline-block;
+        }
+      }
+    }
+    h3 {
+      background-color: $foreground;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      display: inline-block;
+      padding: 0 5%;
+    }
+    dl {
+      overflow: hidden;
+      padding: 3% 5%;
+      dd {
+        padding-bottom: 3%;
+        overflow: hidden;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+      }
+    }
+    input{
+      border-bottom:1px solid $colorDeep;
+      //max-width: 76px;
+      //text-align: center;
+      width:auto;
+      padding:0 5%;
+    }
+    input{
+      &.readonly{
+        border:none;
+        // max-width:20px;
+        // text-align: left;
+        padding:0;
+      }
+      resize: none;
+    }
+    li{
+      &.message{
+        .sex{display: inline-block}
+        .choice{
+          display: inline-block;
+          margin-right: 5%;
+          &:before{
+            @include choice();
+            background-image: url("#{$img_path}common/images/icon_choose_n.png");
+          }
+          &.active{
+            &:before{
+              background-image: url("#{$img_path}common/images/icon_choose_h.png");
+            }
+
+          }
+        }
+      }
+    }
+    .save{
+      width: 100%;
+      padding: 7px 0;
+      span{
+        display: block;
+        background-color: $foreground;
+        color: #fff;
+        border-radius: 3px;
+        text-align: center;
+        line-height: 30px;
+      }
+    }
+  }
+}

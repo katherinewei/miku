@@ -1,0 +1,912 @@
+@import "_mixin";
+@import "_reset";
+@import "_animation";
+@import "_font";
+@import "_grid";
+@import "_box";
+@import "_translate";
+//@import "icons-image.css";
+/**
+ * xiang dang jia base.css
+ * 2014-12-02 19:46;
+ * superman
+ * version 0.0.1
+ */
+
+body.dialog-mode {
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow-y: hidden !important;
+}
+
+input[placeholder],
+textarea[placeholder] {
+    &:active, &:focus {
+        &::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+}
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+input[type="password"],
+input, textarea,
+button {
+  -webkit-appearance: none;
+}
+
+.layout:after,
+.clearfix:after {
+    @include clearfix;
+}
+/* img[data-src], .loading {
+    background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20141228/vNTT-0-1419752374073.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 32px;
+    min-height: 32px;
+} */
+/* [data-lazyload-src], */
+
+//navbar-fixed
+.navbar-fixed-top {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+@-webkit-keyframes rotate {
+    from {-webkit-transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);}
+}
+
+.loading {
+    background-image: url("#{$img_path}common/images/loading_icon.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 48px 48px;
+    min-width: 48px;
+    min-height: 48px;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.waitting {
+   // background: rgba(0, 0, 0, 0.5);
+    padding-top: 5px;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    border-radius: 3px;
+    display:block;
+    text-align: center;
+    height:48px;
+    margin-left: -24px;
+    margin-top: -24px;
+    .message {
+        //text-align: center;
+        padding: 3px 10px;
+    }
+    &:after{
+        content: "";
+        background:{
+            image: url("#{$img_path}common/images/main_progress_centre.png");
+            size: 25px auto;
+            position: center center;
+            repeat: no-repeat;
+        }
+        //background-image: url("http://mikumine.b0.upaiyun.com/common/images/main_progress_centre.png");
+        display: block;
+        width: 30px;
+        height: 6px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+       // background-size: 30px auto;
+       // background-position: center center;
+        margin-top: 3px;
+        margin-left: -15px;
+        //display:table-cell;
+        vertical-align:middle;
+       // margin: 0 auto;
+
+    }
+}
+
+.page-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -24px 0 0 -24px;
+    z-index: 9999;
+    width: 48px;
+    height: 48px;
+    background-size: 100% 100%;
+}
+
+.tbtx-broadcast {
+    position: fixed;
+    left: -9999px;
+    top: -9999px;
+    z-index: 99999;
+    padding: 8px 20px;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    //line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+
+}
+/*********************************************************/
+
+.action {
+    color: #333;
+    font-size: 0.8em;
+}
+
+.bgimg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.price,
+.money {
+  //color: $strongcolor;
+    strong{
+      //font-weight: bold;
+      font-weight: normal;
+    }
+    &:before {
+        content: '￥';
+        vertical-align: middle;
+    }
+}
+
+.refprice {
+    color: $avianize;
+    text-decoration: line-through;
+    font-size: 0.8em;
+}
+
+.button {
+    font-weight: normal;
+    text-align: center;
+    border-radius: 5px;
+    background: $foreground;
+    color: #fff;
+    padding: 0.4em 0.2em;
+    &.disable {
+        background: $disablebackground !important;
+        color: $disableforeground !important;
+    }
+}
+
+.row {
+    .delete.action {
+        display: none;
+    }
+    &.row-delete-mode {
+        position: relative;
+        .delete.action {
+            display: block;
+            background: #f00;
+            color: #fff;
+            @include position(auto, 0, 0);
+            @include size(30%, 100%);
+            text-align: center;
+        }
+    }
+}
+
+.ellipsis {
+    @include ellipsis;
+}
+
+.payment-popup {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    .popup-mask {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    .popup-body {
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        .payment-item {
+            @include gridborder(1px);
+            padding: 10px 0 10px 50px;
+            p strong em {
+                font-size: 18px;
+                color: #f00;
+                &:before {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .popup-title {
+        font-size: 18px;
+        padding-bottom: 5px;
+    }
+    .payment-icon {
+        background: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150203/vNTT-0-1422959535453.png) no-repeat left top;
+        background-size: 26px 20px;
+        padding-left: 30px;
+    }
+    .wxpay-icon {
+        background: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150203/vNTT-0-1422959535510.png) no-repeat;
+    }
+    .alipay-icon {
+        background: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150203/vNTT-0-1422959535499.png) no-repeat;
+    }
+    .delivery-icon {
+        background: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150203/vNTT-0-1422959535758.png) no-repeat;
+    }
+    .wxpay-icon,
+    .alipay-icon,
+    .delivery-icon {
+        background-size: 42px 42px;
+        background-position: left center;
+        padding-left: 50px;
+    }
+}
+
+/* .notice {
+    .header {
+        background: #fff;
+        .row {
+            line-height: 1.2;
+            .col {
+                padding: 8px 0;
+                border-bottom: 1px solid #ccc;
+                color: #9c6;
+                &.curr {
+                    border-bottom-color: #9c6;
+                }
+                &.none {
+                    color: #ccc;
+                }
+            }
+        }
+    }
+    .content {
+        margin: 10px;
+        background: #fff;
+        @include gridborder(1px, 1px, 1px, 1px);
+        .refprice {
+            margin-left: 1em;
+        }
+        .row {
+            @include gridborder(1px);
+            padding: 5px;
+        }
+        .activeItem .button {}
+    }
+} */
+
+.prompt-swpie {
+    background-image: url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150316/vNTT-0-1426490985149.png);
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -12px;
+    animation-name: pulsation;
+    animation-duration: 0.35s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+//header(position:fixed)
+.header {
+    position: fixed;
+    //position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transition: background .3s;
+    transition: background .3s;
+    z-index: 1;
+    //border-bottom: 1px solid $borderColor;
+    color: $headerForeground;
+
+    .navbar {
+        position: relative;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        background: $headerBackground;
+    }
+    .btn-navbar {
+        position: absolute;
+        top: 0;
+        height: 45px;
+        width: 45px;
+        z-index: 9;
+        .icon {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+        }
+    }
+    .navbar-left {
+        left: 0;
+    }
+    .navbar-right {
+        right: 0;
+    }
+    .navbar-main {
+        margin: 0;
+
+        font-size: 16px;
+    }
+    .navbar-right {
+        right: 0;
+    }
+    .icon-return {
+        background: url("#{$img_path}common/images/navBack.png") center no-repeat;
+    }
+    .icon-question {
+        background-size: 80px 835px;;
+        background-position: 8px -458px;
+        background-image: url("#{$img_path}common/images/ally_icon.png");
+    }
+}
+
+//page-content
+.page-content {
+    padding: 45px 0;
+}
+
+
+
+#app-bar {
+    border-top: 1px solid #e5e5e5;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    height: 50px;
+    @include app-bar-bg;
+    ul {
+        height: 100%;
+    }
+    li {
+        text-align: center;
+        line-height: 14px;
+        &.active {
+            .index-bar {
+               // background-position-y: 0px;
+                //background-image: url("#{$img_path}common/images/icon1_bottom_click.png");
+                background:{
+                    image:url("#{$img_path}common/images/app_bar1_active.png");
+                }
+            }
+            .list-bar {
+              // background-position-y: -60px;
+               // background:{
+                //    image:url("#{$img_path}common/images/app_bar2.png");
+               // }
+            }
+            .cart-bar {
+               // background-position-y: -120px;
+                background:{
+                    image:url("#{$img_path}common/images/app_bar2_active.png");
+                }
+            }
+            .user-bar {
+               // background-position-y: -180px;
+                background:{
+                    image:url("#{$img_path}common/images/app_bar3_active.png");
+                }
+            }
+            p {
+                color: $colorDeep;
+            }
+        }
+
+        i {
+            height: 30px;
+            width: 30px;
+            background-color: #FFFFFF;
+           // background-image: url("#{$img_path}common/images/app_bar.png");
+            //url(http://welinklife.b0.upaiyun.com/1/LTE=/SVRFTS1QVUJMSVNI/MA==/20150515/vNTT-0-1431669574692.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            //background-size: 30px 240px; //242px;
+            //background-position-x: 50%;
+            display: block;
+            margin: 0 auto;
+            &.index-bar {
+                background:{
+                     image:url("#{$img_path}common/images/app_bar1.png");
+                }
+                //background: url("#{$img_path}common/images/icon1_bottom_normal.png");
+                //background-size: 100%;
+                //background-position-y: -30px;
+            }
+            &.list-bar {
+                //background-position-y: -90px;
+            }
+            &.cart-bar {
+                //background-position-y: -150px;
+                background:{
+                    image:url("#{$img_path}common/images/app_bar2.png");
+                }
+                position: relative;
+            }
+            &.user-bar {
+                background:{
+                    image:url("#{$img_path}common/images/app_bar3.png");
+                }
+                //background-position-y: -210px;
+            }
+        }
+        p {
+            color: #8b8b8b;
+            font-size: 12px;
+        }
+        .price {
+            display: block;
+            //width: 20px;
+            height: 20px;
+            padding:0 3px;
+            text-align: center;
+            border: 1px solid #fff;
+            color: #fff;
+            border-radius: 10px;
+            line-height: 20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -18px 0 0 7px;
+            font-size: 12px;
+            background: $foreground;
+            font-style: normal;
+        }
+    }
+}
+
+
+//购物车
+.category-handle {
+    //@include icon-image(center, -121px);
+    height: 45px;
+    //width: 20%;
+    width: 45px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url("#{$img_path}common/images/cart_icon_pink.png");
+    // background-size: 48px 320px;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.cart-bar {
+    .price {
+        display: block;
+        // width: 16px;
+        padding:0 1px;
+        height: 14px;
+        text-align: center;
+        border: 1px solid $foreground;
+        color: #fff;
+        border-radius: 10px;
+        line-height: 14px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -23px 0 0 -13px;
+        font-size: 10px;
+        background: $foreground;
+        visibility: hidden;
+    }
+}
+
+//关注与下载start
+.white_background{
+    background: $foreground;
+}
+.black_background{
+    background: #FCE131;
+}
+#down_and_concern{
+    filter:alpha(opacity=70); /*IE滤镜，透明度50%*/
+    -moz-opacity:0.7; /*Firefox私有，透明度50%*/
+    opacity:0.7;/*其他，透明度50%*/
+    font-size: 12px;
+    height: 45px;
+    position: fixed;
+    left: 0px;
+    bottom: 50px;
+    width: 100%;
+    z-index: 10;
+    .white{
+        color: #fff;
+    }
+    .white_border{
+        border:1px solid #fff;
+    }
+
+    .black_border{
+        border:1px solid $headerForeground;
+     }
+
+    img{
+        display:inline-block;
+    }
+    div{
+        float:left;
+        height:100%;
+        line-height:45px;
+        text-align:center;
+    }
+    .down_img_left{
+        width:10%;
+    }
+    .down_con_center{
+        margin-top:2px;
+        margin-left:3px;
+    }
+    .down_con_right{
+        width:20%;
+        height:30px;
+        line-height:30px;
+        float:right;
+        margin-right:11px;
+        margin-top:8px;
+    }
+}
+//关注与下载end
+
+body.editing #app-bar {
+    display: none;
+}
+/**
+ * 支付方式
+ */
+.wl-payer-dialog {
+    .payment-list {
+        background: #fff;
+        padding: 0 15px;
+        @include border(0, 0, 1px);
+        li {
+            padding: 10px 0;
+            @include gridborder(0, 0, 1px);
+            &:last-child {
+                border-bottom: 0;
+            }
+            &.active {
+                background-image: url("#{$img_path}common/images/select_icon.png");
+                background-repeat: no-repeat;
+                background-position: right center;
+                background-size: 21px 21px;
+            }
+        }
+    }
+}
+
+/*
+*页面顶部标题
+*/
+.head{
+    width: 100%;
+  background: {
+    color:$foreground
+  }
+    .head-tit{
+        height: 3.14rem;
+        text-align: center;
+        line-height: 3.14rem;
+        span{
+            color: #fff;
+            font:{
+                size:18px;
+                weight: 500;
+            }
+        }
+
+        div{
+            color: #fff;
+            font:{
+                size:18px;
+                weight: 500;
+            }
+            float:left;
+            height: 100%;
+            line-height: 3.14rem;
+            text-align: center;
+            margin: 0 auto;
+            background:{
+                size: 40px;
+                repeat: no-repeat;
+            }
+        }
+        .head-tit-right{
+            float: right;
+            width: 2.86rem;
+            height: 2.1429rem;
+            background:{
+                size: 2.8571rem;
+                position: center 9px;
+                image: url($head-tit-img);
+            }
+        }
+        .head-tit-left{
+            margin-top: 0.3571rem;
+            margin-left: 1.0714rem;
+            width: 2.1429rem;
+            height: 2.1429rem;
+            background:{
+                size: 2.7857rem 20.5000rem;
+                position: 1px -26px;
+                image: url($head-tit-img);
+            }
+        }
+        .head-tit-mid{
+            position: relative;
+            left: 27.4%;
+            height: 3.14rem;
+        }
+
+    }
+
+}
+
+/*
+*分享提示
+*/
+.shareCont {
+    top: 0px;
+    position: fixed;
+    z-index: 0;
+    height: 0;
+    opacity: 0;
+    background-color: #191919;
+    -webkit-transition: all 0.5s linear 0s;
+    transition: all 0.5s linear 0s;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    width: 100%;
+    .closeShareTips {
+        color: #fa4f90;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 2px solid #fa4f90;
+        font-weight: bold;
+        width: 30%;
+        margin: 2% auto;
+        text-align: center;
+        padding: 1.5% 3%;
+        letter-spacing: 2px;
+    }
+}
+
+/*
+*显隐
+*/
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/*
+*遮罩
+*/
+.shadows_parent {
+    position: relative;
+    overflow: hidden;
+    .shadows {
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .hasSoldOut{
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: url("#{$img_path}common/images/icon_soldout-@2x.png");
+        background-repeat: no-repeat;
+        background-size: 28%;
+        background-position: center;
+        transition-delay: 750ms;
+        z-index: 1;
+    }
+}
+
+/*
+*去掉安卓滚动条
+*/
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/*
+*返回顶部
+*/
+.topIcon {
+    background-image: url("#{$img_path}common/images/icon_top.png");
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    text-indent: -9999px;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s ease-in 0s;
+    &.is-visible {
+        opacity: 1;
+        z-index: 99;
+    }
+}
+
+//.pic-carousel {
+//    position: relative;
+//}
+//
+//.carousel-status {
+//    width: 100%;
+//    position: absolute;
+//    bottom: 0;
+//    text-align: center;
+//    span {
+//        display: inline-block;
+//        width: 6px;
+//        height: 6px;
+//        border-radius: 50%;
+//        background: #e7e7e7;
+//        margin-left: 8px;
+//        color: rgba(0,0,0,0);
+//        &:first-child {
+//            margin-left: 0;
+//        }
+//        &.sel {
+//            background: $foreground;
+//            border: 1px solid $foreground;
+//        }
+//    }
+//}
+
+.banner{
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    .slider-outer li{
+        float: left; 
+    }
+    .carousel-status{
+        width:100%;
+        height:11px;
+        position:absolute;
+        z-index:1;
+        bottom:5px;
+        text-align:center;
+        ul{
+            display:inline-block;
+            height:6px;
+            padding:3px 5px;
+            border-radius:6px;
+            font-size:0;
+            vertical-align:top;
+            li{
+                display:inline-block;
+                width:6px;
+                height:6px;
+                border-radius:6px;
+                background:#e7e7e7;
+                margin:0 5px;
+                vertical-align:top;
+                overflow:hidden;
+                &.on{
+                    background:$foreground;
+                }
+            }
+        }
+    }
+    .slider-outer{
+        position:relative;
+        z-index:0;
+    }
+}
+
+/*弹窗*/
+.telDialog {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    .cont {
+        margin: 0 auto;
+        width: 85%;
+        border-radius: 8px;
+        background-color: #fff;
+        text-align: center;
+        position: absolute;
+        top: 40%;
+        left: 7.5%;
+        padding-top: 3%;
+        font-size: 16px;
+        p {
+            padding: 2% 5%;
+            font-size: 14px;
+        }
+
+        .btngroup {
+            border-top: 1px solid #e5e5e5;
+            .btn {
+                width: 50%;
+                box-sizing: border-box;
+                padding: 5% 0;
+                text-align: center;
+                float: left;
+                color: #2e2e2e;
+                &:last-child {
+                    border-left: 1px solid #e5e5e5;
+                }
+            }
+        }
+    }
+}
+//显示是否有上级 || 在同一线上
+#showParentUserPage{
+    background-color: rgba(0,0,0,.4);
+    position: fixed;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 11;
+    .content{
+        width:80%;
+        margin: 42% auto 0;
+        position: relative;
+        .close{
+            background-image: url("#{$img_path}common/images/popup_delete.png");
+            position: absolute;
+            right:0;
+            top:0;
+            background-size: 100%;
+            display: block;
+            height:30px;
+            width:30px;
+        }
+    }
+}
+

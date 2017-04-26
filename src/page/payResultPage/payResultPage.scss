@@ -1,0 +1,35 @@
+@import "../../common/style/_mixin";
+.page-content{
+  background-color: $background;
+}
+.box{
+  text-align: center;
+  margin-top: 30%;
+  img{
+    display: inline-block;
+    width:30%;
+    margin-bottom: 5%;
+  }
+}
+.btnGroup{
+  margin-top: 5%;
+  span{
+    border-radius: 20px;
+    border:1px solid $foreground;
+    padding: 6px 0;
+    width:35%;
+    margin-right: 8%;
+    outline: none;
+    display: inline-block;
+  }
+  .btnE{
+    color: $foreground;
+    background-color: $background;
+  }
+  .btnF{
+    color: #fff;
+    background-color: $foreground;
+    margin-right: 0;
+
+  }
+}

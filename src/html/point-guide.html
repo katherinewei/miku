@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>积分规则</title>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- meta viewport -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../css/common.css"/>
+    <style>
+        body {
+            overflow-y: auto;
+            background-color: #fff;
+        }
+
+        .header {
+            position: relative;
+            display: none;
+        }
+
+        h1, h2, p {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            font-weight: normal;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-size: 18px;
+            margin: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 6px;
+        }
+    </style>
+</head>
+
+<body>
+<section class="header">
+    <div class="content navbar">
+        <div class="btn-navbar navbar-left"><a href="javascript:history.go(-1);" class="icon icon-return"></a></div>
+        <div class="navbar-main">积分规则</div>
+    </div>
+</section>
+
+<h2>一、积分获取</h2>
+
+<p>1.成为新用户即可获得500积分</p>
+
+<p>2.每日签到领取积分。第1天获得10积分；连续签到领取更多积分，最多可领取40积分。</p>
+
+<p>3.购买商品付款的现金部分可按比例获得积分，每100元获得100积分。</p>
+
+<h2>二、积分使用</h2>
+
+<p>购买商品时可使用积分抵用现金，每100积分可抵用1元，抵用金额不能超过应付金额。</p>
+</body>
+<script>
+    var type = getQueryString('type');
+    if (type == 1) {
+        document.getElementsByClassName('header')[0]['style'].display = 'block';
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+</html>

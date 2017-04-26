@@ -1,0 +1,91 @@
+/**
+ * Created by Spades-k on 2015/12/25.
+ * version 0.0.1
+ */
+
+@import "../../common/style/_mixin";
+@import "../../common/style/_media";
+.page-content{
+  //background-color: $background;
+}
+.lottery-list {
+  overflow-y: auto;
+  .media {
+    margin: 3% 3% 0 3%;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .media-left {
+    width:110px;
+    min-height: 110px;
+    //height: 80px;
+    margin-right: 3%;
+    overflow: hidden;
+    border-right: 1px solid $borderColor;
+    a {
+      display: inline-block;
+      width:110px;
+      //height: 80px;
+      vertical-align: middle;
+    }
+  }
+  .media-object {
+    width:110px;
+    //height: 80px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .media-body {
+    position: relative;
+    height: 80px;
+    color: #2e2e2e;
+    padding-right: 3%;
+    padding-left:3%;
+  }
+  .media-heading {
+    height: 45px;
+    margin-top: 6px;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: #2d2d2d;
+    overflow: hidden;
+  }
+  .media-footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .btn-receive {
+    position: absolute;
+    bottom: 5px;
+    right: 3%;
+    color: $foreground;
+  }
+}
+
+
+.not-has-goods-msg {
+  text-align: center;
+  margin-top:30%;
+  font-size: 14px;
+  .icon-ally-null {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-image: url("#{$img_path}common/images/gift_empty.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  p {
+    margin: 5% 0;
+  }
+  a {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5%;
+    color: $foreground;
+    border: 1px solid $foreground;
+    font-size: 18px;
+  }
+}

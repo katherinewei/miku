@@ -1,0 +1,49 @@
+@import "../../common/style/_mixin";
+body{
+  background-color: $background;
+}
+
+#weixinKFDialog{
+  text-align: center;
+  font-size: 15px;
+  width:82%;
+  margin: 0 auto;
+
+  .logo{
+    margin: 8% auto;
+    img{
+      width:100%;
+    }
+  }
+  .photo{
+    max-width: 60px;
+    margin:0 6%;
+  }
+  .qrcode{
+    position: relative;
+    .icon{
+      max-width: 24px;
+      position: absolute;
+      top:30%;
+      &.iconl{
+        left:7%;
+        transform: rotate(180deg);
+      }
+      &.iconr{
+        right:7%;
+
+      }
+    }
+
+    .qrcodeImg{
+      width:50%;
+      margin:10% auto;
+      padding: 5px;
+      border: 1px solid #000;
+      img{
+        border:1px solid $borderColor;
+      }
+    }
+  }
+
+}
